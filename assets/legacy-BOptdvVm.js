@@ -1,1 +1,0 @@
-import{m as e}from"./Index-xS7me9MV.js";e();
