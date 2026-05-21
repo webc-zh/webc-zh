@@ -1,1 +1,0 @@
-import{m as e}from"./Index-BPypD_sk.js";e();
