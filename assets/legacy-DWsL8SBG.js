@@ -1,0 +1,1 @@
+import{m as e}from"./Index-CVtcwtaJ.js";e();
