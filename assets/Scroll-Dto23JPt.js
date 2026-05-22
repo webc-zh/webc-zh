@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Demo-C3ryr4qf.js","./Index-BFp6iz0s.js","./init-CAIsLjgy.js","./init-BKyKWG2m.css","./Index-D2nR6Vig.css","./legacy-C54uH7nR.js"])))=>i.map(i=>d[i]);
-import{t as e}from"./Index-BFp6iz0s.js";var t=[`自定义虚拟滚动条
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Demo-D7Er5u54.js","./Index-DJssRa8q.js","./init-CAIsLjgy.js","./init-BKyKWG2m.css","./Index-D2nR6Vig.css","./legacy-DxJF-imq.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./Index-DJssRa8q.js";var t=[`自定义虚拟滚动条
 
 ## 功能
 
@@ -49,4 +49,4 @@ v-scroll
   border 1px solid #0000000f
 </style>
 \`\`\`
-`,()=>e(()=>import(`./Demo-C3ryr4qf.js`),__vite__mapDeps([0,1,2,3,4,5]),import.meta.url),[{name:`--cursorGrabSvg`,data_url:`/lib/svg/giUzPhnYmbjOG3VzqseH5g.svg`,file_path:`./cursor/grab.svg`},{name:`--cursorScrollhSvg`,data_url:`/lib/svg/yhI9x3s8u28j5vUN45useQ.svg`,file_path:`./cursor/scrollh.svg`},{name:`--cursorScrollvSvg`,data_url:`/lib/svg/sgoOOaKyF_KnkUoRKxWczw.svg`,file_path:`./cursor/scrollv.svg`}]];export{t as default};
+`,()=>e(()=>import(`./Demo-D7Er5u54.js`),__vite__mapDeps([0,1,2,3,4,5]),import.meta.url),[[`--cursorGrabSvg`,`giUzPhnYmbjOG3VzqseH5g`,`./cursor/grab.svg`],[`--cursorScrollhSvg`,`yhI9x3s8u28j5vUN45useQ`,`./cursor/scrollh.svg`],[`--cursorScrollvSvg`,`sgoOOaKyF_KnkUoRKxWczw`,`./cursor/scrollv.svg`]]];export{t as default};
