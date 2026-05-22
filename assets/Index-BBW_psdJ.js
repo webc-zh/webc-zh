@@ -1,5 +1,5 @@
 let e, t, n, s;
-import "./init-1lqV4cF8.js";
+import "./init-B9Yn4HQR.js";
 import { B as a, delayRoute as i, goto as l, nowUrl as o } from "x";
 var c, d, u, f, h, p, v, g, b, m, x, w = Object.create, k = Object.defineProperty, y = Object.getOwnPropertyDescriptor, _ = Object.getOwnPropertyNames, $ = Object.getPrototypeOf, S = Object.prototype.hasOwnProperty, E = Array.isArray, A = Array.prototype.indexOf, q = Array.prototype.includes, F = Array.from, z = Object.keys, j = Object.defineProperty, C = Object.getOwnPropertyDescriptor, P = Object.getOwnPropertyDescriptors, L = Object.prototype, M = Array.prototype, O = Object.getPrototypeOf, T = Object.isExtensible, B = () => {};
 function D() {
@@ -2082,11 +2082,11 @@ var nj = {}, nC = function(e, t, n) {
 }, nP = [[
 	"Scroll",
 	"自定义虚拟滚动条",
-	() => nC(() => import("./Scroll-HQiVx8yJ.js"), [], import.meta.url)
+	() => nC(() => import("./Scroll-BHoH71lS.js"), [], import.meta.url)
 ], [
 	"Wait",
 	"加载动画与表单提交遮罩",
-	() => nC(() => import("./Wait-CMACtffg.js"), [], import.meta.url)
+	() => nC(() => import("./Wait-CUYkabIq.js"), [], import.meta.url)
 ]], nL = t8("<button> </button>"), nM = {
 	hash: "svelte-qgmc0f",
 	code: "button.svelte-qgmc0f {display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0 10px;height:28px;box-sizing:border-box;border-radius:6px;font-size:12px;font-weight:500;border:none;background:rgba(0,113,227,0.078);color:#0071e3;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);outline:none;user-select:none;}button.svelte-qgmc0f::before {content:'';width:12px;height:12px;background:url(\"/svg/copy.svg\") no-repeat center/contain;filter:invert(30%) sepia(87%) saturate(1915%) hue-rotate(192deg) brightness(97%) contrast(102%);transition:filter 0.2s ease;}button.svelte-qgmc0f:hover {background:rgba(0,113,227,0.149);}button.svelte-qgmc0f:active {transform:scale(0.97);background:rgba(0,113,227,0.22);}button.copied.svelte-qgmc0f {background:#34c759;color:#fff;}button.copied.svelte-qgmc0f::before {background-image:url(\"/svg/ok.svg\");filter:invert(100%);}"
@@ -2131,7 +2131,7 @@ function nN(e, t) {
 			es(d), es(c);
 			var f = ts(c), h = tn(f), p = tn(h, !0);
 			es(h), es(f), es(s), tb(() => {
-				t4(o, r()), nw(u, "src", `/lib/svg/${tH(n)[1] ?? ""}.svg`), nw(u, "alt", r()), t4(p, tH(n)[2]);
+				t4(o, r()), nw(u, "src", tH(n)[1]), nw(u, "alt", r()), t4(p, tH(n)[2]);
 			}), t6(e, s);
 		}), es(s), es(r), es(t), t6(e, t);
 	};
