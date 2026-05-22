@@ -1,0 +1,1 @@
+import{f as e}from"./Index-B0P-uPa_.js";e();
