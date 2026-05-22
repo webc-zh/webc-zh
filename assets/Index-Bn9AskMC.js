@@ -2066,11 +2066,11 @@ var nq = {}, nj = function(e, t, n) {
 }, nC = [[
 	"Scroll",
 	"自定义虚拟滚动条",
-	() => nj(() => import("./Scroll-Cxmq9oY_.js"), [], import.meta.url)
+	() => nj(() => import("./Scroll-BWtMmcHB.js"), [], import.meta.url)
 ], [
 	"Wait",
 	"加载动画与表单提交遮罩",
-	() => nj(() => import("./Wait-73k4UItE.js"), [], import.meta.url)
+	() => nj(() => import("./Wait-Cm5VTr-g.js"), [], import.meta.url)
 ]], nP = t5("<button> </button>"), nL = {
 	hash: "svelte-qgmc0f",
 	code: "button.svelte-qgmc0f {display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0 10px;height:28px;box-sizing:border-box;border-radius:6px;font-size:12px;font-weight:500;border:none;background:rgba(0,113,227,0.078);color:#0071e3;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);outline:none;user-select:none;}button.svelte-qgmc0f::before {content:'';width:12px;height:12px;background:url(\"/svg/copy.svg\") no-repeat center/contain;filter:invert(30%) sepia(87%) saturate(1915%) hue-rotate(192deg) brightness(97%) contrast(102%);transition:filter 0.2s ease;}button.svelte-qgmc0f:hover {background:rgba(0,113,227,0.149);}button.svelte-qgmc0f:active {transform:scale(0.97);background:rgba(0,113,227,0.22);}button.copied.svelte-qgmc0f {background:#34c759;color:#fff;}button.copied.svelte-qgmc0f::before {background-image:url(\"/svg/ok.svg\");filter:invert(100%);}"
@@ -4302,7 +4302,7 @@ function rC(e, t) {
 		n && a.includes(n) && e8(c, n, !0);
 	});
 	let f = eV(() => r().map((e) => {
-		let t = rf[tH(o)](rh, "0.1.21") + "/" + e;
+		let t = rf[tH(o)](rh, "0.1.22") + "/" + e;
 		return e.endsWith(".css") ? "<link href=\"" + t + "\" rel=\"stylesheet\">" : e.endsWith(".js") ? "<script type=\"module\">import \"" + t + "\"<\/script>" : t;
 	}).join("\n")), h = eV(() => tH(c) + " webc.add " + n());
 	var p = t8(), v = tr(p), g = (e) => {
