@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Demo-Dd1QvUR2.js","./Index-Di7540Ed.js","./init-DqPqExSv.js","./init-BKyKWG2m.css","./Index-D2nR6Vig.css","./legacy-lrSnjW8k.js"])))=>i.map(i=>d[i]);
-import{t as e}from"./Index-Di7540Ed.js";var t=[`## 功能
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Demo-DqRbjvoq.js","./Index-BE4DauHA.js","./init-DqPqExSv.js","./init-BKyKWG2m.css","./Index-D2nR6Vig.css","./legacy-aBFCDwYE.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./Index-BE4DauHA.js";var t=[`## 功能
 
 - **双向滚动**：提供垂直（\`v-scroll\`）和水平（\`h-scroll\`）滚动容器
 - **尺寸响应**：监听内容与容器尺寸变化，自动更新滚动条尺寸与位置，无溢出时自动隐藏
@@ -46,4 +46,4 @@ v-scroll
   height 400px
   border 1px solid #0000000f
 </style>
-\`\`\``,()=>e(()=>import(`./Demo-Dd1QvUR2.js`),__vite__mapDeps([0,1,2,3,4,5]),import.meta.url),[[`--cursorGrabSvg`,`giUzPhnYmbjOG3VzqseH5g`,`cursor/grab.svg`],[`--cursorScrollhSvg`,`yhI9x3s8u28j5vUN45useQ`,`cursor/scrollh.svg`],[`--cursorScrollvSvg`,`sgoOOaKyF_KnkUoRKxWczw`,`cursor/scrollv.svg`]],[`Scroll.css`,`Scroll.js`]];export{t as default};
+\`\`\``,()=>e(()=>import(`./Demo-DqRbjvoq.js`),__vite__mapDeps([0,1,2,3,4,5]),import.meta.url),[[`--cursorGrabSvg`,`giUzPhnYmbjOG3VzqseH5g`,`cursor/grab.svg`],[`--cursorScrollhSvg`,`yhI9x3s8u28j5vUN45useQ`,`cursor/scrollh.svg`],[`--cursorScrollvSvg`,`sgoOOaKyF_KnkUoRKxWczw`,`cursor/scrollv.svg`]],[`Scroll.css`,`Scroll.js`]];export{t as default};
