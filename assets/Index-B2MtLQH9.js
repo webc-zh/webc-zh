@@ -2106,11 +2106,11 @@ var nF = {}, nC = function(e, t, n) {
 }, nP = [[
 	"Scroll",
 	"自定义虚拟滚动条",
-	() => nC(() => import("./Scroll-DGF935b1.js"), [], import.meta.url)
+	() => nC(() => import("./Scroll-DydFzxvg.js"), [], import.meta.url)
 ], [
 	"Wait",
 	"加载动画与表单提交遮罩",
-	() => nC(() => import("./Wait-CI5qJkae.js"), [], import.meta.url)
+	() => nC(() => import("./Wait-CJTClw3-.js"), [], import.meta.url)
 ]], nL = t5("<b class=\"aside-header svelte-paud8n\"><a href=\"/\"><i class=\"icon-home svelte-paud8n\"></i><b>主页</b></a><a href=\"https://groups.google.com/g/webc-site\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"svelte-paud8n\"><i class=\"icon-forum svelte-paud8n\"></i><b>论坛</b></a></b>"), nO = {
 	hash: "svelte-paud8n",
 	code: ".aside-header.svelte-paud8n {display:flex;gap:8px;margin-bottom:12px;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) {flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;font-size:13px;font-weight:500;border-radius:10px;border:1px solid rgba(0,0,0,0.02);background:rgba(255,255,255,0.4);color:#1d1d1f;text-align:left;cursor:pointer;position:relative;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.02);transition:all 0.25s cubic-bezier(0.4, 0, 0.2, 1);}.aside-header.svelte-paud8n a:where(.svelte-paud8n):hover {background:rgba(255,255,255,0.702);border-color:rgba(0,0,0,0.059);box-shadow:0 4px 12px rgba(0,0,0,0.039);transform:translateY(-0.5px);}.aside-header.svelte-paud8n a.active:where(.svelte-paud8n) {background:rgba(0,113,227,0.078);border-color:rgba(0,113,227,0.2);color:#0071e3;font-weight:600;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i:where(.svelte-paud8n) {width:16px;height:16px;mask-size:contain;mask-repeat:no-repeat;mask-position:center;display:inline-block;background:currentColor;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i.icon-home:where(.svelte-paud8n) {mask-image:var(--homeSvg);}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i.icon-forum:where(.svelte-paud8n) {mask-image:var(--groupSvg);}"
@@ -4555,7 +4555,7 @@ nA(rR, {
 }, [], [], { mode: "open" });
 var rN = t5("<!><article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"><!></b></article>", 1), rB = t5("<article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"></b></article>"), rI = t5("<v-scroll><b class=\"svelte-kymqdk\"><!></b></v-scroll>", 2), rU = {
 	hash: "svelte-kymqdk",
-	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-kymqdk {flex:1;min-width:0;min-height:0;}v-scroll.svelte-kymqdk::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-kymqdk > b:where(.svelte-kymqdk) {display:flex;flex-direction:column;gap:var(--gap);padding:var(--gap) var(--gap) var(--gap) 0;box-sizing:border-box;}\n@media (max-width: 800px) {v-scroll.svelte-kymqdk > b:where(.svelte-kymqdk) {padding:var(--gap) 0;}\n}article.svelte-kymqdk {display:flex;flex-direction:column;overflow:hidden;border-radius:24px;flex:1 0 auto;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {margin:auto;padding:32px;box-sizing:border-box;max-width:100%;}\n@media (max-width: 800px) {article.svelte-kymqdk {border-radius:16px;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {padding:20px 16px;}\n}"
+	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-kymqdk {flex:1;min-width:0;min-height:0;}v-scroll.svelte-kymqdk::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-kymqdk > b:where(.svelte-kymqdk) {display:flex;flex-direction:column;gap:var(--gap);padding:var(--gap) var(--gap) var(--gap) 0;box-sizing:border-box;flex:1;}\n@media (max-width: 800px) {v-scroll.svelte-kymqdk > b:where(.svelte-kymqdk) {padding:var(--gap) 0;}\n}article.svelte-kymqdk {display:flex;flex-direction:column;overflow:hidden;border-radius:24px;flex:1 0 auto;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {margin:auto;padding:32px;box-sizing:border-box;max-width:100%;}\n@media (max-width: 800px) {article.svelte-kymqdk {border-radius:16px;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {padding:20px 16px;}\n}"
 };
 function rH(e, t) {
 	ed(t, !0), no(e, rU);
