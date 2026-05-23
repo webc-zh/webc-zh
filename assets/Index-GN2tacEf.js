@@ -1,6 +1,6 @@
 let e, t, n;
 import { r, t as a } from "./init-ht2V0RCQ.js";
-var l, s, i, o, c, d, u, f, h, p, v, g = Object.create, b = Object.defineProperty, m = Object.getOwnPropertyDescriptor, x = Object.getOwnPropertyNames, w = Object.getPrototypeOf, y = Object.prototype.hasOwnProperty, k = Array.isArray, _ = Array.prototype.indexOf, $ = Array.prototype.includes, q = Array.from, S = Object.keys, j = Object.defineProperty, E = Object.getOwnPropertyDescriptor, A = Object.getOwnPropertyDescriptors, z = Object.prototype, F = Array.prototype, C = Object.getPrototypeOf, P = Object.isExtensible, L = () => {};
+var l, s, i, o, c, d, u, f, h, p, v, g = Object.create, b = Object.defineProperty, x = Object.getOwnPropertyDescriptor, m = Object.getOwnPropertyNames, w = Object.getPrototypeOf, y = Object.prototype.hasOwnProperty, k = Array.isArray, _ = Array.prototype.indexOf, $ = Array.prototype.includes, q = Array.from, S = Object.keys, j = Object.defineProperty, E = Object.getOwnPropertyDescriptor, A = Object.getOwnPropertyDescriptors, z = Object.prototype, F = Array.prototype, C = Object.getPrototypeOf, P = Object.isExtensible, L = () => {};
 function O(e) {
 	return e();
 }
@@ -135,16 +135,16 @@ function eb(e, t) {
 	}
 	throw e;
 }
-function em(e, t) {
+function ex(e, t) {
 	e.f = -7169 & e.f | t;
 }
-function ex(e) {
-	(512 & e.f) != 0 || null === e.deps ? em(e, 1024) : em(e, 4096);
+function em(e) {
+	(512 & e.f) != 0 || null === e.deps ? ex(e, 1024) : ex(e, 4096);
 }
 function ew(e, t, n) {
 	(2048 & e.f) != 0 ? t.add(e) : 4096 & e.f && n.add(e), function e(t) {
 		if (null !== t) for (let n of t) 2 & n.f && 65536 & n.f && (n.f ^= 65536, e(n.deps));
-	}(e.deps), em(e, 1024);
+	}(e.deps), ex(e, 1024);
 }
 var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, eE = !1, eA = !1, ez = null, eF = null, eC = 0, eP = 1, eL = class e {
 	id = eP++;
@@ -193,30 +193,30 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 	unskip_effect(e, t = (e) => this.schedule(e)) {
 		var n = this.#h.get(e);
 		if (n) {
-			for (var r of (this.#h.delete(e), n.d)) em(r, 2048), t(r);
-			for (r of n.m) em(r, 4096), t(r);
+			for (var r of (this.#h.delete(e), n.d)) ex(r, 2048), t(r);
+			for (r of n.m) ex(r, 4096), t(r);
 		}
 		this.#p.add(e);
 	}
 	#b() {
-		if (this.#e = !0, eC++ > 1e3 && (this.#m(), function() {
+		if (this.#e = !0, eC++ > 1e3 && (this.#x(), function() {
 			try {
 				throw Error("https://svelte.dev/e/effect_update_depth_exceeded");
 			} catch (e) {
 				eb(e, ej);
 			}
 		}()), !this.#g()) {
-			for (let e of this.#u) this.#f.delete(e), em(e, 2048), this.schedule(e);
-			for (let e of this.#f) em(e, 4096), this.schedule(e);
+			for (let e of this.#u) this.#f.delete(e), ex(e, 2048), this.schedule(e);
+			for (let e of this.#f) ex(e, 4096), this.schedule(e);
 		}
 		let t = this.#c;
 		this.#c = [], this.apply();
 		var n = ez = [], r = [], a = eF = [];
 		for (let e of t) try {
-			this.#x(e, n, r);
+			this.#m(e, n, r);
 		} catch (t) {
 			throw function e(t) {
-				em(t, 1024);
+				ex(t, 1024);
 				for (var n = t.first; null !== n;) e(n), n = n.next;
 			}(e), t;
 		}
@@ -227,7 +227,7 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 		if (ez = null, eF = null, this.#g()) {
 			for (let [e, t] of (this.#w(r), this.#w(n), this.#h)) (function e(t, n) {
 				if ((32 & t.f) == 0 || (1024 & t.f) == 0) {
-					(2048 & t.f) != 0 ? n.d.push(t) : 4096 & t.f && n.m.push(t), em(t, 1024);
+					(2048 & t.f) != 0 ? n.d.push(t) : 4096 & t.f && n.m.push(t), ex(t, 1024);
 					for (var r = t.first; null !== r;) e(r, n), r = r.next;
 				}
 			})(e, t);
@@ -239,14 +239,14 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 		for (let e of (this.#u.clear(), this.#f.clear(), this.#r)) e(this);
 		this.#r.clear(), eq = this, eM(r), eM(n), eq = null, this.#o?.resolve();
 		var i = e$;
-		if (this.linked && 0 === this.#s && this.#m(), this.#c.length > 0) {
+		if (this.linked && 0 === this.#s && this.#x(), this.#c.length > 0) {
 			null === i && (i = this, this.#_());
 			let e = i;
 			e.#c.push(...this.#c.filter((t) => !e.#c.includes(t)));
 		}
 		null !== i && i.#b();
 	}
-	#x(e, t, n) {
+	#m(e, t, n) {
 		e.f ^= 1024;
 		for (var r = e.first; null !== r;) {
 			var a = r.f, l = (96 & a) != 0;
@@ -287,11 +287,11 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 			var n = e.reactions;
 			if (null !== n) for (let e of n) {
 				var r = e.f;
-				(2 & r) != 0 ? t(e) : 4194320 & r && !this.async_deriveds.has(e) && (this.#f.delete(e), em(e, 2048), this.schedule(e));
+				(2 & r) != 0 ? t(e) : 4194320 & r && !this.async_deriveds.has(e) && (this.#f.delete(e), ex(e, 2048), this.schedule(e));
 			}
 		};
 		for (let e of this.current.keys()) t(e);
-		this.oncommit(() => e.discard()), e.#m(), e$ = this, this.#b();
+		this.oncommit(() => e.discard()), e.#x(), e$ = this, this.#b();
 	}
 	#w(e) {
 		for (var t = 0; t < e.length; t += 1) ew(e[t], this.#u, this.#f);
@@ -314,13 +314,13 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 	}
 	discard() {
 		for (let e of this.#a) e(this);
-		this.#a.clear(), this.#l.clear(), this.#m();
+		this.#a.clear(), this.#l.clear(), this.#x();
 	}
 	register_created_effect(e) {
 		this.#d.push(e);
 	}
 	#$() {
-		this.#m();
+		this.#x();
 		for (let c = ek; null !== c; c = c.#n) {
 			var e = c.id < this.id, t = [];
 			for (let [r, [a, l]] of this.current) {
@@ -347,14 +347,14 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 					for (var s of t) (function e(t, n, r, a) {
 						if (!r.has(t) && (r.add(t), null !== t.reactions)) for (let l of t.reactions) {
 							let t = l.f;
-							(2 & t) != 0 ? e(l, n, r, a) : 4194320 & t && !(2048 & t) && eD(l, n, a) && (em(l, 2048), eR(l));
+							(2 & t) != 0 ? e(l, n, r, a) : 4194320 & t && !(2048 & t) && eD(l, n, a) && (ex(l, 2048), eR(l));
 						}
 					})(s, r, a, l);
 					l = /* @__PURE__ */ new Map();
 					var i = [...c.current.keys()].filter((e) => !this.current.has(e) || this.current.get(e)[0] !== e.v);
-					if (i.length > 0) for (let e of this.#d) !(155648 & e.f) && eD(e, i, l) && ((4194320 & e.f) != 0 ? (em(e, 2048), c.schedule(e)) : c.#u.add(e));
+					if (i.length > 0) for (let e of this.#d) !(155648 & e.f) && eD(e, i, l) && ((4194320 & e.f) != 0 ? (ex(e, 2048), c.schedule(e)) : c.#u.add(e));
 					if (c.#c.length > 0 && !c.#v) {
-						for (var o of (c.apply(), c.#c)) c.#x(o, [], []);
+						for (var o of (c.apply(), c.#c)) c.#m(o, [], []);
 						c.#c = [];
 					}
 					c.deactivate();
@@ -425,7 +425,7 @@ var ey = !1, ek = null, e_ = null, e$ = null, eq = null, eS = null, ej = null, e
 	#_() {
 		null === e_ ? ek = e_ = this : (e_.#n = this, this.#t = e_), e_ = this;
 	}
-	#m() {
+	#x() {
 		var e = this.#t, t = this.#n;
 		null === e ? ek = t : e.#n = t, null === t ? e_ = e : t.#t = e, this.linked = !1;
 	}
@@ -526,35 +526,35 @@ var eN = class {
 	}
 	#B() {
 		try {
-			this.#z = tm(() => this.#E(this.#q));
+			this.#z = tx(() => this.#E(this.#q));
 		} catch (e) {
 			this.error(e);
 		}
 	}
 	#R(e) {
 		let t = this.#j.failed;
-		t && (this.#C = tm(() => {
+		t && (this.#C = tx(() => {
 			t(this.#q, () => e, () => () => {});
 		}));
 	}
 	#N() {
 		let e = this.#j.pending;
-		e && (this.is_pending = !0, this.#F = tm(() => e(this.#q)), ev(() => {
+		e && (this.is_pending = !0, this.#F = tx(() => e(this.#q)), ev(() => {
 			var e = this.#P = document.createDocumentFragment(), t = e7();
-			e.append(t), this.#z = this.#U(() => tm(() => this.#E(t))), 0 === this.#O && (this.#q.before(e), this.#P = null, t_(this.#F, () => {
+			e.append(t), this.#z = this.#U(() => tx(() => this.#E(t))), 0 === this.#O && (this.#q.before(e), this.#P = null, t_(this.#F, () => {
 				this.#F = null;
 			}), this.#H(e$));
 		}));
 	}
 	#I() {
 		try {
-			if (this.is_pending = this.has_pending_snippet(), this.#O = 0, this.#L = 0, this.#z = tm(() => {
+			if (this.is_pending = this.has_pending_snippet(), this.#O = 0, this.#L = 0, this.#z = tx(() => {
 				this.#E(this.#q);
 			}), this.#O > 0) {
 				var e = this.#P = document.createDocumentFragment();
 				tq(this.#z, e);
 				let t = this.#j.pending;
-				this.#F = tm(() => t(this.#q));
+				this.#F = tx(() => t(this.#q));
 			} else this.#H(e$);
 		} catch (e) {
 			this.error(e);
@@ -627,7 +627,7 @@ var eN = class {
 			}
 			n && (this.#C = this.#U(() => {
 				try {
-					return tm(() => {
+					return tx(() => {
 						var t = tz;
 						t.b = this, t.f |= 128, n(this.#q, () => e, () => l);
 					});
@@ -701,7 +701,7 @@ function eY(e) {
 }
 function eV(e) {
 	var t = eY(e);
-	e.equals(t) || (e.wv = ++tT, e$?.is_fork && null !== e.deps) || (null !== e$ ? (e$.capture(e, t, !0), eq?.capture(e, t, !0)) : e.v = t, null !== e.deps) ? !tj && (null !== eS ? (tu() || e$?.is_fork) && eS.set(e, t) : ex(e)) : em(e, 1024);
+	e.equals(t) || (e.wv = ++tT, e$?.is_fork && null !== e.deps) || (null !== e$ ? (e$.capture(e, t, !0), eq?.capture(e, t, !0)) : e.v = t, null !== e.deps) ? !tj && (null !== eS ? (tu() || e$?.is_fork) && eS.set(e, t) : em(e)) : ex(e, 1024);
 }
 function eX(e) {
 	if (null !== e.effects) for (let t of e.effects) t.teardown && null !== t.fn && tI(t);
@@ -734,19 +734,19 @@ function e5(e, t, n = null) {
 	if (!e.equals(t)) {
 		eK.set(e, tj ? t : e.v);
 		var r = eL.ensure();
-		r.capture(e, t), 2 & e.f && (2048 & e.f && eY(e), null === eS && ex(e)), e.wv = ++tT, function e(t, n, r) {
+		r.capture(e, t), 2 & e.f && (2048 & e.f && eY(e), null === eS && em(e)), e.wv = ++tT, function e(t, n, r) {
 			var a = t.reactions;
 			if (null !== a) for (var l = ef(), s = a.length, i = 0; i < s; i++) {
 				var o = a[i], c = o.f;
 				if (l || o !== tz) {
 					var d = (2048 & c) == 0;
-					d && em(o, n), (131072 & c) != 0 ? eJ.add(o) : (2 & c) != 0 ? (eS?.delete(o), !(65536 & c) && (512 & c && (null === tz || !(2097152 & tz.f)) && (o.f |= 65536), e(o, 4096, r))) : d && (16 & c && null !== eT && eT.add(o), null !== r ? r.push(o) : eR(o));
+					d && ex(o, n), (131072 & c) != 0 ? eJ.add(o) : (2 & c) != 0 ? (eS?.delete(o), !(65536 & c) && (512 & c && (null === tz || !(2097152 & tz.f)) && (o.f |= 65536), e(o, 4096, r))) : d && (16 & c && null !== eT && eT.add(o), null !== r ? r.push(o) : eR(o));
 				}
 			}
 		}(e, 2048, n), ef() && null !== tz && 1024 & tz.f && !(96 & tz.f) && (null === tO ? tO = [e] : tO.push(e)), r.is_fork || !(eJ.size > 0) || eZ || function() {
 			for (let e of (eZ = !1, eJ)) {
 				let t;
-				1024 & e.f && em(e, 4096);
+				1024 & e.f && ex(e, 4096);
 				try {
 					t = tR(e);
 				} catch {
@@ -985,7 +985,7 @@ function tu() {
 }
 function tf(e) {
 	let t = td(8, null);
-	return em(t, 1024), t.teardown = e, t;
+	return ex(t, 1024), t.teardown = e, t;
 }
 function th(e) {
 	tc("$effect");
@@ -1070,10 +1070,10 @@ function tg(e, t = [], n = [], r = []) {
 function tb(e, t = 0) {
 	return td(16 | t, e);
 }
-function tm(e) {
+function tx(e) {
 	return td(524320, e);
 }
-function tx(e) {
+function tm(e) {
 	var t = e.teardown;
 	if (null !== t) {
 		let e = tj, n = tE;
@@ -1103,10 +1103,10 @@ function ty(e, t = !0) {
 			var n = e === t ? null : e9(e);
 			e.remove(), e = n;
 		}
-	}(e.nodes.start, e.nodes.end), n = !0), em(e, 33554432), tw(e, t && !n), tB(e, 0);
+	}(e.nodes.start, e.nodes.end), n = !0), ex(e, 33554432), tw(e, t && !n), tB(e, 0);
 	var r = e.nodes && e.nodes.t;
 	if (null !== r) for (let e of r) e.stop();
-	tx(e), e.f ^= 33554432, e.f |= 16384;
+	tm(e), e.f ^= 33554432, e.f |= 16384;
 	var a = e.parent;
 	null !== a && null !== a.first && tk(e), e.next = e.prev = e.teardown = e.ctx = e.deps = e.fn = e.nodes = e.ac = e.b = null;
 }
@@ -1141,7 +1141,7 @@ function t_(e, t, n = !0) {
 }
 function t$(e, t) {
 	if ((8192 & e.f) != 0) {
-		e.f ^= 8192, !(1024 & e.f) && (em(e, 2048), eL.ensure().schedule(e));
+		e.f ^= 8192, !(1024 & e.f) && (ex(e, 2048), eL.ensure().schedule(e));
 		for (var n = e.first; null !== n;) {
 			var r = n.next, a = (65536 & n.f) != 0 || (32 & n.f) != 0;
 			t$(n, !!a && t), n = r;
@@ -1169,7 +1169,7 @@ function tR(e) {
 			var l = n[a];
 			if (tR(l) && eV(l), l.wv > e.wv) return !0;
 		}
-		512 & t && null === eS && em(e, 1024);
+		512 & t && null === eS && ex(e, 1024);
 	}
 	return !1;
 }
@@ -1192,7 +1192,7 @@ function tN(e) {
 			var a = t.reactions;
 			if (null !== a && !(null !== tF && $.call(tF, t))) for (var l = 0; l < a.length; l++) {
 				var s = a[l];
-				(2 & s.f) != 0 ? e(s, n, !1) : n === s && (r ? em(s, 2048) : 1024 & s.f && em(s, 4096), eR(s));
+				(2 & s.f) != 0 ? e(s, n, !1) : n === s && (r ? ex(s, 2048) : 1024 & s.f && ex(s, 4096), eR(s));
 			}
 		})(tO[d], e);
 		if (null !== a && a !== e) {
@@ -1219,7 +1219,7 @@ function tB(e, t) {
 			}
 		}
 		if (null === n && (2 & t.f) != 0 && (null === tP || !$.call(tP, t))) {
-			512 & t.f && (t.f ^= 512, t.f &= -65537), t.v !== K && ex(t);
+			512 & t.f && (t.f ^= 512, t.f &= -65537), t.v !== K && em(t);
 			if (null !== t.effects) for (let e of t.effects) (e.teardown || e.ac) && (e.teardown?.(), e.ac?.abort(V), null !== e.fn && (e.teardown = L), e.ac = null, tB(e, 0), tw(e));
 			tB(t, 0);
 		}
@@ -1228,7 +1228,7 @@ function tB(e, t) {
 function tI(e) {
 	var t = e.f;
 	if ((16384 & t) == 0) {
-		em(e, 1024);
+		ex(e, 1024);
 		var n = tz, r = tS;
 		tz = e, tS = !0;
 		try {
@@ -1237,7 +1237,7 @@ function tI(e) {
 				!(32 & a.f) && ty(a), a = l;
 			}
 			else tw(e);
-			tx(e);
+			tm(e);
 			var s = tN(e);
 			e.teardown = "function" == typeof s ? s : null, e.wv = tT;
 		} finally {
@@ -1497,7 +1497,7 @@ var t9 = /* @__PURE__ */ new WeakMap(), ne = class {
 	};
 	ensure(e, t) {
 		var n = e$;
-		if (t && !this.#V.has(e) && !this.#X.has(e)) this.#V.set(e, tm(() => t(this.anchor)));
+		if (t && !this.#V.has(e) && !this.#X.has(e)) this.#V.set(e, tx(() => t(this.anchor)));
 		this.#Y.set(n, e);
 		Q && (this.anchor = c), this.#$(n);
 	}
@@ -1553,12 +1553,12 @@ function na(e, t, n, r, a, l = null) {
 				if (g !== o) {
 					if (void 0 !== h && h.has(g)) {
 						if (d.length < u.length) {
-							var h, p, v, g, b, m, x = u[0];
-							c = x.prev;
+							var h, p, v, g, b, x, m = u[0];
+							c = m.prev;
 							var w = d[0], y = d[d.length - 1];
-							for (m = 0; m < d.length; m += 1) ns(d[m], x, n);
-							for (m = 0; m < u.length; m += 1) h.delete(u[m]);
-							ni(e, w.prev, y.next), ni(e, c, w), ni(e, y, x), o = x, c = y, b -= 1, d = [], u = [];
+							for (x = 0; x < d.length; x += 1) ns(d[x], m, n);
+							for (x = 0; x < u.length; x += 1) h.delete(u[x]);
+							ni(e, w.prev, y.next), ni(e, c, w), ni(e, y, m), o = m, c = y, b -= 1, d = [], u = [];
 						} else h.delete(g), ns(g, o, n), ni(e, g.prev, g.next), ni(e, g, null === c ? e.effect.first : c.next), ni(e, c, g), c = g;
 						continue;
 					}
@@ -1619,7 +1619,7 @@ function na(e, t, n, r, a, l = null) {
 			var e = (s = tH(u)).length;
 			let b = !1;
 			Q && "[!" === el(i) != (0 === e) && (ee(i = ea()), Q = !1, b = !0);
-			for (var m = /* @__PURE__ */ new Set(), x = e$, w = 0; w < e; w += 1) {
+			for (var x = /* @__PURE__ */ new Set(), m = e$, w = 0; w < e; w += 1) {
 				Q && 8 === c.nodeType && "]" === c.data && (i = c, b = !0, Q = !1);
 				var y = s[w], k = r(y, w), _ = h ? null : o.get(k);
 				_ ? (_.v && e5(_.v, y), _.i && e5(_.i, w)) : (_ = function(e, t, n, r, a, l, s, i) {
@@ -1627,16 +1627,16 @@ function na(e, t, n, r, a, l = null) {
 					return {
 						v: o,
 						i: c,
-						e: tm(() => (l(t, o ?? n, c ?? a, i), () => {
+						e: tx(() => (l(t, o ?? n, c ?? a, i), () => {
 							e.delete(r);
 						}))
 					};
-				}(o, h ? i : p ??= e7(), y, k, w, a, t, n), h || (_.e.f |= 33554432), o.set(k, _)), m.add(k);
+				}(o, h ? i : p ??= e7(), y, k, w, a, t, n), h || (_.e.f |= 33554432), o.set(k, _)), x.add(k);
 			}
-			if (0 === e && l && !d && (h ? d = tm(() => l(i)) : (d = tm(() => l(p ??= e7())), d.f |= 33554432)), e > m.size && function() {
+			if (0 === e && l && !d && (h ? d = tx(() => l(i)) : (d = tx(() => l(p ??= e7())), d.f |= 33554432)), e > x.size && function() {
 				throw Error("https://svelte.dev/e/each_key_duplicate");
 			}(), Q && e > 0 && ee(ea()), !h) {
-				if (f.set(x, m), 1) v(x);
+				if (f.set(m, x), 1) v(m);
 			}
 			b && (Q = !0), tH(u);
 		}),
@@ -1758,13 +1758,13 @@ function nv(e, t, n, r) {
 	} else r && (Array.isArray(r) ? (np(e, n?.[0], r[0]), np(e, n?.[1], r[1], "important")) : np(e, n, r));
 	return r;
 }
-var ng = Symbol("is custom element"), nb = Symbol("is html"), nm = X ? "link" : "LINK";
-function nx(e, t, n, r) {
+var ng = Symbol("is custom element"), nb = Symbol("is html"), nx = X ? "link" : "LINK";
+function nm(e, t, n, r) {
 	var a, l = (a = e, a[U] ??= {
 		[ng]: a.nodeName.includes("-"),
 		[nb]: "http://www.w3.org/1999/xhtml" === a.namespaceURI
 	});
-	Q && (l[t] = e.getAttribute(t), "src" === t || "srcset" === t || "href" === t && e.nodeName === nm) || l[t] !== (l[t] = n) && ("loading" === t && (e[B] = n), null == n ? e.removeAttribute(t) : "string" != typeof n && (function(e) {
+	Q && (l[t] = e.getAttribute(t), "src" === t || "srcset" === t || "href" === t && e.nodeName === nx) || l[t] !== (l[t] = n) && ("loading" === t && (e[B] = n), null == n ? e.removeAttribute(t) : "string" != typeof n && (function(e) {
 		var t, n = e.getAttribute("is") || e.nodeName, r = nw.get(n);
 		if (r) return r;
 		nw.set(n, r = []);
@@ -1838,15 +1838,15 @@ function nS(e, t, n, r) {
 			return arguments.length > 0 ? ((!i || !t || g || v) && a(t ? s() : e), e) : s();
 		};
 	}
-	var b = !1, m = ((1 & n) != 0 ? eU : eG)(() => (b = !1, s()));
-	o && tH(m);
-	var x = tz;
+	var b = !1, x = ((1 & n) != 0 ? eU : eG)(() => (b = !1, s()));
+	o && tH(x);
+	var m = tz;
 	return function(e, t) {
 		if (arguments.length > 0) {
-			let n = t ? tH(m) : i && o ? e3(e) : e;
-			return e2(m, n), b = !0, void 0 !== d && (d = n), e;
+			let n = t ? tH(x) : i && o ? e3(e) : e;
+			return e2(x, n), b = !0, void 0 !== d && (d = n), e;
 		}
-		return tj && b || (16384 & x.f) != 0 ? m.v : tH(m);
+		return tj && b || (16384 & m.f) != 0 ? x.v : tH(x);
 	};
 }
 var nj = class {
@@ -2106,62 +2106,19 @@ var nF = {}, nC = function(e, t, n) {
 }, nP = [[
 	"Scroll",
 	"自定义虚拟滚动条",
-	() => nC(() => import("./Scroll-DyPZ1xGQ.js"), [], import.meta.url)
+	() => nC(() => import("./Scroll-BWLn3hRQ.js"), [], import.meta.url)
 ], [
 	"Wait",
 	"加载动画与表单提交遮罩",
-	() => nC(() => import("./Wait-CsFd4loF.js"), [], import.meta.url)
-]], nL = [
-	{
-		name: "On",
-		title: "绑定与解绑事件监听",
-		doc: "- `On(elem, dict)`\n  - `elem`: DOM 元素。\n  - `dict`: 事件与回调对象。键为事件名，值为回调函数。回调函数格式：\n    - 参数：`e`（事件对象）。\n    - 返回值：无。\n  - 返回值：解绑函数。格式为 `() => void`。",
-		code: "export const On = (elem, dict) => {\n  let event, func;\n  for (event in dict) {\n    func = dict[event];\n    elem.addEventListener(event, func);\n  }\n  return () => {\n    for (event in dict) {\n      func = dict[event];\n      elem.removeEventListener(event, func);\n    }\n  };\n};\n"
-	},
-	{
-		name: "route",
-		title: "路由管理与跳转",
-		doc: "- `nowUrl()`\n  - 返回值：当前 URL 路径（不含首部斜杠）。\n\n- `route(hook)`\n  - `hook`: 路由变化时执行的回调函数。格式：\n    - 参数：\n      - `url`: 字符串，新 URL 路径。\n      - `preUrl`: 字符串（可选），旧 URL 路径。\n    - 返回值：无。\n  - 返回值：取消订阅的函数，格式为 `() => void`。\n\n- `setPre(url)`\n  - `url`: 字符串，新的前一次 URL 路径。\n\n- `preUrl()`\n  - 返回值：前一次的 URL 路径。\n\n- `refresh(url)`\n  - `url`: 字符串（可选），要触发回调的 URL 路径，默认是当前 URL。\n\n- `removeSlash(url)`\n  - `url`: 字符串。\n  - 返回值：移除首部斜杠后的字符串。\n\n- `split(str, s)`\n  - `str`: 待拆分字符串。\n  - `s`: 分隔符。\n  - 返回值：包含两个元素的数组 `[前部, 后部]`。\n\n- `setUrl(url)`\n  - `url`: 目标 URL 路径。\n  - 返回值：若路径改变返回 `1`，若仅 hash 改变不返回值。\n\n- `goto(url)`\n  - `url`: 目标 URL 路径。",
-		code: "import { On } from \"x/On.js\";\n\nexport const nowUrl = () => location.pathname.slice(1),\n  [route, setPre, preUrl, refresh, removeSlash, split, setUrl, goto] = (() => {\n    let PRE = nowUrl(),\n      HOOK = [];\n    if (location.hash) PRE += location.hash;\n\n    const HASH = \"#\",\n      route = (hook) => {\n        HOOK.push(hook);\n        hook(nowUrl());\n        return () => {\n          HOOK = HOOK.filter((f) => f !== hook);\n        };\n      },\n      setPre = (url) => {\n        PRE = url;\n      },\n      preUrl = () => PRE,\n      refresh = (url) => {\n        url = url || nowUrl();\n        for (const f of HOOK) f(url, PRE);\n        setPre(url);\n      },\n      removeSlash = (url) => (url[0] === \"/\" ? url.slice(1) : url),\n      split = (str, s) => {\n        const p = str.indexOf(s);\n        return p >= 0 ? [str.slice(0, p), str.slice(p + 1)] : [str, \"\"];\n      },\n      setUrl = (url) => {\n        url = removeSlash(url);\n        if (url !== PRE) {\n          const [path, hash] = split(url, HASH),\n            [p] = split(PRE, HASH);\n          setPre(url);\n          if (path !== p) {\n            history.pushState(null, \"\", \"/\" + url);\n            return 1;\n          }\n          if (location.hash.slice(1) !== hash) {\n            location.hash = hash;\n            return;\n          }\n        }\n        window.dispatchEvent(new HashChangeEvent(\"hashchange\"));\n      },\n      goto = (url) => {\n        if (setUrl(url)) refresh(url);\n      };\n\n    On(window, {\n      popstate: () => {\n        const url = nowUrl();\n        if (url !== split(PRE, HASH)[0]) refresh(url);\n      },\n    });\n\n    return [route, setPre, preUrl, refresh, removeSlash, split, setUrl, goto];\n  })();\n"
-	},
-	{
-		name: "selfA",
-		title: "同站链接点击校验与处理",
-		doc: "- `selfA(p, e)`\n  - `p`: `<a>` 元素。\n  - `e`: 点击事件对象。\n  - 返回值：若是同站链接，阻止默认行为并返回包含 search/hash 的相对路径，否则返回 `undefined`。",
-		code: "// 判断A标签的href是否为当前网站的, 如果是, 返回url, 以实现不刷新跳转\nexport const selfA = (p, e) => {\n  var hash, url;\n  if (p.host === location.host) {\n    ({ hash } = p);\n    url = p.pathname.slice(1) + p.search;\n    if (hash) {\n      url += hash;\n    }\n    e.preventDefault();\n    return url;\n  }\n};\n"
-	},
-	{
-		name: "dom",
-		title: "DOM 属性与方法简写",
-		doc: "- `D`: `document` 实例。\n- `B`: `document.body` 元素。\n- `newEl(tagName)`\n  - `tagName`: 字符串，HTML 标签名。\n  - 返回值：新创建的 DOM 元素。",
-		code: "export const D = document,\n  B = D.body,\n  newEl = D.createElement.bind(D);\n"
-	},
-	{
-		name: "a",
-		title: "拦截链接点击实现无刷新跳转",
-		doc: "无导出函数。导入时自动在 `document.body` 监听点击事件。点击同站链接时阻止默认行为并调用 `goto` 跳转，点击外链且无 `target` 属性时将其设为 `_blank`。",
-		code: "import { goto } from \"x/route.js\";\nimport { selfA } from \"x/selfA.js\";\nimport { B } from \"x/dom.js\";\n\nB.addEventListener(\"click\", (e) => {\n  var href, name, p;\n  p = e.target;\n  while (p) {\n    ({ nodeName: name } = p);\n    if (name === \"A\") {\n      ({ href } = p);\n      if (href) {\n        href = selfA(p, e);\n        if (href !== void 0) {\n          goto(href);\n        } else if (!p.target) {\n          p.target = \"_blank\";\n        }\n      }\n      break;\n    } else if (name === \"BODY\") {\n      break;\n    }\n    p = p.parentNode;\n  }\n});\n"
-	},
-	{
-		name: "rmWait",
-		title: "移除加载等待元素",
-		doc: "无导出函数。导入时自动从 DOM 中移除 ID 为 `W` 的元素。\n\n## 设计意图 & 为什么要放置等待动画于 `pug/_.pug`\n\n在 `pug/_.pug` 中，定义了具有 ID `W` 的 `<style>` 标签，该样式利用 CSS `body:before` 伪类实现了一个无需 JS 依赖的纯 CSS 加载等待动画（旋转的圆环）。\n\n这样做的目的是：\n\n- **首屏秒开体验**：在浏览器解析 HTML 时即刻呈现加载状态，无需等待体积较大的 JS 脚本（或 Svelte 组件框架）下载、解析与执行完毕。\n- **避免白屏**：防止网络较慢或 JS 文件加载时用户看到白屏，提供更好的用户视觉反馈。\n\n## 哪儿被调用 / 移除时机\n\n当主 JS 或组件脚本加载完毕并初始化好 DOM 后，会通过动态导入或模块导入执行 `x/rmWait.js`，瞬间移除 `<style id=\"W\">`，从而销毁加载等待动画。\n\n在 `page/entry/init.js` 结尾的地方导入，移除加载中的动画。",
-		code: "import { D } from \"x/dom.js\";\nD.getElementById(\"W\").remove();\n"
-	},
-	{
-		name: "routeDelay",
-		title: "延迟路由触发避免重复加载数据",
-		doc: "用于 Svelte，避免组件被卸载前触发路由导致重复加载数据。\n\n- `routeDelay(loadUrl)`\n  - `loadUrl`: 路由变化时的回调函数。格式：\n    - 参数：\n      - `url`: 字符串，新 URL 路径。\n      - `preUrl`: 字符串（可选），旧 URL 路径。\n    - 返回值：无。\n  - 返回值：取消路由订阅并清除定时器的函数，格式为 `() => void`。",
-		code: "import { route } from \"x/route.js\";\n\n// 避免 onMount 之前，route 被触发，导致重复加载数据\nexport const routeDelay = (loadUrl) => {\n  let t;\n  const unbind = route((url, preUrl) => {\n    t = setTimeout(() => {\n      loadUrl(url, preUrl);\n    });\n  });\n  return () => {\n    unbind();\n    clearTimeout(t);\n  };\n};\n\nexport default routeDelay;\n"
-	}
-], nO = t5("<b class=\"aside-header svelte-paud8n\"><a href=\"/\"><i class=\"icon-home svelte-paud8n\"></i><b>主页</b></a><a href=\"https://groups.google.com/g/webc-site\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"svelte-paud8n\"><i class=\"icon-forum svelte-paud8n\"></i><b>论坛</b></a></b>"), nT = {
+	() => nC(() => import("./Wait-zvmwlxzM.js"), [], import.meta.url)
+]], nL = t5("<b class=\"aside-header svelte-paud8n\"><a href=\"/\"><i class=\"icon-home svelte-paud8n\"></i><b>主页</b></a><a href=\"https://groups.google.com/g/webc-site\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"svelte-paud8n\"><i class=\"icon-forum svelte-paud8n\"></i><b>论坛</b></a></b>"), nO = {
 	hash: "svelte-paud8n",
 	code: ".aside-header.svelte-paud8n {display:flex;gap:8px;margin-bottom:12px;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) {flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;font-size:13px;font-weight:500;border-radius:10px;border:1px solid rgba(0,0,0,0.02);background:rgba(255,255,255,0.4);color:#1d1d1f;text-align:left;cursor:pointer;position:relative;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.02);transition:all 0.25s cubic-bezier(0.4, 0, 0.2, 1);}.aside-header.svelte-paud8n a:where(.svelte-paud8n):hover {background:rgba(255,255,255,0.702);border-color:rgba(0,0,0,0.059);box-shadow:0 4px 12px rgba(0,0,0,0.039);transform:translateY(-0.5px);}.aside-header.svelte-paud8n a.active:where(.svelte-paud8n) {background:rgba(0,113,227,0.078);border-color:rgba(0,113,227,0.2);color:#0071e3;font-weight:600;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i:where(.svelte-paud8n) {width:16px;height:16px;mask-size:contain;mask-repeat:no-repeat;mask-position:center;display:inline-block;background:currentColor;}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i.icon-home:where(.svelte-paud8n) {mask-image:var(--homeSvg);}.aside-header.svelte-paud8n a:where(.svelte-paud8n) i.icon-forum:where(.svelte-paud8n) {mask-image:var(--groupSvg);}"
 };
-function nM(e, t) {
-	ed(t, !0), no(e, nT);
+function nT(e, t) {
+	ed(t, !0), no(e, nO);
 	let n = nS(t, "active_index", 7);
-	var r = nO(), a = te(r);
+	var r = nL(), a = te(r);
 	return er(), en(r), tg(() => nh(a, 1, nc(-2 == n() ? "active" : ""), "svelte-paud8n")), t3(e, r), eu({
 		get active_index() {
 			return n();
@@ -2171,25 +2128,25 @@ function nM(e, t) {
 		}
 	});
 }
-nA(nM, { active_index: {} }, [], [], { mode: "open" });
-var nD = t5("<b class=\"svelte-jjbop4\"><input type=\"text\" placeholder=\"搜索组件...\" class=\"svelte-jjbop4\"/></b>"), nR = {
+nA(nT, { active_index: {} }, [], [], { mode: "open" });
+var nM = t5("<b class=\"svelte-jjbop4\"><input type=\"text\" placeholder=\"搜索组件...\" class=\"svelte-jjbop4\"/></b>"), nD = {
 	hash: "svelte-jjbop4",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-jjbop4 {position:relative;display:flex;}\n@media (max-width: 800px) {b.svelte-jjbop4 {align-items:center;gap:12px;padding:20px 16px 8px;}\n}b.svelte-jjbop4 input:where(.svelte-jjbop4) {box-sizing:border-box;flex:1;min-width:0;padding:10px 36px 10px 16px;font-size:14px;border-radius:10px;font-family:inherit;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='7' r='4'/%3E%3Cpath d='m11 11 3.5 3.5'/%3E%3C/svg%3E\") no-repeat right 12px center, linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0));border:1px solid rgba(0,0,0,0.122);color:#1d1d1f;outline:none;}b.svelte-jjbop4 input:where(.svelte-jjbop4)::placeholder {color:#86868b;font-weight:normal;}b.svelte-jjbop4 input:where(.svelte-jjbop4):focus {border-color:#0071e3;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='7' r='4'/%3E%3Cpath d='m11 11 3.5 3.5'/%3E%3C/svg%3E\") no-repeat right 12px center, linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.302));}\n@media (max-width: 800px) {b.svelte-jjbop4 input:where(.svelte-jjbop4) {font-size:16px;}\n}"
 };
-function nN(e, t) {
-	ed(t, !0), no(e, nR);
+function nR(e, t) {
+	ed(t, !0), no(e, nD);
 	let n = nS(t, "search_query", 15);
-	var r = nD(), a = te(r);
+	var r = nM(), a = te(r);
 	if (Q) {
 		var l = !1, s = () => {
 			if (!l) {
 				if (l = !0, a.hasAttribute("value")) {
 					var e = a.value;
-					nx(a, "value", null), a.value = e;
+					nm(a, "value", null), a.value = e;
 				}
 				if (a.hasAttribute("checked")) {
 					var t = a.checked;
-					nx(a, "checked", null), a.checked = t;
+					nm(a, "checked", null), a.checked = t;
 				}
 			}
 		};
@@ -2229,13 +2186,13 @@ function nN(e, t) {
 		}
 	});
 }
-nA(nN, { search_query: {} }, [], [], { mode: "open" });
-var nB = t5("<a><b class=\"svelte-1xkx02v\">←</b><b class=\"svelte-1xkx02v\"> </b><b class=\"svelte-1xkx02v\"> </b></a>"), nI = t5("<aside><v-scroll><nav class=\"svelte-1xkx02v\"><!><!><b class=\"x-nav svelte-1xkx02v\"><a href=\"/x\"><b class=\"svelte-1xkx02v\">←</b><b class=\"svelte-1xkx02v\">x</b><b class=\"svelte-1xkx02v\"> </b></a></b><b class=\"nav-list svelte-1xkx02v\"></b></nav></v-scroll></aside>", 2), nU = {
+nA(nR, { search_query: {} }, [], [], { mode: "open" });
+var nN = t5("<a><b class=\"svelte-1xkx02v\">←</b><b class=\"svelte-1xkx02v\"> </b><b class=\"svelte-1xkx02v\"> </b></a>"), nB = t5("<aside><v-scroll><nav class=\"svelte-1xkx02v\"><!><!><b class=\"x-nav svelte-1xkx02v\"><a href=\"/x\"><b class=\"svelte-1xkx02v\">←</b><b class=\"svelte-1xkx02v\">x</b><b class=\"svelte-1xkx02v\"> </b></a></b><b class=\"nav-list svelte-1xkx02v\"></b></nav></v-scroll></aside>", 2), nI = {
 	hash: "svelte-1xkx02v",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}aside.svelte-1xkx02v {width:248px;display:flex;flex-direction:column;flex-shrink:0;box-sizing:border-box;}aside.svelte-1xkx02v v-scroll:where(.svelte-1xkx02v) {flex:1;min-height:0;}aside.svelte-1xkx02v v-scroll:where(.svelte-1xkx02v)::part(scroll) {box-sizing:border-box;}aside.svelte-1xkx02v nav:where(.svelte-1xkx02v) {width:100%;padding:var(--gap) var(--gap) var(--gap) 0;display:flex;flex-direction:column;box-sizing:border-box;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) {display:flex;flex-direction:column;gap:6px;margin-top:12px;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) {box-sizing:border-box;padding:12px 16px;font-size:14px;border-radius:10px;font-family:inherit;transition:all 0.25s cubic-bezier(0.4, 0, 0.2, 1);display:flex;flex-direction:column;align-items:stretch;gap:4px;background:rgba(255,255,255,0.4);border:1px solid rgba(0,0,0,0.031);color:#1d1d1f;text-align:left;cursor:pointer;position:relative;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.02);}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v):hover,\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v):hover {background:rgba(255,255,255,0.702);border-color:rgba(0,0,0,0.059);box-shadow:0 4px 12px rgba(0,0,0,0.039);transform:translateY(-1px);padding-left:38px;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v):hover > b:where(.svelte-1xkx02v):nth-child(1),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v):hover > b:where(.svelte-1xkx02v):nth-child(1) {opacity:1;transform:translateX(0);}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) {background:rgba(0,113,227,0.078);border-color:rgba(0,113,227,0.2);color:#0071e3;box-shadow:inset 0 1px 1px rgba(255,255,255,0.502);text-align:right;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(2),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(2) {color:#0071e3;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(3),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(3) {color:rgba(0,113,227,0.8);}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(1),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a.active:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(1) {opacity:1;color:#0071e3;transform:translateX(0);}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(1),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(1) {position:absolute;left:12px;top:50%;margin-top:-8px;opacity:0;transform:translateX(-6px);transition:all 0.25s ease;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(2),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(2) {font-size:15px;font-weight:600;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(3),\naside.svelte-1xkx02v .x-nav:where(.svelte-1xkx02v) a:where(.svelte-1xkx02v) > b:where(.svelte-1xkx02v):nth-child(3) {font-size:12px;color:#86868b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400;transition:color 0.25s ease;}aside.svelte-1xkx02v .nav-list:where(.svelte-1xkx02v) {margin-top:6px;}\n@media (max-width: 800px) {aside.svelte-1xkx02v {position:fixed;top:0;right:0;bottom:0;left:auto;width:280px;max-width:85%;z-index:100;background:rgba(245,245,247,0.933);backdrop-filter:blur(40px);transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);padding:0;}aside.svelte-1xkx02v nav:where(.svelte-1xkx02v) {padding:16px 16px 32px;}aside.show.svelte-1xkx02v {transform:translateX(0);}\n}::highlight(search-match) {background:#ffe066;color:#000;}"
 };
-function nH(e, t) {
-	ed(t, !0), no(e, nU);
+function nU(e, t) {
+	ed(t, !0), no(e, nI);
 	let n = "search-match", r = nS(t, "active_index", 15), a = nS(t, "aside_open", 15), l = nS(t, "class", 7, ""), s = e0(""), i = e0(null), o = 0, c = 0, d = eW(() => {
 		let e, t;
 		return t = (e = tH(s).trim().toLowerCase()) ? e.split(/\s+/) : [], nP.map((e, t) => [e, t]).filter(([[e, n]]) => {
@@ -2267,14 +2224,14 @@ function nH(e, t) {
 			CSS.highlights.set(n, e);
 		}
 	});
-	var u = nI(), f = te(u);
+	var u = nB(), f = te(u);
 	nh(f, 1, "svelte-1xkx02v");
 	var h = te(f), p = te(h);
-	nM(p, { get active_index() {
+	nT(p, { get active_index() {
 		return r();
 	} });
 	var v = tn(p);
-	nN(v, {
+	nR(v, {
 		get search_query() {
 			return tH(s);
 		},
@@ -2282,20 +2239,20 @@ function nH(e, t) {
 			e2(s, $$value, !0);
 		}
 	});
-	var g = tn(v), b = te(g), m = tn(te(b), 2), x = te(m, !0);
-	en(m), en(b), en(g);
+	var g = tn(v), b = te(g), x = tn(te(b), 2), m = te(x, !0);
+	en(x), en(b), en(g);
 	var w = tn(g);
 	return na(w, 21, () => tH(d), nn, (e, t) => {
 		var n = eW(() => D(tH(t), 2)), a = eW(() => D(tH(n)[0], 2));
 		let l = () => tH(a)[0];
-		var s = nB(), i = tn(te(s)), o = te(i, !0);
+		var s = nN(), i = tn(te(s)), o = te(i, !0);
 		en(i);
 		var c = tn(i), d = te(c, !0);
 		en(c), en(s), tg(() => {
-			nh(s, 1, nc(tH(n)[1] == r() ? "active" : ""), "svelte-1xkx02v"), nx(s, "href", "/" + l()), t4(o, l()), t4(d, tH(a)[1]);
+			nh(s, 1, nc(tH(n)[1] == r() ? "active" : ""), "svelte-1xkx02v"), nm(s, "href", "/" + l()), t4(o, l()), t4(d, tH(a)[1]);
 		}), t3(e, s);
 	}), en(w), en(h), n$(h, (e) => e2(i, e), () => tH(i)), en(f), en(u), tg(() => {
-		nh(u, 1, nc(l()), "svelte-1xkx02v"), nh(b, 1, nc(-3 == r() ? "active" : ""), "svelte-1xkx02v"), t4(x, "webc.site 的基础依赖库");
+		nh(u, 1, nc(l()), "svelte-1xkx02v"), nh(b, 1, nc(-3 == r() ? "active" : ""), "svelte-1xkx02v"), t4(m, "webc.site 的基础依赖库");
 	}), tZ("touchstart", u, (e) => {
 		e.touches && e.touches[0] && (o = e.touches[0].clientX, c = e.touches[0].clientY);
 	}), tZ("touchend", u, (e) => {
@@ -2324,19 +2281,19 @@ function nH(e, t) {
 		}
 	});
 }
-tQ(["touchstart", "touchend"]), nA(nH, {
+tQ(["touchstart", "touchend"]), nA(nU, {
 	active_index: {},
 	aside_open: {},
 	class: {}
 }, [], [], { mode: "open" });
-var nW = t5("<button> </button>"), nG = {
+var nH = t5("<button> </button>"), nW = {
 	hash: "svelte-qgmc0f",
 	code: "button.svelte-qgmc0f {display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0 10px;height:28px;box-sizing:border-box;border-radius:6px;font-size:12px;font-weight:500;border:none;background:rgba(0,113,227,0.078);color:#0071e3;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);outline:none;user-select:none;}button.svelte-qgmc0f::before {content:'';width:12px;height:12px;background:var(--copySvg) no-repeat center/contain;filter:invert(30%) sepia(87%) saturate(1915%) hue-rotate(192deg) brightness(97%) contrast(102%);transition:filter 0.2s ease;}button.svelte-qgmc0f:hover {background:rgba(0,113,227,0.149);}button.svelte-qgmc0f:active {transform:scale(0.97);background:rgba(0,113,227,0.22);}button.copied.svelte-qgmc0f {background:#34c759;color:#fff;}button.copied.svelte-qgmc0f::before {background-image:var(--okSvg);filter:invert(100%);}"
 };
-function nY(e, t) {
-	ed(t, !0), no(e, nG);
+function nG(e, t) {
+	ed(t, !0), no(e, nW);
 	let n = nS(t, "text", 7, ""), r = e0(!1);
-	var a = nW(), l = te(a, !0);
+	var a = nH(), l = te(a, !0);
 	return en(a), tg(() => {
 		nh(a, 1, nc(tH(r) ? "copied" : ""), "svelte-qgmc0f"), t4(l, tH(r) ? "已复制" : "复制");
 	}), tZ("click", a, () => {
@@ -2352,28 +2309,28 @@ function nY(e, t) {
 		}
 	});
 }
-tQ(["click"]), nA(nY, { text: {} }, [], [], { mode: "open" });
-var nV = t5("<tr class=\"svelte-quf4hl\"><td class=\"svelte-quf4hl\"><b class=\"svelte-quf4hl\"><code class=\"svelte-quf4hl\"> </code><!></b></td><td class=\"svelte-quf4hl\"><b class=\"svelte-quf4hl\"><img class=\"svelte-quf4hl\"/></b></td><td class=\"svelte-quf4hl\"><code class=\"svelte-quf4hl\"> </code></td></tr>"), nX = t5("<article class=\"LG svelte-quf4hl\"><h2 class=\"svelte-quf4hl\">样式变量</h2><table class=\"svelte-quf4hl\"><thead><tr class=\"svelte-quf4hl\"><th class=\"svelte-quf4hl\">变量名</th><th class=\"svelte-quf4hl\">预览</th><th class=\"svelte-quf4hl\">资源文件</th></tr></thead><tbody></tbody></table></article>"), nJ = {
+tQ(["click"]), nA(nG, { text: {} }, [], [], { mode: "open" });
+var nY = t5("<tr class=\"svelte-quf4hl\"><td class=\"svelte-quf4hl\"><b class=\"svelte-quf4hl\"><code class=\"svelte-quf4hl\"> </code><!></b></td><td class=\"svelte-quf4hl\"><b class=\"svelte-quf4hl\"><img class=\"svelte-quf4hl\"/></b></td><td class=\"svelte-quf4hl\"><code class=\"svelte-quf4hl\"> </code></td></tr>"), nV = t5("<article class=\"LG svelte-quf4hl\"><h2 class=\"svelte-quf4hl\">样式变量</h2><table class=\"svelte-quf4hl\"><thead><tr class=\"svelte-quf4hl\"><th class=\"svelte-quf4hl\">变量名</th><th class=\"svelte-quf4hl\">预览</th><th class=\"svelte-quf4hl\">资源文件</th></tr></thead><tbody></tbody></table></article>"), nX = {
 	hash: "svelte-quf4hl",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}article.svelte-quf4hl {margin-top:var(--gap);border-radius:24px;padding:var(--gap);box-sizing:border-box;line-height:normal;}article.svelte-quf4hl h2:where(.svelte-quf4hl) {font-size:15px;font-weight:600;color:#1d1d1f;margin:0 0 16px;}article.svelte-quf4hl table:where(.svelte-quf4hl) {width:100%;border-collapse:collapse;text-align:left;font-size:13px;}article.svelte-quf4hl table:where(.svelte-quf4hl) tr:where(.svelte-quf4hl) {border-bottom:1px solid rgba(0,0,0,0.039);}article.svelte-quf4hl table:where(.svelte-quf4hl) tr:where(.svelte-quf4hl):last-child {border-bottom:0;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl),\narticle.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl) {padding:12px 16px;vertical-align:middle;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl):first-child,\narticle.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):first-child {padding-left:0;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl):last-child,\narticle.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):last-child {padding-right:0;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl) {font-weight:600;color:#86868b;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl):nth-child(2) {text-align:center;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(1) {font-weight:500;color:#0071e3;width:45%;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(1) b:where(.svelte-quf4hl) {display:flex;align-items:center;gap:8px;white-space:nowrap;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(1) b:where(.svelte-quf4hl) code:where(.svelte-quf4hl) {font-family:source-code-pro, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#0071e3;padding:3px 8px;border-radius:6px;white-space:nowrap;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(2) {width:20%;text-align:center;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(2) b:where(.svelte-quf4hl) {display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:8px;border:1px solid rgba(0,0,0,0.031);background-image:linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0), linear-gradient(45deg, #f0f0f0 25%, #fff 25%, #fff 75%, #f0f0f0 75%, #f0f0f0);background-size:12px 12px;background-position:0 0, 6px 6px;box-shadow:0 2px 8px rgba(0,0,0,0.039);overflow:hidden;user-select:none;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(2) b:where(.svelte-quf4hl) img:where(.svelte-quf4hl) {max-width:32px;max-height:32px;object-fit:contain;transition:transform 0.2s ease;user-select:none;pointer-events:none;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(2) b:where(.svelte-quf4hl):hover img:where(.svelte-quf4hl) {transform:scale(1.15);}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(3) {width:35%;}article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):nth-child(3) code:where(.svelte-quf4hl) {font-family:source-code-pro, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#515154;padding:3px 8px;border-radius:6px;border:1px solid rgba(0,0,0,0.012);white-space:nowrap;}\n@media (max-width: 800px) {article.svelte-quf4hl {border-radius:16px;padding:var(--gap) 20px;overflow-x:auto;}article.svelte-quf4hl table:where(.svelte-quf4hl) {font-size:12px;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl),\n  article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl) {padding:8px 12px;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl):first-child,\n  article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):first-child {padding-left:0;}article.svelte-quf4hl table:where(.svelte-quf4hl) th:where(.svelte-quf4hl):last-child,\n  article.svelte-quf4hl table:where(.svelte-quf4hl) td:where(.svelte-quf4hl):last-child {padding-right:0;}\n}"
 };
-function nK(e, t) {
-	ed(t, !0), no(e, nJ);
+function nJ(e, t) {
+	ed(t, !0), no(e, nX);
 	let n = nS(t, "svgs", 23, () => []);
 	var r = t8(), a = tt(r), l = (e) => {
-		var t = nX(), r = tn(te(t)), a = tn(te(r));
+		var t = nV(), r = tn(te(t)), a = tn(te(r));
 		na(a, 21, n, nn, (e, t) => {
 			var n = eW(() => D(tH(t), 3));
 			let r = () => tH(n)[0];
-			var a = nV(), l = te(a), s = te(l), i = te(s), o = te(i, !0);
-			en(i), nY(tn(i), { get text() {
+			var a = nY(), l = te(a), s = te(l), i = te(s), o = te(i, !0);
+			en(i), nG(tn(i), { get text() {
 				return r();
 			} }), en(s), en(l);
 			var c = tn(l), d = te(c), u = te(d);
 			en(d), en(c);
 			var f = tn(c), h = te(f), p = te(h, !0);
 			en(h), en(f), en(a), tg(() => {
-				t4(o, r()), nx(u, "src", tH(n)[1]), nx(u, "alt", r()), t4(p, tH(n)[2]);
+				t4(o, r()), nm(u, "src", tH(n)[1]), nm(u, "alt", r()), t4(p, tH(n)[2]);
 			}), t3(e, a);
 		}), en(a), en(r), en(t), t3(e, t);
 	};
@@ -2388,8 +2345,8 @@ function nK(e, t) {
 		}
 	});
 }
-nA(nK, { svgs: {} }, [], [], { mode: "open" });
-var nZ = (e) => {
+nA(nJ, { svgs: {} }, [], [], { mode: "open" });
+var nK = (e) => {
 	switch (e) {
 		case 1: return 3;
 		case 2: return 4;
@@ -2399,19 +2356,19 @@ var nZ = (e) => {
 		default: return 8;
 	}
 };
-function nQ(e) {
+function nZ(e) {
 	0 !== e.text.length && (console.assert(e.len > 0, "Never adding text to root"), e.renderer.add_text(e.renderer.data, e.text), e.text = "");
 }
-function n0(e) {
+function nQ(e) {
 	console.assert(e.len > 0, "No nodes to end"), e.len -= 1, e.token = e.tokens[e.len], e.renderer.end_token(e.renderer.data);
 }
+function n0(e, t) {
+	(24 === e.tokens[e.len] || 23 === e.tokens[e.len]) && 25 !== t && nQ(e), e.len += 1, e.tokens[e.len] = t, e.token = t, e.renderer.add_token(e.renderer.data, t);
+}
 function n1(e, t) {
-	(24 === e.tokens[e.len] || 23 === e.tokens[e.len]) && 25 !== t && n0(e), e.len += 1, e.tokens[e.len] = t, e.token = t, e.renderer.add_token(e.renderer.data, t);
+	for (e.fence_start = 0; e.len > t;) nQ(e);
 }
 function n2(e, t) {
-	for (e.fence_start = 0; e.len > t;) n0(e);
-}
-function n5(e, t) {
 	let n = 0;
 	for (let r = 0; r <= e.len && !((t -= e.spaces[r]) < 0); r += 1) switch (e.tokens[r]) {
 		case 9:
@@ -2419,10 +2376,10 @@ function n5(e, t) {
 		case 20:
 		case 25: n = r;
 	}
-	for (; e.len > n;) n0(e);
+	for (; e.len > n;) nQ(e);
 	return t;
 }
-function n8(e, t) {
+function n5(e, t) {
 	let n = -1, r = -1;
 	for (let a = e.blockquote_idx + 1; a <= e.len; a += 1) if (25 === e.tokens[a]) {
 		if (e.indent_len < e.spaces[a]) {
@@ -2431,15 +2388,15 @@ function n8(e, t) {
 		}
 		r = a;
 	} else e.tokens[a] === t && (n = a);
-	return -1 === r ? -1 === n ? (n2(e, e.blockquote_idx), n1(e, t), !0) : (n2(e, n), !1) : (n2(e, r), n1(e, t), !0);
+	return -1 === r ? -1 === n ? (n1(e, e.blockquote_idx), n0(e, t), !0) : (n1(e, n), !1) : (n1(e, r), n0(e, t), !0);
 }
-function n3(e, t) {
-	n1(e, 25), e.spaces[e.len] = e.indent_len + t, n4(e), e.token = 103;
+function n8(e, t) {
+	n0(e, 25), e.spaces[e.len] = e.indent_len + t, n3(e), e.token = 103;
 }
-function n4(e) {
+function n3(e) {
 	e.indent = "", e.indent_len = 0, e.pending = "";
 }
-function n7(e) {
+function n4(e) {
 	switch (e) {
 		case 48:
 		case 49:
@@ -2454,7 +2411,7 @@ function n7(e) {
 		default: return !1;
 	}
 }
-function n6(e, t) {
+function n7(e, t) {
 	for (let r of t) {
 		if (101 === e.token) {
 			switch (r) {
@@ -2465,8 +2422,8 @@ function n6(e, t) {
 					e.indent_len += 4;
 					continue;
 			}
-			let t = n5(e, e.indent_len);
-			e.indent_len = 0, e.token = e.tokens[e.len], t > 0 && n6(e, " ".repeat(t));
+			let t = n2(e, e.indent_len);
+			e.indent_len = 0, e.token = e.tokens[e.len], t > 0 && n7(e, " ".repeat(t));
 		}
 		let t = e.pending + r;
 		switch (e.token) {
@@ -2487,10 +2444,10 @@ function n6(e, t) {
 						continue;
 					case "\n":
 						if (console.assert(1 === e.pending.length), 25 === e.tokens[e.len] && 21 === e.token) {
-							n0(e), n4(e), e.pending = r;
+							nQ(e), n3(e), e.pending = r;
 							continue;
 						}
-						n2(e, e.blockquote_idx), n4(e), e.blockquote_idx = 0, e.fence_start = 0, e.pending = r;
+						n1(e, e.blockquote_idx), n3(e), e.blockquote_idx = 0, e.fence_start = 0, e.pending = r;
 						continue;
 					case "#":
 						switch (r) {
@@ -2501,7 +2458,7 @@ function n6(e, t) {
 								}
 								break;
 							case " ":
-								n5(e, e.indent_len), n1(e, nZ(e.pending.length)), n4(e);
+								n2(e, e.indent_len), n0(e, nK(e.pending.length)), n3(e);
 								continue;
 						}
 						break;
@@ -2513,7 +2470,7 @@ function n6(e, t) {
 							}
 							return -1;
 						}(e, e.blockquote_idx + 1);
-						-1 === t ? (n2(e, e.blockquote_idx), e.blockquote_idx += 1, e.fence_start = 0, n1(e, 20)) : e.blockquote_idx = t, n4(e), e.pending = r;
+						-1 === t ? (n1(e, e.blockquote_idx), e.blockquote_idx += 1, e.fence_start = 0, n0(e, 20)) : e.blockquote_idx = t, n3(e), e.pending = r;
 						continue;
 					}
 					case "-":
@@ -2529,13 +2486,13 @@ function n6(e, t) {
 									continue;
 								case "\n":
 									if (e.hr_chars < 3) break;
-									n5(e, e.indent_len), e.renderer.add_token(e.renderer.data, 22), e.renderer.end_token(e.renderer.data), n4(e), e.hr_chars = 0;
+									n2(e, e.indent_len), e.renderer.add_token(e.renderer.data, 22), e.renderer.end_token(e.renderer.data), n3(e), e.hr_chars = 0;
 									continue;
 							}
 							e.hr_chars = 0;
 						}
 						if ("_" !== e.pending[0] && " " === e.pending[1]) {
-							n8(e, 23), n3(e, 2), n6(e, t.slice(2));
+							n5(e, 23), n8(e, 2), n7(e, t.slice(2));
 							continue;
 						}
 						break;
@@ -2550,10 +2507,10 @@ function n6(e, t) {
 						}
 						switch (r) {
 							case "`":
-								e.pending.length === e.fence_start ? (e.pending = t, e.fence_start = t.length) : (n1(e, 2), n4(e), e.fence_start = 0, n6(e, t));
+								e.pending.length === e.fence_start ? (e.pending = t, e.fence_start = t.length) : (n0(e, 2), n3(e), e.fence_start = 0, n7(e, t));
 								continue;
 							case "\n":
-								n5(e, e.indent_len), n1(e, 10), e.pending.length > e.fence_start && e.renderer.set_attr(e.renderer.data, 4, e.pending.slice(e.fence_start)), n4(e), e.token = 101;
+								n2(e, e.indent_len), n0(e, 10), e.pending.length > e.fence_start && e.renderer.set_attr(e.renderer.data, 4, e.pending.slice(e.fence_start)), n3(e), e.token = 101;
 								continue;
 							default:
 								e.pending = t;
@@ -2561,7 +2518,7 @@ function n6(e, t) {
 						}
 					case "+":
 						if (" " !== r) break;
-						n8(e, 23), n3(e, 2);
+						n5(e, 23), n8(e, 2);
 						continue;
 					case "0":
 					case "1":
@@ -2575,19 +2532,19 @@ function n6(e, t) {
 					case "9":
 						if ("." === e.pending[e.pending.length - 1]) {
 							if (" " !== r) break;
-							n8(e, 24) && "1." !== e.pending && e.renderer.set_attr(e.renderer.data, 16, e.pending.slice(0, -1)), n3(e, e.pending.length + 1);
+							n5(e, 24) && "1." !== e.pending && e.renderer.set_attr(e.renderer.data, 16, e.pending.slice(0, -1)), n8(e, e.pending.length + 1);
 							continue;
 						}
 						{
 							let n = r.charCodeAt(0);
-							if (46 === n || n7(n)) {
+							if (46 === n || n4(n)) {
 								e.pending = t;
 								continue;
 							}
 						}
 						break;
 					case "|":
-						n2(e, e.blockquote_idx), n1(e, 27), n1(e, 28), e.pending = "", n6(e, r);
+						n1(e, e.blockquote_idx), n0(e, 27), n0(e, 28), e.pending = "", n7(e, r);
 						continue;
 				}
 				let a = t;
@@ -2598,9 +2555,9 @@ function n6(e, t) {
 						n += 1;
 						break;
 					}
-					a = e.indent.slice(n) + t, n1(e, 9);
-				} else n1(e, 2);
-				n4(e), n6(e, a);
+					a = e.indent.slice(n) + t, n0(e, 9);
+				} else n0(e, 2);
+				n3(e), n7(e, a);
 				continue;
 			case 27:
 				if (1 === e.table_state) switch (r) {
@@ -2613,14 +2570,14 @@ function n6(e, t) {
 					case "\n":
 						e.table_state = 2, e.pending = "";
 						continue;
-					default: n0(e), e.table_state = 0;
+					default: nQ(e), e.table_state = 0;
 				}
 				else switch (e.pending) {
 					case "|":
-						n1(e, 28), e.pending = "", n6(e, r);
+						n0(e, 28), e.pending = "", n7(e, r);
 						continue;
 					case "\n":
-						n0(e), e.pending = "", e.table_state = 0, n6(e, r);
+						nQ(e), e.pending = "", e.table_state = 0, n7(e, r);
 						continue;
 				}
 				break;
@@ -2628,19 +2585,19 @@ function n6(e, t) {
 				switch (e.pending) {
 					case "": break;
 					case "|":
-						n1(e, 29), n0(e), e.pending = "", n6(e, r);
+						n0(e, 29), nQ(e), e.pending = "", n7(e, r);
 						continue;
 					case "\n":
-						n0(e), e.table_state = Math.min(e.table_state + 1, 2), e.pending = "", n6(e, r);
+						nQ(e), e.table_state = Math.min(e.table_state + 1, 2), e.pending = "", n7(e, r);
 						continue;
 					default:
-						n1(e, 29), n6(e, r);
+						n0(e, 29), n7(e, r);
 						continue;
 				}
 				break;
 			case 29:
 				if ("|" === e.pending) {
-					nQ(e), n0(e), e.pending = "", n6(e, r);
+					nZ(e), nQ(e), e.pending = "", n7(e, r);
 					continue;
 				}
 				break;
@@ -2659,7 +2616,7 @@ function n6(e, t) {
 					e.pending = t;
 					continue;
 				default:
-					0 !== e.pending.length ? (nQ(e), n0(e), e.pending = r) : e.text += r;
+					0 !== e.pending.length ? (nZ(e), nQ(e), e.pending = r) : e.text += r;
 					continue;
 			}
 			case 10:
@@ -2669,7 +2626,7 @@ function n6(e, t) {
 						continue;
 					case "\n":
 						if (t.length === e.fence_start + e.fence_end + 1) {
-							nQ(e), n0(e), e.pending = "", e.fence_start = 0, e.fence_end = 0, e.token = 101;
+							nZ(e), nQ(e), e.pending = "", e.fence_start = 0, e.fence_end = 0, e.token = 101;
 							continue;
 						}
 						e.token = 101;
@@ -2683,10 +2640,10 @@ function n6(e, t) {
 				continue;
 			case 11: switch (r) {
 				case "`":
-					t.length === e.fence_start + Number(" " === e.pending[0]) ? (nQ(e), n0(e), e.pending = "", e.fence_start = 0) : e.pending = t;
+					t.length === e.fence_start + Number(" " === e.pending[0]) ? (nZ(e), nQ(e), e.pending = "", e.fence_start = 0) : e.pending = t;
 					continue;
 				case "\n":
-					e.text += e.pending, e.pending = "", e.token = 21, e.blockquote_idx = 0, nQ(e);
+					e.text += e.pending, e.pending = "", e.token = 21, e.blockquote_idx = 0, nZ(e);
 					continue;
 				case " ":
 					e.text += e.pending, e.pending = r;
@@ -2714,17 +2671,17 @@ function n6(e, t) {
 						e.renderer.add_token(e.renderer.data, 26), "x" === e.pending[1] && e.renderer.set_attr(e.renderer.data, 8, ""), e.renderer.end_token(e.renderer.data), e.pending = " ";
 						continue;
 				}
-				e.token = e.tokens[e.len], e.pending = "", n6(e, t);
+				e.token = e.tokens[e.len], e.pending = "", n7(e, t);
 				continue;
 			case 14:
 			case 15: {
 				let t = "*", n = 12;
 				if (15 === e.token && (t = "_", n = 13), t === e.pending) {
-					if (nQ(e), t === r) {
-						n0(e), e.pending = "";
+					if (nZ(e), t === r) {
+						nQ(e), e.pending = "";
 						continue;
 					}
-					n1(e, n), e.pending = r;
+					n0(e, n), e.pending = r;
 					continue;
 				}
 				break;
@@ -2734,55 +2691,55 @@ function n6(e, t) {
 				let n = "*", a = 14;
 				switch (13 === e.token && (n = "_", a = 15), e.pending) {
 					case n:
-						n === r ? e.tokens[e.len - 1] === a ? e.pending = t : (nQ(e), n1(e, a), e.pending = "") : (nQ(e), n0(e), e.pending = r);
+						n === r ? e.tokens[e.len - 1] === a ? e.pending = t : (nZ(e), n0(e, a), e.pending = "") : (nZ(e), nQ(e), e.pending = r);
 						continue;
 					case n + n:
 						let l = e.token;
-						nQ(e), n0(e), n0(e), n !== r ? (n1(e, l), e.pending = r) : e.pending = "";
+						nZ(e), nQ(e), nQ(e), n !== r ? (n0(e, l), e.pending = r) : e.pending = "";
 						continue;
 				}
 				break;
 			}
 			case 16:
 				if ("~~" === t) {
-					nQ(e), n0(e), e.pending = "";
+					nZ(e), nQ(e), e.pending = "";
 					continue;
 				}
 				break;
 			case 105:
-				"\n" === r ? (nQ(e), n1(e, 30), e.pending = "") : (e.token = e.tokens[e.len], "\\" === e.pending[0] ? e.text += "[" : e.text += "$$", e.pending = "", n6(e, r));
+				"\n" === r ? (nZ(e), n0(e, 30), e.pending = "") : (e.token = e.tokens[e.len], "\\" === e.pending[0] ? e.text += "[" : e.text += "$$", e.pending = "", n7(e, r));
 				continue;
 			case 30:
 				if ("\\]" === t || "$$" === t) {
-					nQ(e), n0(e), e.pending = "";
+					nZ(e), nQ(e), e.pending = "";
 					continue;
 				}
 				break;
 			case 31:
 				if ("\\)" === t || "$" === e.pending[0]) {
-					nQ(e), n0(e), ")" === r ? e.pending = "" : e.pending = r;
+					nZ(e), nQ(e), ")" === r ? e.pending = "" : e.pending = r;
 					continue;
 				}
 				break;
 			case 102:
-				"http://" === t || "https://" === t ? (nQ(e), n1(e, 18), e.pending = t, e.text = t) : "http:/"[e.pending.length] === r || "https:/"[e.pending.length] === r ? e.pending = t : (e.token = e.tokens[e.len], n6(e, r));
+				"http://" === t || "https://" === t ? (nZ(e), n0(e, 18), e.pending = t, e.text = t) : "http:/"[e.pending.length] === r || "https:/"[e.pending.length] === r ? e.pending = t : (e.token = e.tokens[e.len], n7(e, r));
 				continue;
 			case 17:
 			case 19:
 				if ("]" === e.pending) {
-					nQ(e), "(" === r ? e.pending = t : (n0(e), e.pending = r);
+					nZ(e), "(" === r ? e.pending = t : (nQ(e), e.pending = r);
 					continue;
 				}
 				if ("]" === e.pending[0] && "(" === e.pending[1]) {
 					if (")" === r) {
 						let t = 17 === e.token ? 1 : 2, n = e.pending.slice(2);
-						e.renderer.set_attr(e.renderer.data, t, n), n0(e), e.pending = "";
+						e.renderer.set_attr(e.renderer.data, t, n), nQ(e), e.pending = "";
 					} else e.pending += r;
 					continue;
 				}
 				break;
 			case 18:
-				" " === r || "\n" === r || "\\" === r ? (e.renderer.set_attr(e.renderer.data, 1, e.pending), nQ(e), n0(e), e.pending = r) : (e.text += r, e.pending = t);
+				" " === r || "\n" === r || "\\" === r ? (e.renderer.set_attr(e.renderer.data, 1, e.pending), nZ(e), nQ(e), e.pending = r) : (e.text += r, e.pending = t);
 				continue;
 			case 104:
 				if (t.startsWith("<br")) {
@@ -2791,11 +2748,11 @@ function n6(e, t) {
 						continue;
 					}
 					if (">" === r) {
-						nQ(e), e.token = e.tokens[e.len], e.renderer.add_token(e.renderer.data, 21), e.renderer.end_token(e.renderer.data), e.pending = "";
+						nZ(e), e.token = e.tokens[e.len], e.renderer.add_token(e.renderer.data, 21), e.renderer.end_token(e.renderer.data), e.pending = "";
 						continue;
 					}
 				}
-				e.token = e.tokens[e.len], e.text += "<", e.pending = e.pending.slice(1), n6(e, r);
+				e.token = e.tokens[e.len], e.text += "<", e.pending = e.pending.slice(1), n7(e, r);
 				continue;
 		}
 		switch (e.pending[0]) {
@@ -2803,7 +2760,7 @@ function n6(e, t) {
 				if (19 === e.token || 30 === e.token || 31 === e.token) break;
 				switch (r) {
 					case "(":
-						nQ(e), n1(e, 31), e.pending = "";
+						nZ(e), n0(e, 31), e.pending = "";
 						continue;
 					case "[":
 						e.token = 105, e.pending = t;
@@ -2813,7 +2770,7 @@ function n6(e, t) {
 						continue;
 					default:
 						let l = r.charCodeAt(0);
-						e.pending = "", e.text += n7(l) || l >= 65 && l <= 90 || l >= 97 && l <= 122 ? t : r;
+						e.pending = "", e.text += n4(l) || l >= 65 && l <= 90 || l >= 97 && l <= 122 ? t : r;
 						continue;
 				}
 			case "\n":
@@ -2827,22 +2784,22 @@ function n6(e, t) {
 					case 6:
 					case 7:
 					case 8:
-						nQ(e), n2(e, e.blockquote_idx), e.blockquote_idx = 0, e.pending = r;
+						nZ(e), n1(e, e.blockquote_idx), e.blockquote_idx = 0, e.pending = r;
 						continue;
 					default:
-						nQ(e), e.pending = r, e.token = 21, e.blockquote_idx = 0;
+						nZ(e), e.pending = r, e.token = 21, e.blockquote_idx = 0;
 						continue;
 				}
 				break;
 			case "<":
 				if (19 !== e.token && 30 !== e.token && 31 !== e.token) {
-					nQ(e), e.pending = t, e.token = 104;
+					nZ(e), e.pending = t, e.token = 104;
 					continue;
 				}
 				break;
 			case "`":
 				if (19 === e.token) break;
-				"`" === r ? (e.fence_start += 1, e.pending = t) : (e.fence_start += 1, nQ(e), n1(e, 11), e.text = " " === r || "\n" === r ? "" : r, e.pending = "");
+				"`" === r ? (e.fence_start += 1, e.pending = t) : (e.fence_start += 1, nZ(e), n0(e, 11), e.text = " " === r || "\n" === r ? "" : r, e.pending = "");
 				continue;
 			case "_":
 			case "*": {
@@ -2854,16 +2811,16 @@ function n6(e, t) {
 						continue;
 					}
 					if (" " !== r && "\n" !== r) {
-						nQ(e), n1(e, n), e.pending = r;
+						nZ(e), n0(e, n), e.pending = r;
 						continue;
 					}
 				} else {
 					if (l === r) {
-						nQ(e), n1(e, a), n1(e, n), e.pending = "";
+						nZ(e), n0(e, a), n0(e, n), e.pending = "";
 						continue;
 					}
 					if (" " !== r && "\n" !== r) {
-						nQ(e), n1(e, a), e.pending = r;
+						nZ(e), n0(e, a), e.pending = r;
 						continue;
 					}
 				}
@@ -2877,7 +2834,7 @@ function n6(e, t) {
 							continue;
 						}
 					} else if (" " !== r && "\n" !== r) {
-						nQ(e), n1(e, 16), e.pending = r;
+						nZ(e), n0(e, 16), e.pending = r;
 						continue;
 					}
 				}
@@ -2888,7 +2845,7 @@ function n6(e, t) {
 					continue;
 				} else {
 					var n;
-					if (n7(n = r.charCodeAt(0)) || function(e) {
+					if (n4(n = r.charCodeAt(0)) || function(e) {
 						switch (e) {
 							case 32:
 							case 58:
@@ -2904,20 +2861,20 @@ function n6(e, t) {
 						}
 					}(n));
 					else {
-						nQ(e), n1(e, 31), e.pending = r;
+						nZ(e), n0(e, 31), e.pending = r;
 						continue;
 					}
 				}
 				break;
 			case "[":
 				if (19 !== e.token && 17 !== e.token && 30 !== e.token && 31 !== e.token && "]" !== r) {
-					nQ(e), n1(e, 17), e.pending = r;
+					nZ(e), n0(e, 17), e.pending = r;
 					continue;
 				}
 				break;
 			case "!":
 				if (19 !== e.token && "[" === r) {
-					nQ(e), n1(e, 19), e.pending = "";
+					nZ(e), n0(e, 19), e.pending = "";
 					continue;
 				}
 				break;
@@ -2929,9 +2886,9 @@ function n6(e, t) {
 		}
 		e.text += e.pending, e.pending = r;
 	}
-	nQ(e);
+	nZ(e);
 }
-function n9(e, t) {
+function n6(e, t) {
 	let n, r = e.nodes[e.index];
 	switch (t) {
 		case 1: return;
@@ -3028,13 +2985,13 @@ function n9(e, t) {
 	}
 	e.nodes[++e.index] = r.appendChild(n);
 }
-function re(e) {
+function n9(e) {
 	e.index -= 1;
 }
-function rt(e, t) {
+function re(e, t) {
 	e.nodes[e.index].appendChild(document.createTextNode(t));
 }
-function rn(e, t, n) {
+function rt(e, t, n) {
 	e.nodes[e.index].setAttribute(function(e) {
 		switch (e) {
 			case 1: return "href";
@@ -3045,10 +3002,10 @@ function rn(e, t, n) {
 		}
 	}(t), n);
 }
-var rr = ((e, t, n, r) => {
-	if (t && "object" == typeof t || "function" == typeof t) for (var a, l = x(t), s = 0, i = l.length; s < i; s++) a = l[s], y.call(e, a) || a === n || b(e, a, {
+var rn = ((e, t, n, r) => {
+	if (t && "object" == typeof t || "function" == typeof t) for (var a, l = m(t), s = 0, i = l.length; s < i; s++) a = l[s], y.call(e, a) || a === n || b(e, a, {
 		get: ((e) => t[e]).bind(null, a),
-		enumerable: !(r = m(t, a)) || r.enumerable
+		enumerable: !(r = x(t, a)) || r.enumerable
 	});
 	return e;
 })(b(null != (n = (e = (e, t) => {
@@ -3212,10 +3169,10 @@ var rr = ((e, t, n, r) => {
 						f = Array.isArray(f) ? f : [f];
 						for (var h = 0; h < f.length; ++h) {
 							if (d && d.cause == u + "," + h) return;
-							var p = f[h], v = p.inside, g = !!p.lookbehind, b = !!p.greedy, m = p.alias;
+							var p = f[h], v = p.inside, g = !!p.lookbehind, b = !!p.greedy, x = p.alias;
 							if (b && !p.pattern.global) {
-								var x = p.pattern.toString().match(/[imsuy]*$/)[0];
-								p.pattern = RegExp(p.pattern.source, x + "g");
+								var m = p.pattern.toString().match(/[imsuy]*$/)[0];
+								p.pattern = RegExp(p.pattern.source, m + "g");
 							}
 							for (var w = p.pattern || p, y = i.next, k = c; y !== n.tail && (!d || !(k >= d.reach)); k += y.value.length, y = y.next) {
 								var _, $ = y.value;
@@ -3236,7 +3193,7 @@ var rr = ((e, t, n, r) => {
 									if (F && (L = o(n, L, F), k += F.length), function(e, t, n) {
 										for (var r = t.next, a = 0; a < n && r !== e.tail; a++) r = r.next;
 										t.next = r, r.prev = t, e.length -= a;
-									}(n, L, q), y = o(n, L, new l(u, v ? a.tokenize(z, v) : z, m, z)), C && o(n, y, C), q > 1) {
+									}(n, L, q), y = o(n, L, new l(u, v ? a.tokenize(z, v) : z, x, z)), C && o(n, y, C), q > 1) {
 										var O = {
 											cause: u + "," + h,
 											reach: P
@@ -3950,13 +3907,13 @@ var rr = ((e, t, n, r) => {
 	},
 	interpolation: o.interpolation,
 	punctuation: /[{}()\[\];:.]/
-}, rr.default.languages.svelte = rr.default.languages.markup;
-var ra = t5("<b class=\"svelte-dy2xt3\"></b>"), rl = {
+}, rn.default.languages.svelte = rn.default.languages.markup;
+var rr = t5("<b class=\"svelte-dy2xt3\"></b>"), ra = {
 	hash: "svelte-dy2xt3",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-dy2xt3 {display:block;}b.svelte-dy2xt3 h1,\nb.svelte-dy2xt3 h2,\nb.svelte-dy2xt3 h3,\nb.svelte-dy2xt3 h4 {color:#1d1d1f;font-weight:600;margin-top:24px;margin-bottom:16px;}b.svelte-dy2xt3 h1 {font-size:26px;}b.svelte-dy2xt3 h2 {font-size:20px;}b.svelte-dy2xt3 h3 {font-size:16px;}b.svelte-dy2xt3 p {margin-bottom:16px;}b.svelte-dy2xt3 ul {margin-bottom:16px;padding-left:20px;list-style-type:disc;}b.svelte-dy2xt3 ul li {margin-bottom:6px;}b.svelte-dy2xt3 code {font-family:SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;font-size:13px;padding:2px 6px;border-radius:4px;color:#0071e3;border:1px solid rgba(0,113,227,0.102);background:rgba(0,113,227,0.051);}b.svelte-dy2xt3 pre {border:1px dashed #ccc;border-radius:12px;padding:14px 16px;overflow-x:auto;margin-bottom:20px;margin-top:12px;background:rgba(255,255,255,0.451);backdrop-filter:blur(25px) saturate(180%);box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.651), 0 4px 12px rgba(0,0,0,0.02);}b.svelte-dy2xt3 pre code {background:transparent;border:0;padding:0;border-radius:0;color:#1d1d1f;line-height:1.6;}b.svelte-dy2xt3 pre .token.comment,\nb.svelte-dy2xt3 pre .token.prolog,\nb.svelte-dy2xt3 pre .token.doctype,\nb.svelte-dy2xt3 pre .token.cdata {color:#86868b;font-style:italic;}b.svelte-dy2xt3 pre .token.punctuation {color:#57606a;}b.svelte-dy2xt3 pre .token.keyword {color:#ff2d55;font-weight:600;}b.svelte-dy2xt3 pre .token.string,\nb.svelte-dy2xt3 pre .token.char,\nb.svelte-dy2xt3 pre .token.attr-value {color:#116329;}b.svelte-dy2xt3 pre .token.number,\nb.svelte-dy2xt3 pre .token.boolean {color:#af52de;}b.svelte-dy2xt3 pre .token.function {color:#0071e3;}b.svelte-dy2xt3 pre .token.class-name,\nb.svelte-dy2xt3 pre .token.maybe-class-name {color:#953800;}b.svelte-dy2xt3 pre .token.tag,\nb.svelte-dy2xt3 pre .token.operator {color:#ff2d55;}b.svelte-dy2xt3 pre .token.attr-name {color:#bf5af2;}b.svelte-dy2xt3 pre .token.selector {color:#953800;}b.svelte-dy2xt3 pre .token.property {color:#1d1d1f;}b.svelte-dy2xt3 pre .token.regex {color:#a25a00;}b.svelte-dy2xt3 pre[class*='language-'],\nb.svelte-dy2xt3 code[class*='language-'],\nb.svelte-dy2xt3 :not(pre) > code[class*='language-'] {background:transparent;}b.svelte-dy2xt3 a {color:#0071e3;text-decoration:none;border-bottom:1px solid rgba(0,113,227,0.2);transition:all 0.25s ease;}b.svelte-dy2xt3 a:hover {color:#0077ed;border-bottom-color:#0077ed;}b.svelte-dy2xt3 blockquote.alert {margin:20px 0;padding:16px 20px 16px 52px;border-left:4px solid;border-radius:12px;box-sizing:border-box;position:relative;background:rgba(255,255,255,0.451);backdrop-filter:blur(25px) saturate(180%);box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.651), 0 4px 12px rgba(0,0,0,0.02);border:1px solid rgba(255,255,255,0.2);min-height:54px;}b.svelte-dy2xt3 blockquote.alert .alert-title {position:absolute;left:16px;top:16px;font-size:0;margin:0;padding:0;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {display:block;width:22px;height:22px;mask-size:contain;mask-repeat:no-repeat;mask-position:center;flex-shrink:0;}b.svelte-dy2xt3 blockquote.alert p {margin:0;color:#1d1d1f;}b.svelte-dy2xt3 blockquote.alert p:not(:last-child) {margin-bottom:8px;}b.svelte-dy2xt3 blockquote.alert-note {border-left-color:#0071e3;}b.svelte-dy2xt3 blockquote.alert-note .alert-icon {mask-image:var(--noteSvg);background:#0071e3;}b.svelte-dy2xt3 blockquote.alert-tip {border-left-color:#34c759;}b.svelte-dy2xt3 blockquote.alert-tip .alert-icon {mask-image:var(--tipSvg);background:#24b24b;}b.svelte-dy2xt3 blockquote.alert-important {border-left-color:#af52de;}b.svelte-dy2xt3 blockquote.alert-important .alert-icon {mask-image:var(--importantSvg);background:#af52de;}b.svelte-dy2xt3 blockquote.alert-warning {border-left-color:#ff9500;}b.svelte-dy2xt3 blockquote.alert-warning .alert-icon {mask-image:var(--warningSvg);background:#e08200;}b.svelte-dy2xt3 blockquote.alert-caution {border-left-color:#ff3b30;}b.svelte-dy2xt3 blockquote.alert-caution .alert-icon {mask-image:var(--cautionSvg);background:#ff3b30;}\n@media (max-width: 800px) {b.svelte-dy2xt3 h1 {font-size:20px;}b.svelte-dy2xt3 h2 {font-size:17px;}b.svelte-dy2xt3 pre {padding:12px;border-radius:8px;font-size:12px;}b.svelte-dy2xt3 blockquote.alert {padding:12px 14px 12px 42px;border-radius:8px;min-height:40px;}b.svelte-dy2xt3 blockquote.alert .alert-title {left:12px;top:12px;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {width:18px;height:18px;}\n}"
 };
-function rs(e, t) {
-	ed(t, !0), no(e, rl);
+function rl(e, t) {
+	ed(t, !0), no(e, ra);
 	let n = nS(t, "readme", 7), r = e0(null);
 	th(() => {
 		((e, t) => {
@@ -3965,10 +3922,10 @@ function rs(e, t) {
 			if (!e || !t) return;
 			e.innerHTML = "";
 			let a = (n = {
-				add_token: n9,
-				end_token: re,
-				add_text: rt,
-				set_attr: rn,
+				add_token: n6,
+				end_token: n9,
+				add_text: re,
+				set_attr: rt,
 				data: {
 					nodes: [
 						e,
@@ -3996,13 +3953,13 @@ function rs(e, t) {
 				indent_len: 0,
 				table_state: 0
 			});
-			n6(a, t), a.pending.length > 0 && n6(a, "\n"), e.querySelectorAll("pre code").forEach((e) => {
+			n7(a, t), a.pending.length > 0 && n7(a, "\n"), e.querySelectorAll("pre code").forEach((e) => {
 				let t = [];
 				e.classList.forEach((e) => {
 					e.startsWith("language-") || e.startsWith("lang-") || t.push("language-" + e);
 				}), t.forEach((t) => {
 					e.classList.add(t), e.parentElement && "PRE" == e.parentElement.tagName && e.parentElement.classList.add(t);
-				}), rr.default.highlightElement(e);
+				}), rn.default.highlightElement(e);
 			}), e.querySelectorAll("blockquote").forEach((e) => {
 				let t = e.firstElementChild || e, n = t.innerHTML;
 				if (n) {
@@ -4015,7 +3972,7 @@ function rs(e, t) {
 			});
 		})(tH(r), n());
 	});
-	var a = ra();
+	var a = rr();
 	return n$(a, (e) => e2(r, e), () => tH(r)), t3(e, a), eu({
 		get readme() {
 			return n();
@@ -4025,17 +3982,17 @@ function rs(e, t) {
 		}
 	});
 }
-nA(rs, { readme: {} }, [], [], { mode: "open" });
-var ri = t5("<a target=\"_blank\" title=\"查看源码\" aria-label=\"GitHub\" class=\"svelte-1w7oxzi\"></a>"), ro = {
+nA(rl, { readme: {} }, [], [], { mode: "open" });
+var rs = t5("<a target=\"_blank\" title=\"查看源码\" aria-label=\"GitHub\" class=\"svelte-1w7oxzi\"></a>"), ri = {
 	hash: "svelte-1w7oxzi",
 	code: "a.svelte-1w7oxzi {display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,0,0,0.078);color:#1d1d1f;background:linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.122));backdrop-filter:blur(8px);box-shadow:inset 0 1px 1px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.039);transition:all 0.25s cubic-bezier(0.4, 0, 0.2, 1);text-decoration:none;box-sizing:border-box;}a.svelte-1w7oxzi::before {content:'';width:20px;height:20px;background-color:currentColor;mask-image:var(--githubSvg);mask-size:contain;mask-repeat:no-repeat;mask-position:center;}a.svelte-1w7oxzi:hover {color:#0071e3;border-color:rgba(0,71,227,0.2);background:linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));transform:scale(1.06) translateY(-1px);box-shadow:inset 0 1px 1px rgba(255,255,255,0.8), 0 4px 12px rgba(0,0,0,0.059), 0 1px 2px rgba(0,0,0,0.039);}a.svelte-1w7oxzi:active {transform:scale(0.96);background:linear-gradient(135deg, rgba(255,255,255,0.302), rgba(255,255,255,0.059));box-shadow:inset 0 1px 2px rgba(0,0,0,0.051);}"
 };
-function rc(e, t) {
-	ed(t, !0), no(e, ro);
+function ro(e, t) {
+	ed(t, !0), no(e, ri);
 	let n = nS(t, "url", 7, "");
 	var r = t8(), a = tt(r), l = (e) => {
-		var t = ri();
-		tg(() => nx(t, "href", n())), tZ("click", t, (e) => e.stopPropagation()), t3(e, t);
+		var t = rs();
+		tg(() => nm(t, "href", n())), tZ("click", t, (e) => e.stopPropagation()), t3(e, t);
 	};
 	return nt(a, (e) => {
 		n() && e(l);
@@ -4048,22 +4005,22 @@ function rc(e, t) {
 		}
 	});
 }
-tQ(["click"]), nA(rc, { url: {} }, [], [], { mode: "open" });
-var rd = t5("<b class=\"svelte-1cfqs8w\"> </b>"), ru = t5("<b class=\"svelte-1cfqs8w\"><h1 class=\"svelte-1cfqs8w\"> <!></h1><!></b>"), rf = {
+tQ(["click"]), nA(ro, { url: {} }, [], [], { mode: "open" });
+var rc = t5("<b class=\"svelte-1cfqs8w\"> </b>"), rd = t5("<b class=\"svelte-1cfqs8w\"><h1 class=\"svelte-1cfqs8w\"> <!></h1><!></b>"), ru = {
 	hash: "svelte-1cfqs8w",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-1cfqs8w {display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 var(--gap);}\n@media (max-width: 800px) {b.svelte-1cfqs8w {align-items:flex-start;}\n}\n@media (max-width: 800px) {b.svelte-1cfqs8w a {margin-right:44px;}\n}h1.svelte-1cfqs8w {display:flex;align-items:baseline;gap:12px;font-size:28px;font-weight:700;color:#1d1d1f;line-height:1.2;margin:0;}h1.svelte-1cfqs8w b:where(.svelte-1cfqs8w) {font-size:16px;font-weight:400;color:#86868b;margin-bottom:0;}\n@media (max-width: 800px) {h1.svelte-1cfqs8w {font-size:22px;}h1.svelte-1cfqs8w b:where(.svelte-1cfqs8w) {font-size:13px;}\n}"
 };
-function rh(e, t) {
-	ed(t, !0), no(e, rf);
+function rf(e, t) {
+	ed(t, !0), no(e, ru);
 	let n = nS(t, "name", 7, ""), r = nS(t, "title", 7, ""), a = nS(t, "prefix", 7, "com/"), l = eW(() => "//github.com/webc-zh/webc-zh.github.io/tree/main/" + (a() + n()));
 	var s = t8(), i = tt(s), o = (e) => {
-		var t = ru(), a = te(t), s = te(a, !0), i = tn(s), o = (e) => {
-			var t = rd(), n = te(t, !0);
+		var t = rd(), a = te(t), s = te(a, !0), i = tn(s), o = (e) => {
+			var t = rc(), n = te(t, !0);
 			en(t), tg(() => t4(n, r())), t3(e, t);
 		};
 		nt(i, (e) => {
 			r() && e(o);
-		}), en(a), rc(tn(a), { get url() {
+		}), en(a), ro(tn(a), { get url() {
 			return tH(l);
 		} }), en(t), tg(() => t4(s, n())), t3(e, t);
 	};
@@ -4090,31 +4047,31 @@ function rh(e, t) {
 		}
 	});
 }
-nA(rh, {
+nA(rf, {
 	name: {},
 	title: {},
 	prefix: {}
 }, [], [], { mode: "open" });
-var rp = t5("<v-scroll><b class=\"svelte-1dvi356\"><article class=\"LG svelte-1dvi356\"><!><!></article><!></b></v-scroll>", 2), rv = {
+var rh = t5("<v-scroll><b class=\"svelte-1dvi356\"><article class=\"LG svelte-1dvi356\"><!><!></article><!></b></v-scroll>", 2), rp = {
 	hash: "svelte-1dvi356",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-1dvi356 {flex:1;min-width:0;min-height:0;}v-scroll.svelte-1dvi356::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-1dvi356 > b:where(.svelte-1dvi356) {display:flex;flex-direction:column;gap:var(--gap);line-height:1.7;color:#333336;padding:var(--gap) 0;box-sizing:border-box;}v-scroll.svelte-1dvi356 > b:where(.svelte-1dvi356) article:where(.svelte-1dvi356) {border-radius:24px;padding:var(--gap);box-sizing:border-box;}\n@media (max-width: 800px) {v-scroll.svelte-1dvi356 > b:where(.svelte-1dvi356) {font-size:14px;}v-scroll.svelte-1dvi356 > b:where(.svelte-1dvi356) article:where(.svelte-1dvi356) {padding-top:0;border-radius:16px;}\n}"
 };
-function rg(e, t) {
-	ed(t, !0), no(e, rv);
+function rv(e, t) {
+	ed(t, !0), no(e, rp);
 	let n = nS(t, "name", 7, ""), r = nS(t, "title", 7, ""), a = nS(t, "readme", 7), l = nS(t, "svgs", 23, () => []);
-	var s = rp();
+	var s = rh();
 	nh(s, 1, "svelte-1dvi356");
 	var i = te(s), o = te(i), c = te(o);
-	return rh(c, {
+	return rf(c, {
 		get name() {
 			return n();
 		},
 		get title() {
 			return r();
 		}
-	}), rs(tn(c), { get readme() {
+	}), rl(tn(c), { get readme() {
 		return a();
-	} }), en(o), nK(tn(o), { get svgs() {
+	} }), en(o), nJ(tn(o), { get svgs() {
 		return l();
 	} }), en(i), en(s), t3(e, s), eu({
 		get name() {
@@ -4143,26 +4100,26 @@ function rg(e, t) {
 		}
 	});
 }
-nA(rg, {
+nA(rv, {
 	name: {},
 	title: {},
 	readme: {},
 	svgs: {}
 }, [], [], { mode: "open" });
-var rb = {
+var rg = {
 	jsdelivr: (e, t) => "//cdn.jsdelivr.net/npm/" + e + "@" + t,
 	npmmirror: (e, t) => "//registry.npmmirror.com/" + e + "/" + t + "/files"
-}, rm = "webc.site", rx = t5("<b class=\"code svelte-cb5h7f\" role=\"button\" tabindex=\"0\"><b class=\"svelte-cb5h7f\"><!></b><pre class=\"svelte-cb5h7f\"> </pre></b>"), rw = {
+}, rb = "webc.site", rx = t5("<b class=\"code svelte-cb5h7f\" role=\"button\" tabindex=\"0\"><b class=\"svelte-cb5h7f\"><!></b><pre class=\"svelte-cb5h7f\"> </pre></b>"), rm = {
 	hash: "svelte-cb5h7f",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}.code.svelte-cb5h7f {position:relative;display:flex;align-items:center;width:100%;cursor:pointer;background:transparent;border:none;padding:0;text-align:left;}.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {flex:1;min-width:0;margin:0;overflow-x:auto;font-family:source-code-pro, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#1d1d1f;white-space:pre-wrap;word-break:break-all;}.code.svelte-cb5h7f > b:where(.svelte-cb5h7f) {display:flex;align-items:center;max-width:0;opacity:0;pointer-events:none;overflow:hidden;white-space:nowrap;transform:scale(0.9) translateX(-12px);transition:max-width 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin-right 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);}.code.svelte-cb5h7f:hover > b:where(.svelte-cb5h7f) {max-width:90px;margin-right:8px;opacity:1;pointer-events:auto;transform:scale(1) translateX(0);}\n@media (max-width: 800px) {.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {font-size:11px;}\n}"
 };
-function ry(e, t) {
-	ed(t, !0), no(e, rw);
+function rw(e, t) {
+	ed(t, !0), no(e, rm);
 	let n = nS(t, "text", 7, ""), r = e0(void 0), a = (e) => {
 		e.target.closest("button") || tH(r).querySelector("button").click();
 	};
 	var l = rx(), s = te(l);
-	nY(te(s), { get text() {
+	nG(te(s), { get text() {
 		return n();
 	} }), en(s), n$(s, (e) => e2(r, e), () => tH(r));
 	var i = tn(s), o = te(i, !0);
@@ -4177,8 +4134,8 @@ function ry(e, t) {
 		}
 	});
 }
-tQ(["click", "keydown"]), nA(ry, { text: {} }, [], [], { mode: "open" });
-var rk = [["Scroll", [
+tQ(["click", "keydown"]), nA(rw, { text: {} }, [], [], { mode: "open" });
+var ry = [["Scroll", [
 	"<section class=\"demo-section\">\n  <h2>水平虚拟滚动条</h2>\n  <div class=\"scroll-wrap h-wrap\">\n    <h-scroll>\n      <b></b>\n    </h-scroll>\n  </div>\n\n  <h2>垂直虚拟滚动条</h2>\n  <div class=\"scroll-wrap v-wrap\">\n    <v-scroll>\n      <b></b>\n    </v-scroll>\n  </div>\n</section>\n",
 	"const cards_count = 12,\n  h_scroll_container = document.querySelector(\"h-scroll > b\"),\n  v_scroll_container = document.querySelector(\"v-scroll > b\");\n\nif (h_scroll_container) {\n  for (let i = 0; i < cards_count; ++i) {\n    const card = document.createElement(\"b\");\n    card.style.setProperty(\"--theme-hue\", (i * 45) % 360);\n    card.style.setProperty(\"--theme-hue-next\", (i * 45 + 25) % 360);\n    h_scroll_container.appendChild(card);\n  }\n}\n\nif (v_scroll_container) {\n  for (let i = 0; i < cards_count; ++i) {\n    const card = document.createElement(\"b\");\n    card.style.setProperty(\"--theme-hue\", (i * 35) % 360);\n    card.style.setProperty(\"--theme-hue-next\", (i * 35 + 15) % 360);\n    v_scroll_container.appendChild(card);\n  }\n}\n",
 	".demo-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  width: 100%;\n  max-width: 640px;\n  margin: 0 auto;\n  padding: 24px;\n  box-sizing: border-box;\n\n  h2 {\n    font-size: 13px;\n    font-weight: 600;\n    color: #1d1d1f;\n    letter-spacing: -0.01em;\n    margin-top: 16px;\n    margin-bottom: 12px;\n    display: flex;\n    align-items: center;\n\n    &:first-of-type {\n      margin-top: 0;\n    }\n  }\n\n  .scroll-wrap {\n    width: 100%;\n    max-width: 100%;\n    display: block;\n    background: #ffffff66;\n    border: 1px solid #0000000d;\n    border-radius: 16px;\n    box-shadow: inset 0 1px 0 #ffffff99;\n    overflow: hidden;\n  }\n\n  .v-wrap {\n    height: 300px;\n    max-height: 100%;\n    margin-bottom: 24px;\n  }\n\n  .h-wrap {\n    height: 160px;\n    max-height: 100%;\n  }\n\n  v-scroll,\n  h-scroll {\n    width: 100%;\n    height: 100%;\n  }\n\n  v-scroll {\n    & > b {\n      width: 100%;\n      padding: 20px;\n      box-sizing: border-box;\n      display: flex;\n      flex-direction: column;\n      gap: 8px;\n\n      & > b {\n        height: 64px;\n        background: linear-gradient(\n          135deg,\n          hsl(var(--theme-hue), 35%, 98%) 0,\n          hsl(var(--theme-hue-next), 30%, 96%) 100%\n        );\n        border: 1px solid hsl(var(--theme-hue), 25%, 91%);\n        border-radius: 16px;\n        box-shadow: 0 2px 8px #00000003;\n        transition: all 0.2s ease;\n\n        &:hover {\n          transform: translateY(-1px);\n          box-shadow: 0 4px 12px #00000008;\n        }\n      }\n    }\n  }\n\n  h-scroll {\n    & > b {\n      padding: 20px;\n      box-sizing: border-box;\n      display: flex;\n      align-items: center;\n      height: 100%;\n      gap: 8px;\n\n      & > b {\n        width: 140px;\n        height: 100%;\n        border-radius: 16px;\n        flex-shrink: 0;\n        box-sizing: border-box;\n        box-shadow: 0 2px 8px #00000003;\n        background: linear-gradient(\n          135deg,\n          hsl(var(--theme-hue), 35%, 96%) 0,\n          hsl(var(--theme-hue-next), 30%, 93%) 100%\n        );\n        border: 1px solid hsl(var(--theme-hue), 25%, 88%);\n        transition: all 0.2s ease;\n\n        &:hover {\n          transform: translateY(-2px);\n          box-shadow: 0 4px 16px #0000000a;\n        }\n      }\n    }\n  }\n}\n"
@@ -4186,19 +4143,19 @@ var rk = [["Scroll", [
 	"<section class=\"demo-section\">\n  <header>独立加载 (.wait)</header>\n  <div class=\"card-container\">\n    <b class=\"wait\"></b>\n  </div>\n\n  <header>表单提交加载遮罩 (.ing)</header>\n  <div class=\"card-container\">\n    <form class=\"demo-form ing\">\n      <h3>账户登录</h3>\n      <div class=\"form-group\">\n        <label>\n          <span>用户名</span>\n          <input type=\"text\" placeholder=\"输入用户名\" required />\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>\n          <span>密码</span>\n          <input type=\"password\" placeholder=\"输入密码\" required />\n        </label>\n      </div>\n      <button type=\"submit\">登录</button>\n    </form>\n  </div>\n</section>\n",
 	"const form = document.querySelector(\".demo-form\");\nif (form) {\n  form.addEventListener(\"submit\", (e) => {\n    e.preventDefault();\n    form.classList.add(\"ing\");\n    setTimeout(() => {\n      form.classList.remove(\"ing\");\n    }, 2000);\n  });\n}\n",
 	".demo-section {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  margin: 0 auto;\n  padding: 24px;\n  box-sizing: border-box;\n\n  header {\n    font-size: 14px;\n    font-weight: 600;\n    color: #1d1d1f;\n    margin-top: 8px;\n  }\n\n  .card-container {\n    background: #ffffff;\n    border: 1px solid #0000000a;\n    border-radius: 16px;\n    padding: 24px;\n    box-shadow:\n      0 4px 20px #00000005,\n      inset 0 1px 0 #ffffff;\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n    box-sizing: border-box;\n\n    &:first-of-type {\n      justify-content: center;\n      align-items: center;\n    }\n  }\n\n  .demo-form {\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n\n    h3 {\n      margin: 0;\n      font-size: 18px;\n      font-weight: 600;\n      color: #1d1d1f;\n    }\n\n    .form-group {\n      label {\n        display: flex;\n        flex-direction: column;\n        gap: 6px;\n        font-size: 12px;\n        font-weight: 500;\n        color: #86868b;\n\n        span {\n          font-weight: 500;\n        }\n      }\n    }\n\n    input {\n      padding: 10px 14px;\n      border-radius: 10px;\n      border: 1px solid #0000000f;\n      background: #f5f5f7;\n      font-size: 14px;\n      outline: none;\n      transition: all 0.2s ease;\n\n      &:focus {\n        border-color: #0071e3;\n        background: #ffffff;\n        box-shadow: 0 0 0 4px #0071e31a;\n      }\n    }\n\n    button {\n      margin-top: 8px;\n      padding: 12px;\n      border-radius: 10px;\n      background: #0071e3;\n      color: #ffffff;\n      font-weight: 600;\n      font-size: 14px;\n      border: none;\n      transition: all 0.2s ease;\n      cursor: pointer;\n\n      &:hover:not(:disabled) {\n        background: #0077ed;\n      }\n\n      &:active:not(:disabled) {\n        transform: scale(0.98);\n      }\n\n      &:disabled {\n        background: #e5e5ea;\n        color: #aeaeae;\n        cursor: not-allowed;\n      }\n    }\n  }\n}\n"
-]]], r_ = t5("<button type=\"button\"> </button>"), r$ = t5("<nav></nav>"), rq = {
+]]], rk = t5("<button type=\"button\"> </button>"), r_ = t5("<nav></nav>"), r$ = {
 	hash: "svelte-1vwq39h",
 	code: "nav.svelte-1vwq39h {position:absolute;top:100%;margin-top:6px;width:var(--width);display:flex;flex-direction:column;gap:6px;z-index:999;\n  animation: svelte-1vwq39h-scale-in 0.15s cubic-bezier(0.16, 1, 0.3, 1);}nav.left.svelte-1vwq39h {left:0;}nav.right.svelte-1vwq39h {right:0;}nav.svelte-1vwq39h button:where(.svelte-1vwq39h) {border:1px solid rgba(0,0,0,0.078);background:rgba(255,255,255,0.6);backdrop-filter:blur(20px) saturate(190%);width:100%;height:32px;padding:0 14px;border-radius:16px;display:inline-flex;align-items:center;justify-content:flex-start;font-size:12px;font-weight:500;color:#1d1d1f;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.051);transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);white-space:nowrap;box-sizing:border-box;}nav.svelte-1vwq39h button:where(.svelte-1vwq39h):hover {background:rgba(255,255,255,0.949);border-color:rgba(0,0,0,0.149);box-shadow:0 6px 16px rgba(0,0,0,0.078);transform:translateY(-1px);color:#0071e3;}nav.svelte-1vwq39h button.selected:where(.svelte-1vwq39h) {color:#0071e3;font-weight:600;background:rgba(255,255,255,0.949);border-color:rgba(0,113,227,0.4);box-shadow:0 6px 16px rgba(0,113,227,0.102);}nav.svelte-1vwq39h button.selected:where(.svelte-1vwq39h):hover {background:#fff;border-color:#0071e3;}\n@-moz-keyframes svelte-1vwq39h-scale-in {\n  0% {\n    opacity: 0;\n    transform: scale(0.96) translateY(-4px);\n    pointer-events: none;\n  }\n  99% {\n    pointer-events: none;\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1) translateY(0);\n    pointer-events: auto;\n  }\n}\n@-webkit-keyframes svelte-1vwq39h-scale-in {\n  0% {\n    opacity: 0;\n    transform: scale(0.96) translateY(-4px);\n    pointer-events: none;\n  }\n  99% {\n    pointer-events: none;\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1) translateY(0);\n    pointer-events: auto;\n  }\n}\n@-o-keyframes svelte-1vwq39h-scale-in {\n  0% {\n    opacity: 0;\n    transform: scale(0.96) translateY(-4px);\n    pointer-events: none;\n  }\n  99% {\n    pointer-events: none;\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1) translateY(0);\n    pointer-events: auto;\n  }\n}\n@keyframes svelte-1vwq39h-scale-in {\n  0% {\n    opacity: 0;\n    transform: scale(0.96) translateY(-4px);\n    pointer-events: none;\n  }\n  99% {\n    pointer-events: none;\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1) translateY(0);\n    pointer-events: auto;\n  }\n}"
 };
-function rS(e, t) {
-	ed(t, !0), no(e, rq);
+function rq(e, t) {
+	ed(t, !0), no(e, r$);
 	let n = nS(t, "options", 23, () => []), r = nS(t, "value", 7), a = nS(t, "align", 7, "left"), l = nS(t, "width", 7, "100%"), s = nS(t, "onSelect", 7), i = eW(() => n().map((e) => "string" == typeof e ? {
 		label: e.split(" ")[0],
 		value: e
 	} : e));
-	var o = r$();
+	var o = r_();
 	return na(o, 21, () => tH(i), nn, (e, t) => {
-		var n = r_(), a = te(n, !0);
+		var n = rk(), a = te(n, !0);
 		en(n), tg(() => {
 			nh(n, 1, nc(r() == tH(t).value ? "selected" : ""), "svelte-1vwq39h"), t4(a, tH(t).label);
 		}), tZ("click", n, (e) => s()?.(tH(t).value, e)), t3(e, n);
@@ -4237,19 +4194,19 @@ function rS(e, t) {
 		}
 	});
 }
-tQ(["click"]), nA(rS, {
+tQ(["click"]), nA(rq, {
 	options: {},
 	value: {},
 	align: {},
 	width: {},
 	onSelect: {}
 }, [], [], { mode: "open" });
-var rj = t5("<b class=\"svelte-10il9qy\"><button type=\"button\" aria-label=\"在线调试\" class=\"svelte-10il9qy\">在线调试</button><!></b>"), rE = {
+var rS = t5("<b class=\"svelte-10il9qy\"><button type=\"button\" aria-label=\"在线调试\" class=\"svelte-10il9qy\">在线调试</button><!></b>"), rj = {
 	hash: "svelte-10il9qy",
 	code: "b.svelte-10il9qy {position:relative;display:inline-block;}b.svelte-10il9qy > button:where(.svelte-10il9qy) {display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#0071e3;font-size:12px;font-weight:500;border:none;border-bottom:1px solid currentColor;padding:2px 0;cursor:pointer;transition:all 0.2s ease;outline:none;user-select:none;}b.svelte-10il9qy > button:where(.svelte-10il9qy):hover {color:#ff4500;}b.svelte-10il9qy > button:where(.svelte-10il9qy):active {opacity:0.7;}"
 };
-function rA(e, t) {
-	ed(t, !0), no(e, rE);
+function rE(e, t) {
+	ed(t, !0), no(e, rj);
 	let n = nS(t, "name", 7), r = nS(t, "urls_text", 7), a = e0(!1), l = e0(void 0), s = (e, t) => {
 		let n = document.createElement("form");
 		for (let [r, a] of (n.method = "POST", n.action = e, n.target = "_blank", Object.entries(t))) {
@@ -4260,14 +4217,14 @@ function rA(e, t) {
 	}, i = (e) => {
 		e2(a, !1);
 		let t = (() => {
-			let e = rk.find(([e]) => e == n());
+			let e = ry.find(([e]) => e == n());
 			if (!e) return;
 			let [t, [a, l, s]] = e, i = nP.find(([e]) => e == n()), o = i ? i[1] : "";
 			return {
 				html: r() + "\n" + a,
 				js: l,
 				css: s,
-				title: n() + " - " + rm,
+				title: n() + " - " + rb,
 				description: o
 			};
 		})();
@@ -4276,12 +4233,12 @@ function rA(e, t) {
 			codepen: () => s("https://codepen.io/pen/define/", { data: JSON.stringify(t) })
 		}[e]?.();
 	};
-	var o = rj();
+	var o = rS();
 	tK("click", d, (e) => {
 		tH(a) && tH(l) && !tH(l).contains(e.target) && e2(a, !1);
 	});
 	var c = te(o), u = tn(c), f = (e) => {
-		rS(e, {
+		rq(e, {
 			options: [{
 				label: "JSFiddle",
 				value: "jsfiddle"
@@ -4313,39 +4270,39 @@ function rA(e, t) {
 		}
 	});
 }
-tQ(["click"]), nA(rA, {
+tQ(["click"]), nA(rE, {
 	name: {},
 	urls_text: {}
 }, [], [], { mode: "open" });
-var rz = t5("<i class=\"svelte-1wo880g\"> </i>"), rF = t5("<i></i>"), rC = t5("<b class=\"svelte-1wo880g\"><button type=\"button\"><b class=\"svelte-1wo880g\"> <!></b><!></button><!></b>"), rP = {
+var rA = t5("<i class=\"svelte-1wo880g\"> </i>"), rz = t5("<i></i>"), rF = t5("<b class=\"svelte-1wo880g\"><button type=\"button\"><b class=\"svelte-1wo880g\"> <!></b><!></button><!></b>"), rC = {
 	hash: "svelte-1wo880g",
 	code: "b.svelte-1wo880g {position:relative;display:inline-block;}b.svelte-1wo880g button:where(.svelte-1wo880g) {border:1px solid rgba(0,0,0,0.078);background:transparent;padding:0 14px;height:30px;display:inline-flex;align-items:center;font-size:12px;font-weight:300;color:#86868b;border-radius:15px;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);outline:none;user-select:none;box-sizing:border-box;}b.svelte-1wo880g button:where(.svelte-1wo880g) b:where(.svelte-1wo880g) {display:inline-flex;align-items:center;white-space:nowrap;}b.svelte-1wo880g button:where(.svelte-1wo880g) b:where(.svelte-1wo880g) i:where(.svelte-1wo880g) {font-style:normal;font-weight:500;color:rgba(255,255,255,0.8);margin-left:4px;}b.svelte-1wo880g button:where(.svelte-1wo880g):hover {color:#1d1d1f;border-color:rgba(0,0,0,0.161);background:rgba(0,0,0,0.02);}b.svelte-1wo880g button.active:where(.svelte-1wo880g) {background:transparent;border-color:#86868b;color:#424245;box-shadow:none;padding-right:22px;}b.svelte-1wo880g button.active:where(.svelte-1wo880g):hover {background:transparent;border-color:#86868b;}b.svelte-1wo880g button.active:where(.svelte-1wo880g) b:where(.svelte-1wo880g) i:where(.svelte-1wo880g) {color:#424245;}b.svelte-1wo880g button.active.open:where(.svelte-1wo880g) b:where(.svelte-1wo880g) i:where(.svelte-1wo880g) {color:#0071e3;}b.svelte-1wo880g button:where(.svelte-1wo880g) .arrow:where(.svelte-1wo880g) {position:absolute;right:8px;top:50%;transform:translateY(-50%);width:12px;height:12px;background-color:currentColor;mask-image:var(--downSvg);mask-size:contain;mask-repeat:no-repeat;mask-position:center;color:#86868b;pointer-events:none;transition:transform 0.25s ease, color 0.2s ease;}b.svelte-1wo880g button:where(.svelte-1wo880g) .arrow.open:where(.svelte-1wo880g) {transform:translateY(-50%) rotate(180deg);}b.svelte-1wo880g button:where(.svelte-1wo880g):hover .arrow:where(.svelte-1wo880g) {color:#1d1d1f;}"
 };
-function rL(e, t) {
-	ed(t, !0), no(e, rP);
+function rP(e, t) {
+	ed(t, !0), no(e, rC);
 	let n = nS(t, "label", 7), r = nS(t, "mode", 7), a = nS(t, "active", 15), l = nS(t, "value", 15), s = nS(t, "options", 23, () => []), i = nS(t, "onChange", 7), o = e0(!1), c = e0(void 0), u = eW(() => tH(o) && a() == r()), f = (e, t) => {
 		t.stopPropagation(), l(e), e2(o, !1), i()?.(e);
 	};
-	var h = rC();
+	var h = rF();
 	tK("click", d, (e) => {
 		tH(o) && tH(c) && !tH(c).contains(e.target) && e2(o, !1);
 	});
-	var p = te(h), v = te(p), g = te(v, !0), b = tn(g), m = (e) => {
-		var t = rz(), n = te(t, !0);
+	var p = te(h), v = te(p), g = te(v, !0), b = tn(g), x = (e) => {
+		var t = rA(), n = te(t, !0);
 		en(t), tg((e) => t4(n, e), [() => l()?.split(" ")[0]]), t3(e, t);
 	};
 	nt(b, (e) => {
-		a() == r() && e(m);
+		a() == r() && e(x);
 	}), en(v);
-	var x = tn(v), w = (e) => {
-		var t = rF();
+	var m = tn(v), w = (e) => {
+		var t = rz();
 		tg(() => nh(t, 1, `arrow ${tH(o) ? "open" : ""}`, "svelte-1wo880g")), t3(e, t);
 	};
-	nt(x, (e) => {
+	nt(m, (e) => {
 		a() == r() && e(w);
 	}), en(p);
 	var y = tn(p), k = (e) => {
-		rS(e, {
+		rq(e, {
 			get options() {
 				return s();
 			},
@@ -4400,7 +4357,7 @@ function rL(e, t) {
 		}
 	});
 }
-tQ(["click"]), nA(rL, {
+tQ(["click"]), nA(rP, {
 	label: {},
 	mode: {},
 	active: {},
@@ -4408,15 +4365,15 @@ tQ(["click"]), nA(rL, {
 	options: {},
 	onChange: {}
 }, [], [], { mode: "open" });
-var rO = t5("<nav class=\"svelte-1hz2iwf\"><!><!></nav>"), rT = {
+var rL = t5("<nav class=\"svelte-1hz2iwf\"><!><!></nav>"), rO = {
 	hash: "svelte-1hz2iwf",
 	code: "nav.svelte-1hz2iwf {display:inline-flex;align-items:center;margin-left:-4px;gap:8px;}"
 };
-function rM(e, t) {
-	ed(t, !0), no(e, rT);
+function rT(e, t) {
+	ed(t, !0), no(e, rO);
 	let n = nS(t, "active", 15), r = nS(t, "cdn", 15), a = nS(t, "cdn_keys", 23, () => []), l = nS(t, "runner", 15), s = nS(t, "runner_keys", 23, () => []), i = nS(t, "onChange", 7);
-	var o = rO(), c = te(o);
-	return rL(c, {
+	var o = rL(), c = te(o);
+	return rP(c, {
 		label: "直接使用",
 		mode: 0,
 		get options() {
@@ -4435,7 +4392,7 @@ function rM(e, t) {
 		set value($$value) {
 			r($$value);
 		}
-	}), rL(tn(c), {
+	}), rP(tn(c), {
 		label: "打包构建",
 		mode: 1,
 		get options() {
@@ -4493,7 +4450,7 @@ function rM(e, t) {
 		}
 	});
 }
-nA(rM, {
+nA(rT, {
 	active: {},
 	cdn: {},
 	cdn_keys: {},
@@ -4501,13 +4458,13 @@ nA(rM, {
 	runner_keys: {},
 	onChange: {}
 }, [], [], { mode: "open" });
-var rD = t5("<article class=\"LG svelte-gucowb\"><h2 class=\"svelte-gucowb\"><b class=\"svelte-gucowb\"><!></b><!></h2><!></article>"), rR = {
+var rM = t5("<article class=\"LG svelte-gucowb\"><h2 class=\"svelte-gucowb\"><b class=\"svelte-gucowb\"><!></b><!></h2><!></article>"), rD = {
 	hash: "svelte-gucowb",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}article.svelte-gucowb {position:relative;z-index:2;border-radius:24px;padding:var(--gap);box-sizing:border-box;line-height:normal;width:100%;}article.svelte-gucowb h2:where(.svelte-gucowb) {font-size:15px;font-weight:600;color:#1d1d1f;margin:0 0 16px;display:flex;align-items:center;justify-content:space-between;}article.svelte-gucowb h2:where(.svelte-gucowb) > b:where(.svelte-gucowb) {display:flex;align-items:center;gap:12px;}\n@media (max-width: 800px) {article.svelte-gucowb {border-radius:16px;padding:0 var(--gap) var(--gap);}\n}"
 };
-function rN(e, t) {
-	ed(t, !0), no(e, rR);
-	let n = nS(t, "name", 7), r = nS(t, "files", 23, () => []), a = Object.keys(rb), l = [
+function rR(e, t) {
+	ed(t, !0), no(e, rD);
+	let n = nS(t, "name", 7), r = nS(t, "files", 23, () => []), a = Object.keys(rg), l = [
 		"bunx",
 		"npx",
 		"pnpm dlx",
@@ -4527,12 +4484,12 @@ function rN(e, t) {
 		n && l.includes(n) && e2(c, n, !0);
 	});
 	let f = eW(() => r().map((e) => {
-		let t = rb[tH(o)](rm, "0.1.25") + "/" + e;
+		let t = rg[tH(o)](rb, "0.1.25") + "/" + e;
 		return e.endsWith(".css") ? "<link href=\"" + t + "\" rel=\"stylesheet\">" : e.endsWith(".js") ? "<script type=\"module\">import \"" + t + "\"<\/script>" : t;
 	}).join("\n")), h = eW(() => tH(c) + " webc.add@latest " + n());
 	var p = t8(), v = tt(p), g = (e) => {
-		var t = rD(), r = te(t), s = te(r);
-		rM(te(s), {
+		var t = rM(), r = te(t), s = te(r);
+		rT(te(s), {
 			get cdn_keys() {
 				return a;
 			},
@@ -4558,7 +4515,7 @@ function rN(e, t) {
 			set runner($$value) {
 				e2(c, $$value, !0);
 			}
-		}), en(s), rA(tn(s), {
+		}), en(s), rE(tn(s), {
 			get name() {
 				return n();
 			},
@@ -4569,7 +4526,7 @@ function rN(e, t) {
 		var i = tn(r);
 		{
 			let e = eW(() => 0 == tH(d) ? tH(f) : tH(h));
-			ry(i, { get text() {
+			rw(i, { get text() {
 				return tH(e);
 			} });
 		}
@@ -4592,23 +4549,23 @@ function rN(e, t) {
 		}
 	});
 }
-nA(rN, {
+nA(rR, {
 	name: {},
 	files: {}
 }, [], [], { mode: "open" });
-var rB = t5("<!><article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"><!></b></article>", 1), rI = t5("<article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"></b></article>"), rU = t5("<v-scroll><b class=\"svelte-kymqdk\"><!></b></v-scroll>", 2), rH = {
+var rN = t5("<!><article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"><!></b></article>", 1), rB = t5("<article class=\"LG svelte-kymqdk\"><b class=\"svelte-kymqdk\"></b></article>"), rI = t5("<v-scroll><b class=\"svelte-kymqdk\"><!></b></v-scroll>", 2), rU = {
 	hash: "svelte-kymqdk",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-kymqdk {flex:1;min-width:0;min-height:0;}v-scroll.svelte-kymqdk::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-kymqdk > b:where(.svelte-kymqdk) {display:flex;flex-direction:column;min-height:100%;gap:var(--gap);padding:var(--gap) 0;box-sizing:border-box;}article.svelte-kymqdk {flex:1;display:flex;flex-direction:column;overflow:hidden;border-radius:24px;min-height:320px;min-width:0;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {margin:auto;padding:32px;box-sizing:border-box;}\n@media (max-width: 800px) {article.svelte-kymqdk {border-radius:16px;min-height:240px;}article.svelte-kymqdk > b:where(.svelte-kymqdk) {padding:20px 16px;}\n}"
 };
-function rW(e, t) {
-	ed(t, !0), no(e, rH);
+function rH(e, t) {
+	ed(t, !0), no(e, rU);
 	let n = nS(t, "name", 7), r = nS(t, "active_demo", 7), a = nS(t, "files", 23, () => []);
-	var l = rU();
+	var l = rI();
 	nh(l, 1, "svelte-kymqdk");
 	var s = te(l), i = te(s), o = (e) => {
 		let t = eW(r);
-		var l, s, i, o, d = rB(), u = tt(d);
-		rN(u, {
+		var l, s, i, o, d = rN(), u = tt(d);
+		rR(u, {
 			get name() {
 				return n();
 			},
@@ -4629,7 +4586,7 @@ function rW(e, t) {
 			o.ensure(e, e && ((t) => s(t, e)));
 		}, 65536), en(h), en(f), t3(e, d);
 	}, d = (e) => {
-		t3(e, rI());
+		t3(e, rB());
 	};
 	return nt(i, (e) => {
 		r() ? e(o) : e(d, -1);
@@ -4654,23 +4611,23 @@ function rW(e, t) {
 		}
 	});
 }
-nA(rW, {
+nA(rH, {
 	name: {},
 	active_demo: {},
 	files: {}
 }, [], [], { mode: "open" });
-var rG = t5("<b class=\"wait svelte-16jlhhk\"></b>"), rY = t5("<!><b class=\"right svelte-16jlhhk\"><!></b>", 1), rV = t5("<b class=\"svelte-16jlhhk\"><!></b>"), rX = {
+var rW = t5("<b class=\"wait svelte-16jlhhk\"></b>"), rG = t5("<!><b class=\"right svelte-16jlhhk\"><!></b>", 1), rY = t5("<b class=\"svelte-16jlhhk\"><!></b>"), rV = {
 	hash: "svelte-16jlhhk",
-	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-16jlhhk {flex:1;display:flex;gap:var(--gap);overflow:hidden;}b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {display:flex;flex-direction:column;flex:1;min-width:0;gap:var(--gap);padding:0;box-sizing:border-box;}\n@media (max-width: 800px) {b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {border-top:2px dashed #ccc;}\n}b.svelte-16jlhhk .wait:where(.svelte-16jlhhk) {margin:auto;}\n@media (max-width: 800px) {b.svelte-16jlhhk {flex-direction:column;gap:0;}b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {gap:var(--gap);padding:0;}\n}"
+	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-16jlhhk {flex:1;display:flex;gap:var(--gap);overflow:hidden;}b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;gap:var(--gap);padding:0;box-sizing:border-box;}\n@media (max-width: 800px) {b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {border-top:2px dashed #ccc;}\n}b.svelte-16jlhhk .wait:where(.svelte-16jlhhk) {margin:auto;}\n@media (max-width: 800px) {b.svelte-16jlhhk {flex-direction:column;gap:0;}b.svelte-16jlhhk .right:where(.svelte-16jlhhk) {gap:var(--gap);padding:0;}\n}"
 };
-function rJ(e, t) {
-	ed(t, !0), no(e, rX);
+function rX(e, t) {
+	ed(t, !0), no(e, rV);
 	let n = nS(t, "info", 7), r = nS(t, "readme", 7), a = nS(t, "svgs", 23, () => []), l = nS(t, "files", 23, () => []), s = nS(t, "active_demo", 7, null), i = nS(t, "loading", 7, !1);
-	var o = rV(), c = te(o), d = (e) => {
-		t3(e, rG());
+	var o = rY(), c = te(o), d = (e) => {
+		t3(e, rW());
 	}, u = (e) => {
-		var t = rY(), i = tt(t);
-		rg(i, {
+		var t = rG(), i = tt(t);
+		rv(i, {
 			get name() {
 				return n()[0];
 			},
@@ -4685,7 +4642,7 @@ function rJ(e, t) {
 			}
 		});
 		var o = tn(i);
-		rW(te(o), {
+		rH(te(o), {
 			get name() {
 				return n()[0];
 			},
@@ -4738,7 +4695,7 @@ function rJ(e, t) {
 		}
 	});
 }
-nA(rJ, {
+nA(rX, {
 	info: {},
 	readme: {},
 	svgs: {},
@@ -4746,19 +4703,19 @@ nA(rJ, {
 	active_demo: {},
 	loading: {}
 }, [], [], { mode: "open" });
-var rK = t5("<v-scroll><b class=\"svelte-1odvyyj\"><article class=\"svelte-1odvyyj\"><b class=\"svelte-1odvyyj\"><h1 class=\"svelte-1odvyyj\"> </h1><!></b><!></article></b></v-scroll>", 2), rZ = {
+var rJ = t5("<v-scroll><b class=\"svelte-1odvyyj\"><article class=\"svelte-1odvyyj\"><b class=\"svelte-1odvyyj\"><h1 class=\"svelte-1odvyyj\"> </h1><!></b><!></article></b></v-scroll>", 2), rK = {
 	hash: "svelte-1odvyyj",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-1odvyyj {flex:1;min-width:0;min-height:0;}v-scroll.svelte-1odvyyj::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) {display:block;line-height:1.7;color:#333336;padding:var(--gap) 0;box-sizing:border-box;}v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) {padding:0 var(--gap) var(--gap);box-sizing:border-box;max-width:800px;margin:0 auto;}v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) > b:where(.svelte-1odvyyj) {display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:var(--gap);}\n@media (max-width: 800px) {v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) > b:where(.svelte-1odvyyj) {align-items:flex-start;}\n}\n@media (max-width: 800px) {v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) > b:where(.svelte-1odvyyj) a {margin-right:44px;}\n}v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) > b:where(.svelte-1odvyyj) h1:where(.svelte-1odvyyj) {font-size:28px;font-weight:700;color:#1d1d1f;line-height:1.2;margin:0;}\n@media (max-width: 800px) {v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) > b:where(.svelte-1odvyyj) h1:where(.svelte-1odvyyj) {font-size:22px;}\n}\n@media (max-width: 800px) {v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) {font-size:14px;}v-scroll.svelte-1odvyyj > b:where(.svelte-1odvyyj) article:where(.svelte-1odvyyj) {padding:0 20px var(--gap);}\n}"
 };
-function rQ(e, t) {
-	ed(t, !0), no(e, rZ);
+function rZ(e, t) {
+	ed(t, !0), no(e, rK);
 	let n = nS(t, "name", 7), r = nS(t, "readme", 7), a = eW(() => "WebC" == n() ? "//github.com/webc-zh/webc-zh.github.io" : "//github.com/webc-zh/webc-zh.github.io/tree/main/com/" + n());
-	var l = rK();
+	var l = rJ();
 	nh(l, 1, "svelte-1odvyyj");
 	var s = te(l), i = te(s), o = te(i), c = te(o), d = te(c, !0);
-	return en(c), rc(tn(c), { get url() {
+	return en(c), ro(tn(c), { get url() {
 		return tH(a);
-	} }), en(o), rs(tn(o), { get readme() {
+	} }), en(o), rl(tn(o), { get readme() {
 		return r();
 	} }), en(i), en(s), en(l), tg(() => t4(d, n())), t3(e, l), eu({
 		get name() {
@@ -4775,18 +4732,59 @@ function rQ(e, t) {
 		}
 	});
 }
-nA(rQ, {
+nA(rZ, {
 	name: {},
 	readme: {}
 }, [], [], { mode: "open" }), eo = !0;
-t5("<b class=\"readme-body svelte-w0c70t\"><!></b>");
-var r1 = t5("<details class=\"svelte-w0c70t\"><summary class=\"svelte-w0c70t\"><b class=\"svelte-w0c70t\"><h2 class=\"svelte-w0c70t\"> </h2><b class=\"svelte-w0c70t\"> </b></b><b class=\"svelte-w0c70t\"><i class=\"icon-arrow svelte-w0c70t\"></i></b></summary><b class=\"svelte-w0c70t\"><!><b class=\"code-header svelte-w0c70t\">源代码<!></b><b><!></b></b></details>"), r2 = t5("<v-scroll><b class=\"svelte-w0c70t\"><article class=\"svelte-w0c70t\"><!><!><b class=\"util-list svelte-w0c70t\"></b></article></b></v-scroll>", 2), r5 = {
+var rQ = [
+	[
+		"On",
+		"绑定与解绑事件监听",
+		"- `On(elem, dict)`\n  - `elem`: DOM 元素。\n  - `dict`: 事件与回调对象。键为事件名，值为回调函数。回调函数格式：\n    - 参数：`e`（事件对象）。\n    - 返回值：无。\n  - 返回值：解绑函数。格式为 `() => void`。",
+		"export const On = (elem, dict) => {\n  let event, func;\n  for (event in dict) {\n    func = dict[event];\n    elem.addEventListener(event, func);\n  }\n  return () => {\n    for (event in dict) {\n      func = dict[event];\n      elem.removeEventListener(event, func);\n    }\n  };\n};\n"
+	],
+	[
+		"route",
+		"路由管理与跳转",
+		"- `nowUrl()`\n  - 返回值：当前 URL 路径（不含首部斜杠）。\n\n- `route(hook)`\n  - `hook`: 路由变化时执行的回调函数。格式：\n    - 参数：\n      - `url`: 字符串，新 URL 路径。\n      - `preUrl`: 字符串（可选），旧 URL 路径。\n    - 返回值：无。\n  - 返回值：取消订阅的函数，格式为 `() => void`。\n\n- `setPre(url)`\n  - `url`: 字符串，新的前一次 URL 路径。\n\n- `preUrl()`\n  - 返回值：前一次的 URL 路径。\n\n- `refresh(url)`\n  - `url`: 字符串（可选），要触发回调的 URL 路径，默认是当前 URL。\n\n- `removeSlash(url)`\n  - `url`: 字符串。\n  - 返回值：移除首部斜杠后的字符串。\n\n- `split(str, s)`\n  - `str`: 待拆分字符串。\n  - `s`: 分隔符。\n  - 返回值：包含两个元素的数组 `[前部, 后部]`。\n\n- `setUrl(url)`\n  - `url`: 目标 URL 路径。\n  - 返回值：若路径改变返回 `1`，若仅 hash 改变不返回值。\n\n- `goto(url)`\n  - `url`: 目标 URL 路径。",
+		"import { On } from \"x/On.js\";\n\nexport const nowUrl = () => location.pathname.slice(1),\n  [route, setPre, preUrl, refresh, removeSlash, split, setUrl, goto] = (() => {\n    let PRE = nowUrl(),\n      HOOK = [];\n    if (location.hash) PRE += location.hash;\n\n    const HASH = \"#\",\n      route = (hook) => {\n        HOOK.push(hook);\n        hook(nowUrl());\n        return () => {\n          HOOK = HOOK.filter((f) => f !== hook);\n        };\n      },\n      setPre = (url) => {\n        PRE = url;\n      },\n      preUrl = () => PRE,\n      refresh = (url) => {\n        url = url || nowUrl();\n        for (const f of HOOK) f(url, PRE);\n        setPre(url);\n      },\n      removeSlash = (url) => (url[0] === \"/\" ? url.slice(1) : url),\n      split = (str, s) => {\n        const p = str.indexOf(s);\n        return p >= 0 ? [str.slice(0, p), str.slice(p + 1)] : [str, \"\"];\n      },\n      setUrl = (url) => {\n        url = removeSlash(url);\n        if (url !== PRE) {\n          const [path, hash] = split(url, HASH),\n            [p] = split(PRE, HASH);\n          setPre(url);\n          if (path !== p) {\n            history.pushState(null, \"\", \"/\" + url);\n            return 1;\n          }\n          if (location.hash.slice(1) !== hash) {\n            location.hash = hash;\n            return;\n          }\n        }\n        window.dispatchEvent(new HashChangeEvent(\"hashchange\"));\n      },\n      goto = (url) => {\n        if (setUrl(url)) refresh(url);\n      };\n\n    On(window, {\n      popstate: () => {\n        const url = nowUrl();\n        if (url !== split(PRE, HASH)[0]) refresh(url);\n      },\n    });\n\n    return [route, setPre, preUrl, refresh, removeSlash, split, setUrl, goto];\n  })();\n"
+	],
+	[
+		"selfA",
+		"同站链接点击校验与处理",
+		"- `selfA(p, e)`\n  - `p`: `<a>` 元素。\n  - `e`: 点击事件对象。\n  - 返回值：若是同站链接，阻止默认行为并返回包含 search/hash 的相对路径，否则返回 `undefined`。",
+		"// 判断A标签的href是否为当前网站的, 如果是, 返回url, 以实现不刷新跳转\nexport const selfA = (p, e) => {\n  var hash, url;\n  if (p.host === location.host) {\n    ({ hash } = p);\n    url = p.pathname.slice(1) + p.search;\n    if (hash) {\n      url += hash;\n    }\n    e.preventDefault();\n    return url;\n  }\n};\n"
+	],
+	[
+		"dom",
+		"DOM 属性与方法简写",
+		"- `D`: `document` 实例。\n- `B`: `document.body` 元素。\n- `newEl(tagName)`\n  - `tagName`: 字符串，HTML 标签名。\n  - 返回值：新创建的 DOM 元素。",
+		"export const D = document,\n  B = D.body,\n  newEl = D.createElement.bind(D);\n"
+	],
+	[
+		"a",
+		"拦截链接点击实现无刷新跳转",
+		"无导出函数。导入时自动在 `document.body` 监听点击事件。点击同站链接时阻止默认行为并调用 `goto` 跳转，点击外链且无 `target` 属性时将其设为 `_blank`。",
+		"import { goto } from \"x/route.js\";\nimport { selfA } from \"x/selfA.js\";\nimport { B } from \"x/dom.js\";\n\nB.addEventListener(\"click\", (e) => {\n  var href, name, p;\n  p = e.target;\n  while (p) {\n    ({ nodeName: name } = p);\n    if (name === \"A\") {\n      ({ href } = p);\n      if (href) {\n        href = selfA(p, e);\n        if (href !== void 0) {\n          goto(href);\n        } else if (!p.target) {\n          p.target = \"_blank\";\n        }\n      }\n      break;\n    } else if (name === \"BODY\") {\n      break;\n    }\n    p = p.parentNode;\n  }\n});\n"
+	],
+	[
+		"rmWait",
+		"移除加载等待元素",
+		"无导出函数。导入时自动从 DOM 中移除 ID 为 `W` 的元素。\n\n## 设计意图 & 为什么要放置等待动画于 `pug/_.pug`\n\n在 `pug/_.pug` 中，定义了具有 ID `W` 的 `<style>` 标签，该样式利用 CSS `body:before` 伪类实现了一个无需 JS 依赖的纯 CSS 加载等待动画（旋转的圆环）。\n\n这样做的目的是：\n\n- **首屏秒开体验**：在浏览器解析 HTML 时即刻呈现加载状态，无需等待体积较大的 JS 脚本（或 Svelte 组件框架）下载、解析与执行完毕。\n- **避免白屏**：防止网络较慢或 JS 文件加载时用户看到白屏，提供更好的用户视觉反馈。\n\n## 哪儿被调用 / 移除时机\n\n当主 JS 或组件脚本加载完毕并初始化好 DOM 后，会通过动态导入或模块导入执行 `x/rmWait.js`，瞬间移除 `<style id=\"W\">`，从而销毁加载等待动画。\n\n在 `page/entry/init.js` 结尾的地方导入，移除加载中的动画。",
+		"import { D } from \"x/dom.js\";\nD.getElementById(\"W\").remove();\n"
+	],
+	[
+		"routeDelay",
+		"延迟路由触发避免重复加载数据",
+		"用于 Svelte，避免组件被卸载前触发路由导致重复加载数据。\n\n- `routeDelay(loadUrl)`\n  - `loadUrl`: 路由变化时的回调函数。格式：\n    - 参数：\n      - `url`: 字符串，新 URL 路径。\n      - `preUrl`: 字符串（可选），旧 URL 路径。\n    - 返回值：无。\n  - 返回值：取消路由订阅并清除定时器的函数，格式为 `() => void`。",
+		"import { route } from \"x/route.js\";\n\n// 避免 onMount 之前，route 被触发，导致重复加载数据\nexport const routeDelay = (loadUrl) => {\n  let t;\n  const unbind = route((url, preUrl) => {\n    t = setTimeout(() => {\n      loadUrl(url, preUrl);\n    });\n  });\n  return () => {\n    unbind();\n    clearTimeout(t);\n  };\n};\n\nexport default routeDelay;\n"
+	]
+], r0 = t5("<details class=\"svelte-w0c70t\"><summary class=\"svelte-w0c70t\"><b class=\"svelte-w0c70t\"><h2 class=\"svelte-w0c70t\"> </h2><b class=\"svelte-w0c70t\"> </b></b><b class=\"svelte-w0c70t\"><i class=\"icon-arrow svelte-w0c70t\"></i></b></summary><b class=\"svelte-w0c70t\"><!><b class=\"code-header svelte-w0c70t\">源代码<!></b><b><!></b></b></details>"), r1 = t5("<v-scroll><b class=\"svelte-w0c70t\"><article class=\"svelte-w0c70t\"><!><b class=\"util-list svelte-w0c70t\"></b></article></b></v-scroll>", 2), r2 = {
 	hash: "svelte-w0c70t",
-	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-w0c70t {flex:1;min-width:0;min-height:0;}v-scroll.svelte-w0c70t::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) {display:block;line-height:1.7;color:#333336;padding:var(--gap) 0;box-sizing:border-box;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) {padding:0 var(--gap) var(--gap);box-sizing:border-box;max-width:800px;margin:0 auto;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .readme-body:where(.svelte-w0c70t) {margin-bottom:var(--gap);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) {display:flex;flex-direction:column;gap:var(--gap);margin-top:var(--gap);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) {display:flex;flex-direction:column;border-radius:16px;border:1px solid rgba(0,0,0,0.039);background:rgba(255,255,255,0.333);backdrop-filter:blur(20px);box-shadow:0 4px 12px rgba(0,0,0,0.012), inset 0 1px 1px rgba(255,255,255,0.702);overflow:hidden;transition:all 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t):hover {background:rgba(255,255,255,0.502);border-color:rgba(0,0,0,0.063);box-shadow:0 8px 24px rgba(0,0,0,0.031);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details[open]:where(.svelte-w0c70t) .icon-arrow:where(.svelte-w0c70t) {transform:rotate(180deg);filter:opacity(80%);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) {display:flex;align-items:center;justify-content:space-between;padding:var(--gap);background:rgba(0,0,0,0.008);gap:var(--gap);cursor:pointer;user-select:none;outline:none;list-style:none;transition:background-color 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t)::-webkit-details-marker {display:none;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t):hover {background:rgba(0,0,0,0.024);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child {display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child h2:where(.svelte-w0c70t) {font-size:18px;font-weight:600;color:#1d1d1f;margin:0;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child b:where(.svelte-w0c70t) {font-size:13px;color:#86868b;font-weight:400;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):last-child {display:flex;align-items:center;gap:16px;flex-shrink:0;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):last-child .icon-arrow:where(.svelte-w0c70t) {width:16px;height:16px;background:var(--downSvg) no-repeat center/contain;filter:opacity(40%);transition:transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) {display:block;padding:var(--gap);border-top:1px solid rgba(0,0,0,0.02);background:rgba(255,255,255,0.133);\n  animation: svelte-w0c70t-fadeIn 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) {display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#1d1d1f;margin-top:var(--gap);margin-bottom:8px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a {width:14px;height:14px;border:none;background:none;backdrop-filter:none;box-shadow:none;color:#86868b;padding:0;transition:color 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a::before {width:14px;height:14px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a:hover {color:#0071e3;background:none;transform:none;box-shadow:none;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) pre {margin-top:0;margin-bottom:0;}\n@media (max-width: 800px) {v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) {font-size:14px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) {padding:0 20px var(--gap);}\n}\n@-moz-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@-webkit-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@-o-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}"
+	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}v-scroll.svelte-w0c70t {flex:1;min-width:0;min-height:0;}v-scroll.svelte-w0c70t::part(scroll) {box-sizing:border-box;overflow-x:hidden;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) {display:block;line-height:1.7;color:#333336;padding:var(--gap) 0;box-sizing:border-box;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) {padding:0 var(--gap) var(--gap);box-sizing:border-box;max-width:800px;margin:0 auto;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) {display:flex;flex-direction:column;gap:var(--gap);margin-top:var(--gap);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) {display:flex;flex-direction:column;border-radius:16px;border:1px solid rgba(0,0,0,0.039);background:rgba(255,255,255,0.333);backdrop-filter:blur(20px);box-shadow:0 4px 12px rgba(0,0,0,0.012), inset 0 1px 1px rgba(255,255,255,0.702);overflow:hidden;transition:all 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t):hover {background:rgba(255,255,255,0.502);border-color:rgba(0,0,0,0.063);box-shadow:0 8px 24px rgba(0,0,0,0.031);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details[open]:where(.svelte-w0c70t) .icon-arrow:where(.svelte-w0c70t) {transform:rotate(180deg);filter:opacity(80%);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) {display:flex;align-items:center;justify-content:space-between;padding:var(--gap);background:rgba(0,0,0,0.008);gap:var(--gap);cursor:pointer;user-select:none;outline:none;list-style:none;transition:background-color 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t)::-webkit-details-marker {display:none;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t):hover {background:rgba(0,0,0,0.024);}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child {display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child h2:where(.svelte-w0c70t) {font-size:18px;font-weight:600;color:#1d1d1f;margin:0;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):first-child b:where(.svelte-w0c70t) {font-size:13px;color:#86868b;font-weight:400;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):last-child {display:flex;align-items:center;gap:16px;flex-shrink:0;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) summary:where(.svelte-w0c70t) > b:where(.svelte-w0c70t):last-child .icon-arrow:where(.svelte-w0c70t) {width:16px;height:16px;background:var(--downSvg) no-repeat center/contain;filter:opacity(40%);transition:transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) {display:block;padding:var(--gap);border-top:1px solid rgba(0,0,0,0.02);background:rgba(255,255,255,0.133);\n  animation: svelte-w0c70t-fadeIn 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) {display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#1d1d1f;margin-top:var(--gap);margin-bottom:8px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a {width:14px;height:14px;border:none;background:none;backdrop-filter:none;box-shadow:none;color:#86868b;padding:0;transition:color 0.25s ease;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a::before {width:14px;height:14px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) .code-header:where(.svelte-w0c70t) a:hover {color:#0071e3;background:none;transform:none;box-shadow:none;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) .util-list:where(.svelte-w0c70t) details:where(.svelte-w0c70t) > b:where(.svelte-w0c70t) pre {margin-top:0;margin-bottom:0;}\n@media (max-width: 800px) {v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) {font-size:14px;}v-scroll.svelte-w0c70t > b:where(.svelte-w0c70t) article:where(.svelte-w0c70t) {padding:0 20px var(--gap);}\n}\n@-moz-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@-webkit-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@-o-keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes svelte-w0c70t-fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}"
 };
-function r8(e, t) {
-	ed(t, !1), no(e, r5);
-	let n = "x", r = "webc.site 的基础依赖库";
+function r5(e, t) {
+	ed(t, !1), no(e, r2);
 	(function(e = !1) {
 		let t = ec, n = t.l.u;
 		if (!n) return;
@@ -4818,59 +4816,59 @@ function r8(e, t) {
 			nq(t, r), T(n.a);
 		});
 	})();
-	var l = r2();
-	nh(l, 1, "svelte-w0c70t");
-	var s = te(l), i = te(s), o = te(i);
-	rh(o, {
+	var n = r1();
+	nh(n, 1, "svelte-w0c70t");
+	var r = te(n), a = te(r), l = te(a);
+	rf(l, {
 		get name() {
-			return n;
+			return "x";
 		},
 		get title() {
-			return r;
+			return "webc.site 的基础依赖库";
 		},
 		prefix: !0
 	});
-	var c = tn(o);
-	nt(c, (e) => {});
-	var u = tn(c);
-	na(u, 5, () => nL, nn, (e, t) => {
-		var n = r1(), r = te(n), a = te(r), l = te(a), s = te(l, !0);
-		en(l);
-		var i = tn(l), o = te(i, !0);
-		en(i), en(a), er(), en(r);
-		var c = tn(r), d = te(c), u = (e) => {
-			rs(e, { get readme() {
-				return tH(t).doc;
+	var s = tn(l);
+	na(s, 5, () => rQ, nn, (e, t) => {
+		var n = eW(() => D(tH(t), 4));
+		let r = () => tH(n)[0], a = () => tH(n)[2];
+		var l = r0(), s = te(l), i = te(s), o = te(i), c = te(o, !0);
+		en(o);
+		var d = tn(o), u = te(d, !0);
+		en(d), en(i), er(), en(s);
+		var f = tn(s), h = te(f), p = (e) => {
+			rl(e, { get readme() {
+				return a();
 			} });
 		};
-		nt(d, (e) => {
-			tH(t).doc && e(u);
+		nt(h, (e) => {
+			a() && e(p);
 		});
-		var f = tn(d), h = tn(te(f));
+		var v = tn(h), g = tn(te(v));
 		{
-			let e = eG(() => "//github.com/webc-zh/webc-zh.github.io/tree/main/x/" + tH(t).name + ".js");
-			rc(h, { get url() {
+			let e = eG(() => "//github.com/webc-zh/webc-zh.github.io/tree/main/x/" + r() + ".js");
+			ro(g, { get url() {
 				return tH(e);
 			} });
 		}
-		en(f);
-		var p = tn(f);
-		rs(te(p), { get readme() {
+		en(v);
+		var b = tn(v);
+		rl(te(b), { get readme() {
 			return `\`\`\`javascript
-${tH(t).code ?? ""}
+${tH(n)[3] ?? ""}
 \`\`\``;
-		} }), en(p), en(c), en(n), tg(() => {
-			t4(s, tH(t).name), t4(o, tH(t).title);
-		}), t3(e, n);
-	}), en(u), en(i), en(s), en(l), t3(e, l), eu();
+		} }), en(b), en(f), en(l), tg(() => {
+			t4(c, r()), t4(u, tH(n)[1]);
+		}), t3(e, l);
+	}), en(s), en(a), en(r), en(n), t3(e, n), eu();
 }
-nA(r8, {}, [], [], { mode: "open" });
-var r3 = t5("<button class=\"menu-toggle svelte-d2ss8n\" aria-label=\"菜单\"><b class=\"svelte-d2ss8n\"></b><b class=\"svelte-d2ss8n\"></b><b class=\"svelte-d2ss8n\"></b></button>"), r4 = t5("<button class=\"overlay svelte-d2ss8n\" aria-label=\"关闭\"></button>"), r7 = t5("<article class=\"LG svelte-d2ss8n\"><h2>请选择一个组件查看文档</h2></article>"), r6 = t5("<main class=\"svelte-d2ss8n\"><!><!><section class=\"svelte-d2ss8n\"><!></section><!></main>"), r9 = {
+nA(r5, {}, [], [], { mode: "open" });
+var r8 = t5("<button class=\"menu-toggle svelte-d2ss8n\" aria-label=\"菜单\"><b class=\"svelte-d2ss8n\"></b><b class=\"svelte-d2ss8n\"></b><b class=\"svelte-d2ss8n\"></b></button>"), r3 = t5("<button class=\"overlay svelte-d2ss8n\" aria-label=\"关闭\"></button>"), r4 = t5("<article class=\"LG svelte-d2ss8n\"><h2>请选择一个组件查看文档</h2></article>"), r7 = t5("<main class=\"svelte-d2ss8n\"><!><!><section class=\"svelte-d2ss8n\"><!></section><!></main>"), r6 = {
 	hash: "svelte-d2ss8n",
 	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}main.svelte-d2ss8n {display:flex;height:100dvh;width:100vw;background:var(--bgSvg) no-repeat center/cover;color:#1d1d1f;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;overflow:hidden;padding-left:var(--gap);gap:var(--gap);box-sizing:border-box;position:relative;}\n@media (max-width: 800px) {main.svelte-d2ss8n {padding:0;}\n}.menu-toggle.svelte-d2ss8n {display:none;}\n@media (max-width: 800px) {.menu-toggle.svelte-d2ss8n {display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:absolute;top:var(--gap);right:20px;z-index:102;width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,0,0,0.078);color:#1d1d1f;background:linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.122));backdrop-filter:blur(8px);box-shadow:inset 0 1px 1px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.039);transition:all 0.25s cubic-bezier(0.4, 0, 0.2, 1);cursor:pointer;padding:0;}.menu-toggle.svelte-d2ss8n:hover {color:#0071e3;border-color:rgba(0,71,227,0.2);background:linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));transform:scale(1.06) translateY(-1px);box-shadow:inset 0 1px 1px rgba(255,255,255,0.8), 0 4px 12px rgba(0,0,0,0.059), 0 1px 2px rgba(0,0,0,0.039);}.menu-toggle.svelte-d2ss8n:hover > b:where(.svelte-d2ss8n) {background:currentColor;}.menu-toggle.svelte-d2ss8n:active {transform:scale(0.96);background:linear-gradient(135deg, rgba(255,255,255,0.302), rgba(255,255,255,0.059));box-shadow:inset 0 1px 2px rgba(0,0,0,0.051);}.menu-toggle.svelte-d2ss8n > b:where(.svelte-d2ss8n) {width:14px;height:2px;background:currentColor;border-radius:1px;transition:all 0.3s ease;}\n}.overlay.svelte-d2ss8n {display:none;}\n@media (max-width: 800px) {.overlay.svelte-d2ss8n {display:block;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.2);backdrop-filter:blur(4px);\n    animation: svelte-d2ss8n-fadeIn 0.25s ease;}\n}section.svelte-d2ss8n {flex:1;display:flex;flex-direction:column;overflow:hidden;}section.svelte-d2ss8n > article:where(.svelte-d2ss8n) {flex:1;display:flex;align-items:center;justify-content:center;color:#86868b;border-radius:24px;}\n@media (max-width: 800px) {section.svelte-d2ss8n {padding:0;}section.svelte-d2ss8n > article:where(.svelte-d2ss8n) {border-radius:16px;}\n}\n@-moz-keyframes svelte-d2ss8n-fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes svelte-d2ss8n-fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-o-keyframes svelte-d2ss8n-fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@keyframes svelte-d2ss8n-fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}"
 };
-function ae(e, t) {
-	ed(t, !0), no(e, r9);
+function r9(e, t) {
+	ed(t, !0), no(e, r6);
 	let n = e0(-1), r = e0(""), l = e0(null), s = e0([]), i = e0([]), o = e0(!1), c = e0(!1), d = e0(""), u = e0(""), f = eW(() => nP[tH(n)]), h = () => {
 		e2(o, !tH(o));
 	}, p = async () => {
@@ -4903,22 +4901,22 @@ function ae(e, t) {
 			c(), clearTimeout(t);
 		};
 	});
-	var g = r6(), b = te(g), m = (e) => {
-		var t = r3();
+	var g = r7(), b = te(g), x = (e) => {
+		var t = r8();
 		tZ("click", t, h), t3(e, t);
 	};
 	nt(b, (e) => {
-		tH(o) || e(m);
+		tH(o) || e(x);
 	});
-	var x = tn(b), w = (e) => {
-		var t = r4();
+	var m = tn(b), w = (e) => {
+		var t = r3();
 		tZ("click", t, h), t3(e, t);
 	};
-	nt(x, (e) => {
+	nt(m, (e) => {
 		tH(o) && e(w);
 	});
-	var y = tn(x), k = te(y), _ = (e) => {
-		rQ(e, {
+	var y = tn(m), k = te(y), _ = (e) => {
+		rZ(e, {
 			get name() {
 				return tH(d);
 			},
@@ -4927,9 +4925,9 @@ function ae(e, t) {
 			}
 		});
 	}, $ = (e) => {
-		r8(e, {});
+		r5(e, {});
 	}, q = (e) => {
-		rJ(e, {
+		rX(e, {
 			get info() {
 				return tH(f);
 			},
@@ -4950,7 +4948,7 @@ function ae(e, t) {
 			}
 		});
 	}, S = (e) => {
-		t3(e, r7());
+		t3(e, r4());
 	};
 	nt(k, (e) => {
 		-2 == tH(n) ? e(_) : -3 == tH(n) ? e($, 1) : tH(f) ? e(q, 2) : e(S, -1);
@@ -4958,7 +4956,7 @@ function ae(e, t) {
 	var j = tn(y);
 	{
 		let e = eW(() => tH(o) ? "show" : "");
-		nH(j, {
+		nU(j, {
 			get class() {
 				return tH(e);
 			},
@@ -4978,5 +4976,5 @@ function ae(e, t) {
 	}
 	en(g), t3(e, g), eu();
 }
-tQ(["click"]), nA(ae, {}, [], [], { mode: "open" }), t6(ae, { target: r });
+tQ(["click"]), nA(r9, {}, [], [], { mode: "open" }), t6(r9, { target: r });
 export { no as a, t3 as c, tn as d, en as f, nh as i, t5 as l, nA as n, na as o, nv as r, nn as s, nC as t, te as u };
