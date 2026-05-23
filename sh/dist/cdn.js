@@ -1,7 +1,8 @@
 #!/usr/bin/env bun
 
-import { readdirSync, existsSync, statSync, writeFileSync, rmSync } from "node:fs";
+import { readdirSync, existsSync, statSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import read from "@3-/read";
@@ -25,13 +26,39 @@ const { ver } = yargs(hideBin(process.argv)).argv,
   PREFIX_UNDER = "_",
   RESET = "reset",
   X = "x",
-  minifyCss = (css_content, filename, dest_path, map_dest_path) => {
-    const { code, map } = transform({
-      filename,
-      code: Buffer.from(css_content),
-      minify: true,
-      sourceMap: true,
+  processCssSvgs = (css_content, entry) => {
+    const url_re = /url\(\s*['"]?([^'")?#]+?\.svg)(?:\?[^'")]*|#[^'")]*)?['"]?\s*\)/g;
+    return css_content.replace(url_re, (match, svg_url) => {
+      if (
+        svg_url.startsWith("data:") ||
+        svg_url.startsWith("http://") ||
+        svg_url.startsWith("https://")
+      ) {
+        return match;
+      }
+      const base_dir = entry ? join(ROOT, "com", entry) : join(ROOT, "styl"),
+        svg_path = svg_url.startsWith("/") ? join(ROOT, svg_url) : join(base_dir, svg_url);
+      if (existsSync(svg_path)) {
+        const svg_data = readFileSync(svg_path),
+          md5_base64url = createHash("md5").update(svg_data).digest("base64url"),
+          hashed_filename = md5_base64url + ".svg",
+          dest_svg_path = join(DIST, hashed_filename);
+        writeFileSync(dest_svg_path, svg_data);
+        return 'url("' + hashed_filename + '")';
+      } else {
+        console.warn("⚠️ [cdn.js] SVG file does not exist: " + svg_path);
+        return match;
+      }
     });
+  },
+  minifyCss = (css_content, filename, dest_path, map_dest_path, entry) => {
+    const processed_css = processCssSvgs(css_content, entry),
+      { code, map } = transform({
+        filename,
+        code: Buffer.from(processed_css),
+        minify: true,
+        sourceMap: true,
+      });
     let css_code = code.toString().replace(/\/\*#\s*sourceMappingURL=.+?\*\//g, "");
     css_code += "\n/*# sourceMappingURL=" + filename + ".map */";
     writeFileSync(dest_path, css_code);
@@ -56,6 +83,7 @@ const { ver } = yargs(hideBin(process.argv)).argv,
             PREFIX_UNDER + entry + CSS,
             join(DIST, PREFIX_UNDER + entry + CSS),
             join(DIST, PREFIX_UNDER + entry + CSS + MAP),
+            entry,
           );
           if (has_var) {
             const var_content = read(var_css_path);
@@ -64,6 +92,7 @@ const { ver } = yargs(hideBin(process.argv)).argv,
               entry + CSS,
               join(DIST, entry + CSS),
               join(DIST, entry + CSS + MAP),
+              entry,
             );
           }
         } else if (has_var) {
@@ -73,6 +102,7 @@ const { ver } = yargs(hideBin(process.argv)).argv,
             entry + CSS,
             join(DIST, entry + CSS),
             join(DIST, entry + CSS + MAP),
+            entry,
           );
         }
 
@@ -96,7 +126,13 @@ const { ver } = yargs(hideBin(process.argv)).argv,
       const reset_css = join(DIST, RESET + CSS),
         reset_map = join(DIST, RESET + CSS + MAP);
       compileStylus(reset_styl, reset_css, reset_map, false);
-      const reset_content = read(reset_css) + "\n/*# sourceMappingURL=" + RESET + CSS + MAP + " */";
+      const reset_content =
+        processCssSvgs(read(reset_css), null) +
+        "\n/*# sourceMappingURL=" +
+        RESET +
+        CSS +
+        MAP +
+        " */";
       writeFileSync(reset_css, reset_content);
     }
   },
