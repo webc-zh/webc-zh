@@ -1,5 +1,5 @@
 let e, t, n;
-import { r, t as a } from "./init-C0_j8tfg.js";
+import { r, t as a } from "./init-ht2V0RCQ.js";
 var l, s, i, o, c, d, u, f, h, p, v, g = Object.create, b = Object.defineProperty, m = Object.getOwnPropertyDescriptor, x = Object.getOwnPropertyNames, w = Object.getPrototypeOf, y = Object.prototype.hasOwnProperty, k = Array.isArray, _ = Array.prototype.indexOf, $ = Array.prototype.includes, q = Array.from, S = Object.keys, j = Object.defineProperty, E = Object.getOwnPropertyDescriptor, A = Object.getOwnPropertyDescriptors, z = Object.prototype, F = Array.prototype, C = Object.getPrototypeOf, P = Object.isExtensible, L = () => {};
 function O(e) {
 	return e();
@@ -2106,11 +2106,11 @@ var nF = {}, nC = function(e, t, n) {
 }, nP = [[
 	"Scroll",
 	"自定义虚拟滚动条",
-	() => nC(() => import("./Scroll-YEV-v1wB.js"), [], import.meta.url)
+	() => nC(() => import("./Scroll-DxDf6Zbz.js"), [], import.meta.url)
 ], [
 	"Wait",
 	"加载动画与表单提交遮罩",
-	() => nC(() => import("./Wait-C2K39xnP.js"), [], import.meta.url)
+	() => nC(() => import("./Wait-C-NRDCFu.js"), [], import.meta.url)
 ]], nL = [
 	{
 		name: "On",
@@ -4152,22 +4152,22 @@ nA(rg, {
 var rb = {
 	jsdelivr: (e, t) => "//cdn.jsdelivr.net/npm/" + e + "@" + t,
 	npmmirror: (e, t) => "//registry.npmmirror.com/" + e + "/" + t + "/files"
-}, rm = "webc.site", rx = t5("<div class=\"code svelte-cb5h7f\" role=\"button\" tabindex=\"0\"><pre class=\"svelte-cb5h7f\"> </pre><b class=\"svelte-cb5h7f\"><!></b></div>"), rw = {
+}, rm = "webc.site", rx = t5("<b class=\"code svelte-cb5h7f\" role=\"button\" tabindex=\"0\"><b class=\"svelte-cb5h7f\"><!></b><pre class=\"svelte-cb5h7f\"> </pre></b>"), rw = {
 	hash: "svelte-cb5h7f",
-	code: ":root {--gap: 24px;}\n@media (max-width: 999px) {:root {--gap: 16px;}\n}.code.svelte-cb5h7f {position:relative;display:flex;align-items:flex-start;gap:var(--gap);width:100%;cursor:pointer;background:transparent;border:none;padding:0;text-align:left;}.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {flex:1;min-width:0;margin:0;overflow-x:auto;font-family:source-code-pro, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#1d1d1f;white-space:pre-wrap;word-break:break-all;}.code.svelte-cb5h7f > b:where(.svelte-cb5h7f) {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(1px);opacity:0;pointer-events:none;transition:opacity 0.2s ease;cursor:pointer;}.code.svelte-cb5h7f:hover > b:where(.svelte-cb5h7f) {opacity:1;pointer-events:auto;}\n@media (max-width: 999px) {.code.svelte-cb5h7f {gap:12px;}.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {font-size:11px;}\n}"
+	code: ":root {--gap: 24px;}\n@media (max-width: 999px) {:root {--gap: 16px;}\n}.code.svelte-cb5h7f {position:relative;display:flex;align-items:center;width:100%;cursor:pointer;background:transparent;border:none;padding:0;text-align:left;}.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {flex:1;min-width:0;margin:0;overflow-x:auto;font-family:source-code-pro, Menlo, Monaco, Consolas, monospace;font-size:12px;color:#1d1d1f;white-space:pre-wrap;word-break:break-all;}.code.svelte-cb5h7f > b:where(.svelte-cb5h7f) {display:flex;align-items:center;width:0;opacity:0;pointer-events:none;overflow:hidden;white-space:nowrap;transition:width 0.2s ease, opacity 0.2s ease, margin-right 0.2s ease;}.code.svelte-cb5h7f:hover > b:where(.svelte-cb5h7f) {width:76px;opacity:1;pointer-events:auto;margin-right:8px;}\n@media (max-width: 999px) {.code.svelte-cb5h7f pre:where(.svelte-cb5h7f) {font-size:11px;}\n}"
 };
 function ry(e, t) {
 	ed(t, !0), no(e, rw);
 	let n = nS(t, "text", 7, ""), r = e0(void 0), a = (e) => {
 		e.target.closest("button") || tH(r).querySelector("button").click();
 	};
-	var l = rx(), s = te(l), i = te(s, !0);
-	en(s);
-	var o = tn(s);
-	return nY(te(o), { get text() {
+	var l = rx(), s = te(l);
+	nY(te(s), { get text() {
 		return n();
-	} }), en(o), n$(o, (e) => e2(r, e), () => tH(r)), en(l), tg(() => t8(i, n())), tZ("click", l, a), tZ("keydown", l, (e) => {
-		("Enter" === e.key || " " === e.key) && a(e);
+	} }), en(s), n$(s, (e) => e2(r, e), () => tH(r));
+	var i = tn(s), o = te(i, !0);
+	return en(i), en(l), tg(() => t8(o, n())), tZ("click", l, a), tZ("keydown", l, (e) => {
+		[13, 32].includes(e.keyCode) && a(e);
 	}), t4(e, l), eu({
 		get text() {
 			return n();
