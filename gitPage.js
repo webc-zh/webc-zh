@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { $ } from "zx";
-import gci from "~/bin/gci";
+import gci from "~/ai/lib/gci.js";
 
 const main = async () => {
   const branch_name = (await $`git branch --show-current`).toString().trim();
