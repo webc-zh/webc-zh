@@ -1,0 +1,32 @@
+{
+  "name": "webc.add",
+  "version": "0.1.4",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://webc-zh.github.io",
+  "license": "MulanPSL-2.0",
+  "author": "i18n.site@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webc-zh/webc-zh.github.io.git"
+  },
+  "bin": {
+    "webc-i": "./cli.js"
+  },
+  "files": [
+    "./*"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": "./*"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@3-/read": "^0.1.4",
+    "ansis": "^4.3.0",
+    "stylus": "^0.64.0",
+    "tar": "^7.5.15",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {}
+}

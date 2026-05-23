@@ -1,0 +1,32 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "page/entry/*.{js,svelte}",
+    "com.js",
+    "sh/demo.js",
+    "sh/dist/*.js",
+    "sh/hook/*.js",
+    "vite/dist/*.js",
+    "vite/pug/*.js",
+    "vite/com/dev.js"
+  ],
+  "project": ["**/*.{js,svelte}"],
+  "paths": {
+    "x/*": ["./importmap/x/*"]
+  },
+  "ignore": [
+    "cli/**",
+    "importmap/**",
+    ".cache/**",
+    "com/*/demo/**",
+    "oxlint.config.js",
+    "sh/example/**"
+  ],
+  "ignoreBinaries": [
+    "sh/hook/svgMinify.js",
+    "sh/hook/fmtSvelte.sh",
+    "sh/hook/svelteSvgMinify.js",
+    "sh/hook/fmtStyl.sh"
+  ],
+  "ignoreDependencies": ["oxfmt", "oxlint", "fmt_svelte", "stylus-supremacy"]
+}

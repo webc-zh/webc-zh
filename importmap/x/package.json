@@ -1,0 +1,22 @@
+{
+  "name": "@3-/x",
+  "version": "0.2.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://webc-zh.github.io",
+  "license": "MulanPSL-2.0",
+  "author": "i18n.site@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webc-zh/webc-zh.github.io.git"
+  },
+  "files": [
+    "./*"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": "./*"
+  },
+  "scripts": {},
+  "devDependencies": {}
+}
