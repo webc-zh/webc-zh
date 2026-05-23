@@ -41,7 +41,7 @@ var n = [
 	],
 	[
 		3,
-		"3. SVG 资源优化 (vite-plugin-svg-var)",
+		"3. SVG 资源优化",
 		"在 Vite 构建配置中，推荐配合使用 [vite-plugin-svg-var](https://www.npmjs.com/package/vite-plugin-svg-var) 插件优化 SVG 资源加载。"
 	],
 	[
@@ -53,6 +53,11 @@ var n = [
 		4,
 		"特性",
 		"- **UTF-8 编码**：将 SVG 转为 UTF-8 编码的 `data:image/svg+xml`（而不是 base64）并写入 CSS 变量，降低编码体积，提升压缩率。\n- **内容去重**：内容相同的 SVG 文件仅生成单个 CSS 变量，避免资源冗余。\n- **热更新**：监听 `public` 目录变动，在新增、修改或删除 SVG 文件时，重新计算 CSS 变量并触发热重载。"
+	],
+	[
+		3,
+		"4. 中文字体分片",
+		"为了优化中文字体在 Web 端的加载体验，组件库引入了中文字体分片包 **[18s](https://www.npmjs.com/package/18s)**。\n\n- **按需分片加载**：通过中文字体分片技术，将体积庞大的中文字体（如思源黑体）和代码/等宽字体（如 JetBrains Mono）切分为 128KB 左右的 WOFF2 小分片，浏览器根据页面实际显示的字符按需下载分片，显著缩短中文字体加载的白屏与闪烁时间。\n- **内容寻址与长缓存**：字体分片基于其内容的 MD5 Base64url 哈希值命名，防止命名冲突，并提升 CDN 缓存命中率。\n- **项目结构**：\n  - 构建工作区位于 **[font/gen](https://github.com/webc-site/font/tree/main/gen)** (包含原始 TTF 字体、分片及样式重写脚本等)。\n  - 编译后发布的分发资源及文档位于 **[font](https://github.com/webc-site/font)**。\n- **全局样式集成**：\n  在基础样式重置文件 **[styl/reset.styl](https://github.com/webc-site/webc-zh/blob/main/styl/reset.styl)** 中通过 `@import` 引入了 `18s` 包的合并样式，并为全局和代码元素配置了字体别名：\n\n```stylus\n  // 引入 18s 合并后的字体样式映射表\n  @import url('//cdn.jsdelivr.net/npm/18s@0.2.9/_.css')\n\n  // 全局正文字体配置（思源黑体，别名为 t）\n  html, :host\n    font-family t, ui-sans-serif, ...\n\n  // 代码及等宽字体配置（JetBrains Mono，别名为 c）\n  code, kbd, samp, pre\n    font-family c, ui-monospace, ...\n```"
 	],
 	[
 		2,

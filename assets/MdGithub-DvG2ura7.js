@@ -1,6 +1,6 @@
 let e, t, n;
-import { A as a, C as r, D as i, E as s, L as o, N as l, P as c, R as d, S as u, T as g, _ as p, a as b, b as h, c as f, l as k, o as m, p as x, x as v, y, z as w } from "./Index-Ds6B3iKm.js";
-var _, F, A, S, E = Object.create, $ = Object.defineProperty, q = Object.getOwnPropertyDescriptor, C = Object.getOwnPropertyNames, P = Object.getPrototypeOf, L = Object.prototype.hasOwnProperty, O = (e) => {
+import { A as a, C as r, D as i, E as s, L as o, N as l, P as c, R as d, S as u, T as g, _ as p, a as b, b as h, c as f, l as k, o as m, p as x, x as v, y, z as w } from "./Index-CXgnVAx5.js";
+var _, F, A, S, E = Object.create, $ = Object.defineProperty, q = Object.getOwnPropertyDescriptor, C = Object.getOwnPropertyNames, P = Object.getPrototypeOf, L = Object.prototype.hasOwnProperty, j = (e) => {
 	switch (e) {
 		case 1: return 3;
 		case 2: return 4;
@@ -10,7 +10,7 @@ var _, F, A, S, E = Object.create, $ = Object.defineProperty, q = Object.getOwnP
 		default: return 8;
 	}
 };
-function j(e) {
+function O(e) {
 	0 !== e.text.length && (console.assert(e.len > 0, "Never adding text to root"), e.renderer.add_text(e.renderer.data, e.text), e.text = "");
 }
 function B(e) {
@@ -112,7 +112,7 @@ function I(e, t) {
 								}
 								break;
 							case " ":
-								M(e, e.indent_len), T(e, O(e.pending.length)), N(e);
+								M(e, e.indent_len), T(e, j(e.pending.length)), N(e);
 								continue;
 						}
 						break;
@@ -251,7 +251,7 @@ function I(e, t) {
 				break;
 			case 29:
 				if ("|" === e.pending) {
-					j(e), B(e), e.pending = "", I(e, a);
+					O(e), B(e), e.pending = "", I(e, a);
 					continue;
 				}
 				break;
@@ -270,7 +270,7 @@ function I(e, t) {
 					e.pending = t;
 					continue;
 				default:
-					0 !== e.pending.length ? (j(e), B(e), e.pending = a) : e.text += a;
+					0 !== e.pending.length ? (O(e), B(e), e.pending = a) : e.text += a;
 					continue;
 			}
 			case 10:
@@ -280,7 +280,7 @@ function I(e, t) {
 						continue;
 					case "\n":
 						if (t.length === e.fence_start + e.fence_end + 1) {
-							j(e), B(e), e.pending = "", e.fence_start = 0, e.fence_end = 0, e.token = 101;
+							O(e), B(e), e.pending = "", e.fence_start = 0, e.fence_end = 0, e.token = 101;
 							continue;
 						}
 						e.token = 101;
@@ -294,10 +294,10 @@ function I(e, t) {
 				continue;
 			case 11: switch (a) {
 				case "`":
-					t.length === e.fence_start + Number(" " === e.pending[0]) ? (j(e), B(e), e.pending = "", e.fence_start = 0) : e.pending = t;
+					t.length === e.fence_start + Number(" " === e.pending[0]) ? (O(e), B(e), e.pending = "", e.fence_start = 0) : e.pending = t;
 					continue;
 				case "\n":
-					e.text += e.pending, e.pending = "", e.token = 21, e.blockquote_idx = 0, j(e);
+					e.text += e.pending, e.pending = "", e.token = 21, e.blockquote_idx = 0, O(e);
 					continue;
 				case " ":
 					e.text += e.pending, e.pending = a;
@@ -331,7 +331,7 @@ function I(e, t) {
 			case 15: {
 				let t = "*", n = 12;
 				if (15 === e.token && (t = "_", n = 13), t === e.pending) {
-					if (j(e), t === a) {
+					if (O(e), t === a) {
 						B(e), e.pending = "";
 						continue;
 					}
@@ -345,43 +345,43 @@ function I(e, t) {
 				let n = "*", r = 14;
 				switch (13 === e.token && (n = "_", r = 15), e.pending) {
 					case n:
-						n === a ? e.tokens[e.len - 1] === r ? e.pending = t : (j(e), T(e, r), e.pending = "") : (j(e), B(e), e.pending = a);
+						n === a ? e.tokens[e.len - 1] === r ? e.pending = t : (O(e), T(e, r), e.pending = "") : (O(e), B(e), e.pending = a);
 						continue;
 					case n + n:
 						let i = e.token;
-						j(e), B(e), B(e), n !== a ? (T(e, i), e.pending = a) : e.pending = "";
+						O(e), B(e), B(e), n !== a ? (T(e, i), e.pending = a) : e.pending = "";
 						continue;
 				}
 				break;
 			}
 			case 16:
 				if ("~~" === t) {
-					j(e), B(e), e.pending = "";
+					O(e), B(e), e.pending = "";
 					continue;
 				}
 				break;
 			case 105:
-				"\n" === a ? (j(e), T(e, 30), e.pending = "") : (e.token = e.tokens[e.len], "\\" === e.pending[0] ? e.text += "[" : e.text += "$$", e.pending = "", I(e, a));
+				"\n" === a ? (O(e), T(e, 30), e.pending = "") : (e.token = e.tokens[e.len], "\\" === e.pending[0] ? e.text += "[" : e.text += "$$", e.pending = "", I(e, a));
 				continue;
 			case 30:
 				if ("\\]" === t || "$$" === t) {
-					j(e), B(e), e.pending = "";
+					O(e), B(e), e.pending = "";
 					continue;
 				}
 				break;
 			case 31:
 				if ("\\)" === t || "$" === e.pending[0]) {
-					j(e), B(e), ")" === a ? e.pending = "" : e.pending = a;
+					O(e), B(e), ")" === a ? e.pending = "" : e.pending = a;
 					continue;
 				}
 				break;
 			case 102:
-				"http://" === t || "https://" === t ? (j(e), T(e, 18), e.pending = t, e.text = t) : "http:/"[e.pending.length] === a || "https:/"[e.pending.length] === a ? e.pending = t : (e.token = e.tokens[e.len], I(e, a));
+				"http://" === t || "https://" === t ? (O(e), T(e, 18), e.pending = t, e.text = t) : "http:/"[e.pending.length] === a || "https:/"[e.pending.length] === a ? e.pending = t : (e.token = e.tokens[e.len], I(e, a));
 				continue;
 			case 17:
 			case 19:
 				if ("]" === e.pending) {
-					j(e), "(" === a ? e.pending = t : (B(e), e.pending = a);
+					O(e), "(" === a ? e.pending = t : (B(e), e.pending = a);
 					continue;
 				}
 				if ("]" === e.pending[0] && "(" === e.pending[1]) {
@@ -393,7 +393,7 @@ function I(e, t) {
 				}
 				break;
 			case 18:
-				" " === a || "\n" === a || "\\" === a ? (e.renderer.set_attr(e.renderer.data, 1, e.pending), j(e), B(e), e.pending = a) : (e.text += a, e.pending = t);
+				" " === a || "\n" === a || "\\" === a ? (e.renderer.set_attr(e.renderer.data, 1, e.pending), O(e), B(e), e.pending = a) : (e.text += a, e.pending = t);
 				continue;
 			case 104:
 				if (t.startsWith("<br")) {
@@ -402,7 +402,7 @@ function I(e, t) {
 						continue;
 					}
 					if (">" === a) {
-						j(e), e.token = e.tokens[e.len], e.renderer.add_token(e.renderer.data, 21), e.renderer.end_token(e.renderer.data), e.pending = "";
+						O(e), e.token = e.tokens[e.len], e.renderer.add_token(e.renderer.data, 21), e.renderer.end_token(e.renderer.data), e.pending = "";
 						continue;
 					}
 				}
@@ -414,7 +414,7 @@ function I(e, t) {
 				if (19 === e.token || 30 === e.token || 31 === e.token) break;
 				switch (a) {
 					case "(":
-						j(e), T(e, 31), e.pending = "";
+						O(e), T(e, 31), e.pending = "";
 						continue;
 					case "[":
 						e.token = 105, e.pending = t;
@@ -438,22 +438,22 @@ function I(e, t) {
 					case 6:
 					case 7:
 					case 8:
-						j(e), z(e, e.blockquote_idx), e.blockquote_idx = 0, e.pending = a;
+						O(e), z(e, e.blockquote_idx), e.blockquote_idx = 0, e.pending = a;
 						continue;
 					default:
-						j(e), e.pending = a, e.token = 21, e.blockquote_idx = 0;
+						O(e), e.pending = a, e.token = 21, e.blockquote_idx = 0;
 						continue;
 				}
 				break;
 			case "<":
 				if (19 !== e.token && 30 !== e.token && 31 !== e.token) {
-					j(e), e.pending = t, e.token = 104;
+					O(e), e.pending = t, e.token = 104;
 					continue;
 				}
 				break;
 			case "`":
 				if (19 === e.token) break;
-				"`" === a ? (e.fence_start += 1, e.pending = t) : (e.fence_start += 1, j(e), T(e, 11), e.text = " " === a || "\n" === a ? "" : a, e.pending = "");
+				"`" === a ? (e.fence_start += 1, e.pending = t) : (e.fence_start += 1, O(e), T(e, 11), e.text = " " === a || "\n" === a ? "" : a, e.pending = "");
 				continue;
 			case "_":
 			case "*": {
@@ -465,16 +465,16 @@ function I(e, t) {
 						continue;
 					}
 					if (" " !== a && "\n" !== a) {
-						j(e), T(e, n), e.pending = a;
+						O(e), T(e, n), e.pending = a;
 						continue;
 					}
 				} else {
 					if (i === a) {
-						j(e), T(e, r), T(e, n), e.pending = "";
+						O(e), T(e, r), T(e, n), e.pending = "";
 						continue;
 					}
 					if (" " !== a && "\n" !== a) {
-						j(e), T(e, r), e.pending = a;
+						O(e), T(e, r), e.pending = a;
 						continue;
 					}
 				}
@@ -488,7 +488,7 @@ function I(e, t) {
 							continue;
 						}
 					} else if (" " !== a && "\n" !== a) {
-						j(e), T(e, 16), e.pending = a;
+						O(e), T(e, 16), e.pending = a;
 						continue;
 					}
 				}
@@ -515,20 +515,20 @@ function I(e, t) {
 						}
 					}(n));
 					else {
-						j(e), T(e, 31), e.pending = a;
+						O(e), T(e, 31), e.pending = a;
 						continue;
 					}
 				}
 				break;
 			case "[":
 				if (19 !== e.token && 17 !== e.token && 30 !== e.token && 31 !== e.token && "]" !== a) {
-					j(e), T(e, 17), e.pending = a;
+					O(e), T(e, 17), e.pending = a;
 					continue;
 				}
 				break;
 			case "!":
 				if (19 !== e.token && "[" === a) {
-					j(e), T(e, 19), e.pending = "";
+					O(e), T(e, 19), e.pending = "";
 					continue;
 				}
 				break;
@@ -540,7 +540,7 @@ function I(e, t) {
 		}
 		e.text += e.pending, e.pending = a;
 	}
-	j(e);
+	O(e);
 }
 function W(e, t) {
 	let n, a = e.nodes[e.index];
@@ -841,16 +841,16 @@ var Y = ((e, t, n, a) => {
 										for (var q = y; q !== n.tail && ($ < E || "string" == typeof q.value); q = q.next) A++, $ += q.value.length;
 										A--, F = t.slice(w, $), _.index -= w;
 									} else if (!(_ = s(v, 0, F, f))) continue;
-									var S = _.index, C = _[0], P = F.slice(0, S), L = F.slice(S + C.length), O = w + F.length;
-									d && O > d.reach && (d.reach = O);
-									var j = y.prev;
-									if (P && (j = l(n, j, P), w += P.length), function(e, t, n) {
+									var S = _.index, C = _[0], P = F.slice(0, S), L = F.slice(S + C.length), j = w + F.length;
+									d && j > d.reach && (d.reach = j);
+									var O = y.prev;
+									if (P && (O = l(n, O, P), w += P.length), function(e, t, n) {
 										for (var a = t.next, r = 0; r < n && a !== e.tail; r++) a = a.next;
 										t.next = a, a.prev = t, e.length -= r;
-									}(n, j, A), y = l(n, j, new i(u, h ? r.tokenize(C, h) : C, m, C)), L && l(n, y, L), A > 1) {
+									}(n, O, A), y = l(n, O, new i(u, h ? r.tokenize(C, h) : C, m, C)), L && l(n, y, L), A > 1) {
 										var B = {
 											cause: u + "," + p,
-											reach: O
+											reach: j
 										};
 										e(t, n, a, y.prev, w, B), d && B.reach > d.reach && (d.reach = B.reach);
 									}
@@ -1564,7 +1564,7 @@ var Y = ((e, t, n, a) => {
 }, Y.default.languages.svelte = Y.default.languages.markup;
 var V = v("<b class=\"svelte-dy2xt3\"></b>"), J = {
 	hash: "svelte-dy2xt3",
-	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-dy2xt3 {display:block;}b.svelte-dy2xt3 h1,\nb.svelte-dy2xt3 h2,\nb.svelte-dy2xt3 h3,\nb.svelte-dy2xt3 h4 {color:#1d1d1f;font-weight:600;margin-top:24px;margin-bottom:16px;}b.svelte-dy2xt3 h1 {font-size:26px;}b.svelte-dy2xt3 h2 {font-size:20px;}b.svelte-dy2xt3 h3 {font-size:16px;}b.svelte-dy2xt3 p {margin-bottom:16px;}b.svelte-dy2xt3 ul {margin-bottom:16px;padding-left:20px;list-style-type:disc;}b.svelte-dy2xt3 ul li {margin-bottom:6px;}b.svelte-dy2xt3 code {font-size:13px;padding:2px 6px;border-radius:4px;color:#0071e3;border:1px solid rgba(0,113,227,0.102);background:rgba(0,113,227,0.051);}b.svelte-dy2xt3 pre {border:1px solid rgba(0,0,0,0.071);border-radius:12px;padding:14px 16px;overflow-x:auto;margin-bottom:20px;margin-top:12px;background:rgba(255,255,255,0.502);backdrop-filter:blur(25px) saturate(180%);box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.651), 0 4px 12px rgba(0,0,0,0.02);}b.svelte-dy2xt3 pre code {background:transparent;border:0;padding:0;border-radius:0;color:#1d1d1f;line-height:1.6;}b.svelte-dy2xt3 pre .token.comment,\nb.svelte-dy2xt3 pre .token.prolog,\nb.svelte-dy2xt3 pre .token.doctype,\nb.svelte-dy2xt3 pre .token.cdata {color:#86868b;font-style:italic;}b.svelte-dy2xt3 pre .token.punctuation {color:#6e7681;}b.svelte-dy2xt3 pre .token.keyword {color:#ad208e;font-weight:600;}b.svelte-dy2xt3 pre .token.string,\nb.svelte-dy2xt3 pre .token.char,\nb.svelte-dy2xt3 pre .token.attr-value {color:#248a3d;}b.svelte-dy2xt3 pre .token.number,\nb.svelte-dy2xt3 pre .token.boolean {color:#1c00cf;}b.svelte-dy2xt3 pre .token.function {color:#0071e3;}b.svelte-dy2xt3 pre .token.class-name,\nb.svelte-dy2xt3 pre .token.maybe-class-name {color:#5c2699;}b.svelte-dy2xt3 pre .token.tag,\nb.svelte-dy2xt3 pre .token.operator {color:#ad208e;}b.svelte-dy2xt3 pre .token.attr-name {color:#8a3ffc;}b.svelte-dy2xt3 pre .token.selector {color:#5c2699;}b.svelte-dy2xt3 pre .token.property {color:#1d1d1f;}b.svelte-dy2xt3 pre .token.regex {color:#c41a16;}b.svelte-dy2xt3 pre[class*='language-'],\nb.svelte-dy2xt3 code[class*='language-'],\nb.svelte-dy2xt3 :not(pre) > code[class*='language-'] {background:transparent;}b.svelte-dy2xt3 a {color:#0071e3;text-decoration:none;border-bottom:1px solid rgba(0,113,227,0.2);transition:all 0.25s ease;}b.svelte-dy2xt3 a:hover {color:#0077ed;border-bottom-color:#0077ed;}b.svelte-dy2xt3 blockquote.alert {margin:20px 0;padding:16px 20px 16px 52px;border-left:4px solid;border-radius:12px;box-sizing:border-box;position:relative;background:rgba(255,255,255,0.451);backdrop-filter:blur(25px) saturate(180%);box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.651), 0 4px 12px rgba(0,0,0,0.02);border:1px solid rgba(255,255,255,0.2);}b.svelte-dy2xt3 blockquote.alert .alert-title {position:absolute;left:16px;top:16px;font-size:0;margin:0;padding:0;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {display:block;width:22px;height:22px;mask-size:contain;mask-repeat:no-repeat;mask-position:center;flex-shrink:0;}b.svelte-dy2xt3 blockquote.alert p {margin:0;color:#1d1d1f;}b.svelte-dy2xt3 blockquote.alert p:not(:last-child) {margin-bottom:8px;}b.svelte-dy2xt3 blockquote.alert-note {border-left-color:#0071e3;}b.svelte-dy2xt3 blockquote.alert-note .alert-icon {mask-image:var(--noteSvg);background:#0071e3;}b.svelte-dy2xt3 blockquote.alert-tip {border-left-color:#34c759;}b.svelte-dy2xt3 blockquote.alert-tip .alert-icon {mask-image:var(--tipSvg);background:#24b24b;}b.svelte-dy2xt3 blockquote.alert-important {border-left-color:#af52de;}b.svelte-dy2xt3 blockquote.alert-important .alert-icon {mask-image:var(--importantSvg);background:#af52de;}b.svelte-dy2xt3 blockquote.alert-warning {border-left-color:#ff9500;}b.svelte-dy2xt3 blockquote.alert-warning .alert-icon {mask-image:var(--warningSvg);background:#e08200;}b.svelte-dy2xt3 blockquote.alert-caution {border-left-color:#ff3b30;}b.svelte-dy2xt3 blockquote.alert-caution .alert-icon {mask-image:var(--cautionSvg);background:#ff3b30;}\n@media (max-width: 800px) {b.svelte-dy2xt3 h1 {font-size:20px;}b.svelte-dy2xt3 h2 {font-size:17px;}b.svelte-dy2xt3 pre {padding:12px;border-radius:8px;font-size:12px;}b.svelte-dy2xt3 blockquote.alert {padding:12px 14px 12px 42px;border-radius:8px;}b.svelte-dy2xt3 blockquote.alert .alert-title {left:12px;top:12px;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {width:18px;height:18px;}\n}"
+	code: ":root {--gap: 24px;}\n@media (max-width: 800px) {:root {--gap: 16px;}\n}b.svelte-dy2xt3 {display:block;text-autospace:auto;text-spacing-trim:auto;overflow-wrap:break-word;}b.svelte-dy2xt3 h1,\nb.svelte-dy2xt3 h2,\nb.svelte-dy2xt3 h3,\nb.svelte-dy2xt3 h4 {color:#1d1d1f;font-weight:600;margin-top:24px;margin-bottom:16px;}b.svelte-dy2xt3 h1 {font-size:26px;}b.svelte-dy2xt3 h2 {font-size:20px;}b.svelte-dy2xt3 h3 {font-size:16px;}b.svelte-dy2xt3 p {margin-bottom:16px;line-height:1.7;text-align:justify;text-justify:inter-character;}b.svelte-dy2xt3 ul,\nb.svelte-dy2xt3 ol {margin-bottom:16px;padding-left:16px;line-height:1.7;}b.svelte-dy2xt3 ul ul,\nb.svelte-dy2xt3 ol ul,\nb.svelte-dy2xt3 ul ol,\nb.svelte-dy2xt3 ol ol {padding-left:20px;}b.svelte-dy2xt3 ul {list-style-type:disc;}b.svelte-dy2xt3 ol {list-style-type:decimal;}b.svelte-dy2xt3 li {margin-bottom:8px;padding-left:4px;color:#333336;}b.svelte-dy2xt3 li::marker {color:#86868b;}b.svelte-dy2xt3 em {font-style:normal;-webkit-text-emphasis:filled circle;text-emphasis:filled circle;-webkit-text-emphasis-position:under;text-emphasis-position:under;}b.svelte-dy2xt3 blockquote:not(.alert) {margin:20px 0;padding:10px 16px;border-left:4px solid #e5e7eb;color:#6e7681;}b.svelte-dy2xt3 code {font-size:13px;padding:2px 6px;border-radius:4px;color:#1b6e30;border:1px solid rgba(48,209,88,0.133);background:linear-gradient(135deg, rgba(48,209,88,0.047), rgba(36,178,75,0.11));}b.svelte-dy2xt3 pre {border:1px solid rgba(0,0,0,0.071);border-radius:12px;padding:14px 16px;overflow-x:auto;margin-bottom:20px;margin-top:12px;background:rgba(255,255,255,0.502);backdrop-filter:blur(25px) saturate(180%);box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.651), 0 4px 12px rgba(0,0,0,0.02);}b.svelte-dy2xt3 pre code {background:transparent;border:0;padding:0;border-radius:0;color:#1d1d1f;line-height:1.6;}b.svelte-dy2xt3 pre .token.comment,\nb.svelte-dy2xt3 pre .token.prolog,\nb.svelte-dy2xt3 pre .token.doctype,\nb.svelte-dy2xt3 pre .token.cdata {color:#86868b;font-style:italic;}b.svelte-dy2xt3 pre .token.punctuation {color:#6e7681;}b.svelte-dy2xt3 pre .token.keyword {color:#ad208e;font-weight:600;}b.svelte-dy2xt3 pre .token.string,\nb.svelte-dy2xt3 pre .token.char,\nb.svelte-dy2xt3 pre .token.attr-value {color:#248a3d;}b.svelte-dy2xt3 pre .token.number,\nb.svelte-dy2xt3 pre .token.boolean {color:#1c00cf;}b.svelte-dy2xt3 pre .token.function {color:#0071e3;}b.svelte-dy2xt3 pre .token.class-name,\nb.svelte-dy2xt3 pre .token.maybe-class-name {color:#5c2699;}b.svelte-dy2xt3 pre .token.tag,\nb.svelte-dy2xt3 pre .token.operator {color:#ad208e;}b.svelte-dy2xt3 pre .token.attr-name {color:#8a3ffc;}b.svelte-dy2xt3 pre .token.selector {color:#5c2699;}b.svelte-dy2xt3 pre .token.property {color:#1d1d1f;}b.svelte-dy2xt3 pre .token.regex {color:#c41a16;}b.svelte-dy2xt3 pre[class*='language-'],\nb.svelte-dy2xt3 code[class*='language-'],\nb.svelte-dy2xt3 :not(pre) > code[class*='language-'] {background:transparent;}b.svelte-dy2xt3 a {color:#0071e3;text-decoration:none;border-bottom:1px solid rgba(0,113,227,0.2);transition:all 0.25s ease;}b.svelte-dy2xt3 a:hover {color:#0077ed;border-bottom-color:#0077ed;}b.svelte-dy2xt3 blockquote.alert {margin:20px 0;padding:16px 20px 16px 52px;border-radius:12px;box-sizing:border-box;position:relative;backdrop-filter:blur(20px) saturate(180%);box-shadow:0 4px 12px rgba(0,0,0,0.012);}b.svelte-dy2xt3 blockquote.alert .alert-title {position:absolute;left:16px;top:18px;font-size:0;margin:0;padding:0;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {display:block;width:22px;height:22px;mask-size:contain;mask-repeat:no-repeat;mask-position:center;flex-shrink:0;}b.svelte-dy2xt3 blockquote.alert p {margin:0;color:#1d1d1f;}b.svelte-dy2xt3 blockquote.alert p:not(:last-child) {margin-bottom:8px;}b.svelte-dy2xt3 blockquote.alert-note {background:linear-gradient(135deg, rgba(90,200,250,0.02), rgba(0,113,227,0.039));}b.svelte-dy2xt3 blockquote.alert-note .alert-icon {mask-image:var(--noteSvg);background:linear-gradient(135deg, #5ac8fa, #0071e3);}b.svelte-dy2xt3 blockquote.alert-tip {background:linear-gradient(135deg, rgba(255,214,10,0.031), rgba(255,159,10,0.055));}b.svelte-dy2xt3 blockquote.alert-tip .alert-icon {mask-image:var(--tipSvg);background:linear-gradient(135deg, #ffd60a, #ff9f0a);}b.svelte-dy2xt3 blockquote.alert-important {background:linear-gradient(135deg, rgba(241,167,255,0.02), rgba(175,82,222,0.039));}b.svelte-dy2xt3 blockquote.alert-important .alert-icon {mask-image:var(--importantSvg);background:linear-gradient(135deg, #f1a7ff, #af52de);}b.svelte-dy2xt3 blockquote.alert-warning {background:linear-gradient(135deg, rgba(255,219,77,0.02), rgba(255,149,0,0.039));}b.svelte-dy2xt3 blockquote.alert-warning .alert-icon {mask-image:var(--warningSvg);background:linear-gradient(135deg, #ffdb4d, #ff9500);}b.svelte-dy2xt3 blockquote.alert-caution {background:linear-gradient(135deg, rgba(255,149,179,0.02), rgba(255,59,48,0.039));}b.svelte-dy2xt3 blockquote.alert-caution .alert-icon {mask-image:var(--cautionSvg);background:linear-gradient(135deg, #ff95b3, #ff3b30);}\n@media (max-width: 800px) {b.svelte-dy2xt3 h1 {font-size:20px;}b.svelte-dy2xt3 h2 {font-size:17px;}b.svelte-dy2xt3 pre {padding:12px;border-radius:8px;font-size:12px;}b.svelte-dy2xt3 blockquote.alert {padding:12px 14px 12px 42px;border-radius:8px;}b.svelte-dy2xt3 blockquote.alert .alert-title {left:12px;top:13px;}b.svelte-dy2xt3 blockquote.alert .alert-title .alert-icon {width:18px;height:18px;}\n}"
 };
 function K(e, t) {
 	w(t, !0), x(e, J);
