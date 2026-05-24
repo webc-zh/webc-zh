@@ -1,7 +1,7 @@
-import { i as e, n as t, t as r } from "./MdGithub-B7H0Ik4m.js";
-import { E as l, F as n, H as s, I as a, R as o, T as c, U as w, V as i, _ as v, a as h, d as p, g as d, h as u, j as m, k as f, p as b, s as g, t as x, v as y, x as U, y as k, z as O } from "./Index-DaFTFUld.js";
-import "./legacy-CE0A-J26.js";
-import { t as S } from "./MdTop-DuH_lYYN.js";
+import { i as e, n as t, t as r } from "./MdGithub-BIlLQnEE.js";
+import { E as l, F as n, H as s, I as a, R as o, T as c, U as w, V as i, _ as v, a as h, d as p, g as d, h as u, j as m, k as f, p as b, s as g, t as x, v as y, x as U, y as k, z as O } from "./index-BnyknPJp.js";
+import "./legacy-CXGOFWEu.js";
+import { t as S } from "./MdTop-CAcr5EOc.js";
 var D = [
 	[
 		"On",
@@ -55,8 +55,8 @@ function j(h, U) {
 	g();
 	var P = E();
 	p(P, 1, "svelte-w0c70t");
-	var A = f(P), z = f(A), I = f(z);
-	S(I, {
+	var A = f(P), z = f(A), M = f(z);
+	S(M, {
 		get name() {
 			return j;
 		},
@@ -65,8 +65,8 @@ function j(h, U) {
 		},
 		prefix: !0
 	});
-	var M = m(I);
-	u(M, 5, () => D, d, (o, h) => {
+	var I = m(M);
+	u(I, 5, () => D, d, (o, h) => {
 		var p = a(() => w(c(h), 4));
 		let d = () => c(p)[0], u = () => c(p)[2];
 		var b = R(), g = f(b), x = f(g), U = f(x), O = f(U, !0);
@@ -97,7 +97,7 @@ ${c(p)[3] ?? ""}
 		} }), s(A), s(E), s(b), l(() => {
 			y(O, d()), y(D, c(p)[1]);
 		}), k(o, b);
-	}), s(M), s(z), s(A), s(P), k(h, P), o();
+	}), s(I), s(z), s(A), s(P), k(h, P), o();
 }
 function L(e) {
 	j(e, {});
